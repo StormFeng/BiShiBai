@@ -1,0 +1,54 @@
+package com.bishilai.bishilai;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import com.bishilai.bishilai.fragments.Fragment1;
+import com.bishilai.bishilai.fragments.Fragment2;
+import com.bishilai.bishilai.fragments.Fragment3;
+import com.bishilai.bishilai.fragments.Fragment4;
+import com.bishilai.bishilai.widget.GradientTabStripAdapter;
+import java.util.ArrayList;
+import java.util.List;
+import am.widget.basetabstrip.BaseTabStrip;
+import midian.baselib.base.BaseFragmentActivity;
+import midian.baselib.widget.GradientTabStrip;
+
+public class MainActivity extends BaseFragmentActivity implements BaseTabStrip.OnItemClickListener {
+
+    private ViewPager vpFragments;
+    private GradientTabStripAdapter adapter;
+    private List<Fragment> fragments=new ArrayList<>();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        vpFragments = (ViewPager) findViewById(R.id.gts_vp_fragments);
+        GradientTabStrip tabStrip = (GradientTabStrip) findViewById(R.id.gradientTabStrip);
+        fragments.add(new Fragment1());
+        fragments.add(new Fragment2());
+        fragments.add(new Fragment3());
+        fragments.add(new Fragment4());
+        adapter = new GradientTabStripAdapter(getSupportFragmentManager(),fragments);
+        vpFragments.setAdapter(adapter);
+        tabStrip.setAdapter(adapter);
+        tabStrip.bindViewPager(vpFragments);
+        tabStrip.setOnItemClickListener(this);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+
+    }
+
+    @Override
+    public void onSelectedClick(int position) {
+
+    }
+
+    @Override
+    public void onDoubleClick(int position) {
+
+    }
+}

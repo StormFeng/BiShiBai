@@ -1,0 +1,5 @@
+include ':app'
+include ':baseLib'
+include ':configlib'
+include ':midianAfinal'
+include ':bDIntegrationSDK_LibProject'

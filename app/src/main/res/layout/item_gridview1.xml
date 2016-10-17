@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/blue"
+    android:paddingTop="15sp"
+    android:paddingBottom="15sp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13.5sp"
+        android:textColor="@color/white"
+        android:text="小米5s"/>
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="9.5sp"
+        android:textColor="@color/white"
+        android:text="拍照黑科技 超感光相机"/>
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="11.5sp"
+        android:textColor="@color/white"
+        android:text="1999元起"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher"/>
+
+</LinearLayout>

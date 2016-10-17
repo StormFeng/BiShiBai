@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BiShiBai.iml" filepath="$PROJECT_DIR$/BiShiBai.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bDIntegrationSDK_LibProject/bDIntegrationSDK_LibProject.iml" filepath="$PROJECT_DIR$/bDIntegrationSDK_LibProject/bDIntegrationSDK_LibProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baseLib/baseLib.iml" filepath="$PROJECT_DIR$/baseLib/baseLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configlib/configlib.iml" filepath="$PROJECT_DIR$/configlib/configlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/midianAfinal/midianAfinal.iml" filepath="$PROJECT_DIR$/midianAfinal/midianAfinal.iml" />
+    </modules>
+  </component>
+</project>
