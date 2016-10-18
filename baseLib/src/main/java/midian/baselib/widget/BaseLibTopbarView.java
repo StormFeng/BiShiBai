@@ -78,7 +78,7 @@ public class BaseLibTopbarView extends RelativeLayout {
 
 	public BaseLibTopbarView setTitle(String title) {
 		title_tv.setText(title);
-		title_tv.setTextColor(Color.parseColor("#4A90E2"));
+		title_tv.setTextColor(Color.parseColor("#FFFFFF"));
 		return this;
 	}
 
@@ -90,13 +90,13 @@ public class BaseLibTopbarView extends RelativeLayout {
 
 	public BaseLibTopbarView setTitle(int resId) {
 		title_tv.setText(resId);
-        title_tv.setTextColor(Color.parseColor("#4A90E2"));
+        title_tv.setTextColor(Color.parseColor("#FFFFFF"));
 		return this;
 	}
 
 	public BaseLibTopbarView setLeftText(String text, OnClickListener onclickListener) {
 		left_tv.setText(text);
-		left_tv.setTextColor(Color.parseColor("#4A90E2"));
+		left_tv.setTextColor(Color.parseColor("#FFFFFF"));
 		if (onclickListener != null)
 			left_ll.setOnClickListener(onclickListener);
 		left_tv.setVisibility(VISIBLE);
@@ -105,7 +105,7 @@ public class BaseLibTopbarView extends RelativeLayout {
 
 	public BaseLibTopbarView setLeftText(int resId, OnClickListener onclickListener) {
 		left_tv.setText(resId);
-		left_tv.setTextColor(Color.parseColor("#4A90E2"));
+		left_tv.setTextColor(Color.parseColor("#FFFFFF"));
 		if (onclickListener != null)
 			left_ll.setOnClickListener(onclickListener);
 		left_tv.setVisibility(VISIBLE);
@@ -114,7 +114,7 @@ public class BaseLibTopbarView extends RelativeLayout {
 
 	public BaseLibTopbarView setRightText(String text, OnClickListener onclickListener) {
 		right_tv.setText(text);
-		right_tv.setTextColor(Color.parseColor("#4A90E2"));
+		right_tv.setTextColor(Color.parseColor("#FFFFFF"));
         if (onclickListener != null)
             right_tv.setOnClickListener(onclickListener);
 		right_tv.setVisibility(VISIBLE);

@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.bishilai.bishilai.widget.Banner
+            android:id="@+id/bannerView"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            app:indicator_height="7dp"
+            app:indicator_margin="3dp"
+            app:indicator_width="7dp"/>
+
+        <LinearLayout
+            android:id="@+id/ll_Flag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="6dp">
+            <TextView
+                android:id="@+id/tv_Tab1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_launcher"
+                android:text="tab1"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/tv_Tab2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_launcher"
+                android:text="tab2"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/tv_Tab3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_launcher"
+                android:text="tab3"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/tv_Tab4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_launcher"
+                android:text="tab4"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="四轴防抖拍照 还能刷卡"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="小米手机5 黑科技手机"
+                android:textSize="11sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="限量送LED随身灯 + Type-C转换头"
+                android:textSize="11sp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥1599起"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/holo_red_dark"/>
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/ic_launcher"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.bishilai.bishilai.widget.InnerGridView
+            android:id="@+id/gridView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:verticalSpacing="5sp"
+            android:horizontalSpacing="5sp"
+            android:numColumns="3"></com.bishilai.bishilai.widget.InnerGridView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="大流量直出纯净水，健康家庭必备"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="享花呗三期免息，10月17日10:00-10月31日10:00"
+                android:textSize="11sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="小米净水器(厨下式)"
+                android:textSize="11sp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥1599起"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/holo_red_dark"/>
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/ic_launcher"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/possible_result_points"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/dp_red"
+            android:text="新机专享红包"/>
+
+        <com.bishilai.bishilai.widget.DivideText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.bishilai.bishilai.widget.DivideText>
+
+        <com.bishilai.bishilai.widget.InnerGridView
+            android:id="@+id/gridView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:verticalSpacing="5sp"
+            android:horizontalSpacing="5sp"
+            android:numColumns="3"></com.bishilai.bishilai.widget.InnerGridView>
+
+        <com.bishilai.bishilai.widget.DivideText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.bishilai.bishilai.widget.DivideText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:gravity="center_vertical"
+            android:background="@color/map_blue">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="米兔定位电话"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="精准定位、双向通话、超长待机、小巧随行"
+                    android:textSize="9sp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:text="了解详情"
+                    android:textSize="9sp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/comment_bg2"/>
+            </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher"/>
+        </LinearLayout>
+
+        <com.bishilai.bishilai.widget.InnerGridView
+            android:id="@+id/gridView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:verticalSpacing="5sp"
+            android:horizontalSpacing="5sp"
+            android:numColumns="2"></com.bishilai.bishilai.widget.InnerGridView>
+
+        <com.bishilai.bishilai.widget.DivideText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.bishilai.bishilai.widget.DivideText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:gravity="center_vertical"
+            android:background="@color/map_blue">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="米兔定位电话"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="精准定位、双向通话、超长待机、小巧随行"
+                    android:textSize="9sp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:text="了解详情"
+                    android:textSize="9sp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/comment_bg2"/>
+            </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher"/>
+        </LinearLayout>
+
+        <com.bishilai.bishilai.widget.InnerGridView
+            android:id="@+id/gridView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:verticalSpacing="5sp"
+            android:horizontalSpacing="5sp"
+            android:numColumns="2"></com.bishilai.bishilai.widget.InnerGridView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="查看更多米家产品"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:padding="10dp"/>
+
+        <com.bishilai.bishilai.widget.DivideText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.bishilai.bishilai.widget.DivideText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:gravity="center_vertical"
+            android:background="@color/map_blue">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="米兔定位电话"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="精准定位、双向通话、超长待机、小巧随行"
+                    android:textSize="9sp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:text="了解详情"
+                    android:textSize="9sp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/comment_bg2"/>
+            </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher"/>
+        </LinearLayout>
+
+        <com.bishilai.bishilai.widget.InnerGridView
+            android:id="@+id/gridView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:verticalSpacing="5sp"
+            android:horizontalSpacing="5sp"
+            android:numColumns="2"></com.bishilai.bishilai.widget.InnerGridView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="查看更多米家产品"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:padding="10dp"/>
+
+        <com.bishilai.bishilai.widget.DivideText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.bishilai.bishilai.widget.DivideText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:gravity="center_vertical"
+            android:background="@color/map_blue">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="《小米》"
+                    android:textSize="18sp"
+                    android:textColor="@color/two_code_title"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="创刊号火热赠送中"
+                    android:textSize="18sp"
+                    android:textColor="@color/two_code_title"/>
+
+            </LinearLayout>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher"/>
+        </LinearLayout>
+
+        <com.bishilai.bishilai.widget.InnerGridView
+            android:id="@+id/gridView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:verticalSpacing="5sp"
+            android:horizontalSpacing="5sp"
+            android:numColumns="2"></com.bishilai.bishilai.widget.InnerGridView>
+
+        <com.bishilai.bishilai.widget.DivideText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.bishilai.bishilai.widget.DivideText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:gravity="center_vertical"
+            android:background="@color/possible_result_points">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="用一件卫衣承包一秋的时尚"
+                    android:textStyle="bold"
+                    android:textColor="@color/dp_red"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="轻盈保暖 | 贴身舒适 | 运动休闲两相宜"
+                    android:textSize="9sp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/two_code_title"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="99元起"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/dp_red"/>
+
+            </LinearLayout>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher"/>
+        </LinearLayout>
+
+        <com.bishilai.bishilai.widget.InnerGridView
+            android:id="@+id/gridView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:verticalSpacing="5sp"
+            android:horizontalSpacing="5sp"
+            android:numColumns="2"></com.bishilai.bishilai.widget.InnerGridView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="查看更多服装"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:padding="10dp"/>
+
+        <com.bishilai.bishilai.widget.DivideText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.bishilai.bishilai.widget.DivideText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:gravity="center_vertical"
+            android:background="@color/dp_gray">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8H乳胶枕"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="三曲线贴合颈部，呵护一晚好睡眠"
+                    android:textSize="9sp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="159元起"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/dp_red"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher"/>
+        </LinearLayout>
+
+        <com.bishilai.bishilai.widget.InnerGridView
+            android:id="@+id/gridView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:verticalSpacing="5sp"
+            android:horizontalSpacing="5sp"
+            android:numColumns="2"></com.bishilai.bishilai.widget.InnerGridView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"
+            android:background="@color/white">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="小米银行 任我行" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="永久免月费，电话0.1元/分钟"
+                    android:textSize="9sp" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_launcher"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="小米银行 任我行" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="永久免月费，电话0.1元/分钟"
+                    android:textSize="9sp" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_launcher"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="可播放视频超过14小时"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="大屏手机就是小米Max"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="￥1299起"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/holo_red_dark"/>
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/ic_launcher"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/dp_red"
+                    android:text="新品"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/dp_red"
+                    android:text="智能家庭"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/dp_red"
+                    android:text="官翻机"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/dp_red"
+                    android:text="女生"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/dp_red"
+                    android:text="学生"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/dp_red"
+                    android:text="白领"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -24,6 +24,7 @@
     <color name="transparent">#55ffffff</color>
     <color name="tab_color">#ffffff</color>
     <color name="alpha">#00ffffff</color>
+    <color name="orange">#ff6b00</color>
 
 
 </resources>

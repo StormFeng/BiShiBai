@@ -16,17 +16,17 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2016/10/17 0017.
  */
 
-public class AdapterGridView3 extends BaseAdapter {
+public class AdapterGridView12 extends BaseAdapter {
 
     private Context context;
 
-    public AdapterGridView3(Context context) {
+    public AdapterGridView12(Context context) {
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return 12;
+        return 18;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class AdapterGridView3 extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_gridview2, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_gridview12, null);
             viewHolder = new ViewHolder(convertView);
         }else {
             viewHolder = (ViewHolder) convertView.getTag();

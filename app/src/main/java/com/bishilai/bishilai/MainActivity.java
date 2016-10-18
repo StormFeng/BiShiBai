@@ -8,6 +8,8 @@ import com.bishilai.bishilai.fragments.Fragment2;
 import com.bishilai.bishilai.fragments.Fragment3;
 import com.bishilai.bishilai.fragments.Fragment4;
 import com.bishilai.bishilai.widget.GradientTabStripAdapter;
+import com.jaeger.library.StatusBarUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 import am.widget.basetabstrip.BaseTabStrip;
@@ -35,6 +37,8 @@ public class MainActivity extends BaseFragmentActivity implements BaseTabStrip.O
         tabStrip.setAdapter(adapter);
         tabStrip.bindViewPager(vpFragments);
         tabStrip.setOnItemClickListener(this);
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimary));
+        StatusBarUtil.setTranslucentForImageViewInFragment(MainActivity.this,0,null);
     }
 
     @Override

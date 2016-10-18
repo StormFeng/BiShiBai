@@ -20,6 +20,7 @@ public class ScrollViewWidthListener extends ScrollView {
 	Set<Integer> _shownViewsIndices = new HashSet<Integer>();
 	onChildViewVisibilityChangedListener _onChildViewVisibilityChangedListener;
 	private boolean isInit = true;
+	ScrollChangeListener scrollChangeListener;
 
 	public interface onChildViewVisibilityChangedListener {
 		public void onChildViewVisibilityChanged(int index, View v,
@@ -137,11 +138,18 @@ public class ScrollViewWidthListener extends ScrollView {
 		}
 	}
 
+	public void setChangeListener(ScrollChangeListener listener){
+		this.scrollChangeListener=listener;
+	}
+
 	@Override
 	protected void onScrollChanged(final int l, final int t, final int oldl,
 			final int oldt) {
 		super.onScrollChanged(l, t, oldl, oldt);
 		checkViewsVisibility(l, t);
+		if (scrollChangeListener != null) {
+			scrollChangeListener.onScrollChanged(this, l, t, oldl, oldt);
+		}
 	}
 
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bishilai.bishilai.R;
@@ -16,17 +17,17 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2016/10/17 0017.
  */
 
-public class AdapterGridView1 extends BaseAdapter {
+public class AdapterGridView21 extends BaseAdapter {
 
     private Context context;
 
-    public AdapterGridView1(Context context) {
+    public AdapterGridView21(Context context) {
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return 9;
+        return 11;
     }
 
     @Override
@@ -43,7 +44,7 @@ public class AdapterGridView1 extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_gridview1, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_gridview21, null);
             viewHolder = new ViewHolder(convertView);
         }else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -55,10 +56,8 @@ public class AdapterGridView1 extends BaseAdapter {
     static class ViewHolder {
         @BindView(R.id.tv1)
         TextView tv1;
-        @BindView(R.id.tv2)
-        TextView tv2;
-        @BindView(R.id.tv3)
-        TextView tv3;
+        @BindView(R.id.iv)
+        ImageView iv;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);

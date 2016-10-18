@@ -10,4 +10,128 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/window_bg">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="商城早报"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="零售店"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:background="@color/white"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="互动频道"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="精彩视频"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:background="@color/white"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="精选商品"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1元活动"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:background="@color/white"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:background="@color/dp_gray">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="米兔定位电话"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="精准定位、双向通话、超长待机、小巧随行"
+                        android:textSize="9sp"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:text="了解详情"
+                        android:textSize="9sp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/comment_bg2"/>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_launcher"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
