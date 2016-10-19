@@ -1,10 +1,13 @@
 package com.bishilai.bishilai.fragments;
 
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -15,6 +18,8 @@ import com.bishilai.bishilai.activity.ActivityGoodDetail;
 import com.bishilai.bishilai.adapter.AdapterGridView11;
 import com.bishilai.bishilai.adapter.AdapterGridView12;
 import com.bishilai.bishilai.adapter.AdapterGridView13;
+import com.bishilai.bishilai.utils.AddToCartHelper;
+import com.bishilai.bishilai.utils.ScreenUtils;
 import com.bishilai.bishilai.widget.Banner;
 import com.bishilai.bishilai.widget.InnerGridView;
 import com.jaeger.library.StatusBarUtil;
@@ -58,7 +63,8 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
     private InnerGridView gridView7;
     private InnerGridView gridView8;
 
-
+    private float var1,var2;
+    private String var3,color;
     private List<String> images = new ArrayList<>();
     private int flag = 0;
 
@@ -121,13 +127,13 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
                     topbar.setBackgroundColor(Color.parseColor("#00FFFFFF"));
                 } else if(y<485 && y>=0){
                     topbar.setVisibility(View.VISIBLE);
-                    float var1 = (float)y/485;
-                    float var2 = var1 * 255;
-                    String var3 = Integer.toHexString((int) var2);
+                    var1 = (float)y/485;
+                    var2 = var1 * 255;
+                    var3 = Integer.toHexString((int) var2);
                     if(var3.length()==1){
                         var3="0"+var3;
                     }
-                    String color=new StringBuffer("#EB6563").insert(1,var3).toString();
+                    color=new StringBuffer("#EB6563").insert(1,var3).toString();
                     //LogUtils.e("y:"+y+"\n"+"var3:"+var3+"\n"+"color:"+color);
                     topbar.setBackgroundColor(Color.parseColor(color));
                 }else if(y>=485){
@@ -153,4 +159,6 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
     public void OnBannerClick(View view, int position) {
         UIHelper.jump(_activity, ActivityGoodDetail.class);
     }
+
+
 }

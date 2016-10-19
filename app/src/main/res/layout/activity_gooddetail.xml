@@ -8,6 +8,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="47dp"
         android:background="@color/window_bg">
         <LinearLayout
             android:layout_width="match_parent"
@@ -173,6 +174,65 @@
                 <include
                     layout="@layout/item_comment"/>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingBottom="15dp"
+                android:orientation="vertical"
+                android:background="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:text="提问"
+                        android:gravity="center_vertical"
+                        android:padding="15dp"
+                        android:textColor="@color/text_bg90" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="共200条"
+                        android:gravity="center_vertical"
+                        android:padding="15dp"
+                        android:textColor="@color/text_bg90"
+                        android:drawablePadding="10dp"
+                        android:drawableRight="@drawable/icon_arrow_right"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divide_line"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/orange"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="能不能红外线"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_bg66"
+                    android:layout_marginTop="6dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="您好，5s是不支持红外的，感谢您对小米的支持"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+
+            
+            
         </LinearLayout>
     </com.bishilai.bishilai.widget.ScrollChangeListenerView>
 
@@ -180,5 +240,53 @@
         android:id="@+id/topbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divide_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="47dp"
+                android:layout_height="47dp"
+                android:text="喜欢"
+                android:gravity="center"
+                android:textColor="@color/text_bg90"
+                android:textSize="11sp"
+                android:drawableTop="@drawable/icon_shopcar"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/divide_line"/>
+            <TextView
+                android:id="@+id/tv_ShopCard"
+                android:layout_width="47dp"
+                android:layout_height="47dp"
+                android:text="购物车"
+                android:textColor="@color/text_bg90"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:drawableTop="@drawable/icon_shopcar"/>
+            <Button
+                android:id="@+id/btn_AddGood"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:background="@color/orange"
+                android:text="加入购物车"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
 
 </RelativeLayout>

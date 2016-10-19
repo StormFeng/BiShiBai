@@ -1,21 +1,32 @@
 package com.bishilai.bishilai.activity;
 
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
 import com.bishilai.bishilai.R;
+import com.bishilai.bishilai.utils.AddToCartHelper;
+import com.bishilai.bishilai.utils.ScreenUtils;
 import com.bishilai.bishilai.widget.Banner;
+import com.bishilai.bishilai.widget.CountView;
 import com.bishilai.bishilai.widget.ScrollChangeListenerView;
+import com.daimajia.androidanimations.library.BaseViewAnimator;
+import com.daimajia.androidanimations.library.YoYo;
 import com.jaeger.library.StatusBarUtil;
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.nineoldandroids.animation.ObjectAnimator;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
 import com.zhy.view.flowlayout.TagFlowLayout;
@@ -26,6 +37,7 @@ import java.util.Set;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import midian.baselib.base.BaseActivity;
 import midian.baselib.utils.UIHelper;
 import midian.baselib.widget.BaseLibTopbarView;
@@ -46,10 +58,18 @@ public class ActivityGoodDetail extends BaseActivity implements Banner.OnBannerC
     ScrollChangeListenerView scrollView;
     @BindView(R.id.tag_Image)
     TagFlowLayout tagImage;
+    @BindView(R.id.countView)
+    CountView countView;
+    @BindView(R.id.btn_AddGood)
+    Button btnAddGood;
+    @BindView(R.id.tv_ShopCard)
+    TextView tvShopCard;
 
     private int flag;
     private ArrayList<String> images = new ArrayList<>();
     private List<String> tags = new ArrayList<>();
+    private float var1, var2;
+    private String var3, color;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,16 +122,16 @@ public class ActivityGoodDetail extends BaseActivity implements Banner.OnBannerC
         scrollView.setChangeListener(scrollChangeListener);
     }
 
-    TagAdapter<String> imageAdapter=new TagAdapter<String>(images) {
+    TagAdapter<String> imageAdapter = new TagAdapter<String>(images) {
         @Override
         public View getView(FlowLayout parent, int position, String s) {
             RoundedImageView iv = (RoundedImageView) LayoutInflater.from(_activity).inflate(R.layout.tag_imagelayout, tagImage, false);
-            ac.setImage(iv,images.get(position));
+            ac.setImage(iv, images.get(position));
             return iv;
         }
     };
 
-    TagAdapter<String> textAdapter=new TagAdapter<String>(tags) {
+    TagAdapter<String> textAdapter = new TagAdapter<String>(tags) {
         @Override
         public View getView(FlowLayout parent, int position, String s) {
             TextView tv = (TextView) LayoutInflater.from(_activity).inflate(R.layout.tag_layout, tagText, false);
@@ -123,7 +143,25 @@ public class ActivityGoodDetail extends BaseActivity implements Banner.OnBannerC
     ScrollChangeListener scrollChangeListener = new ScrollChangeListener() {
         @Override
         public void onScrollChanged(ScrollView scrollView, int x, int y, int oldx, int oldy) {
-
+            if (y < 0) {
+                topbar.setTitle("");
+                topbar.setBackgroundColor(Color.parseColor("#00FFFFFF"));
+            } else if (y < 850 && y >= 0) {
+                topbar.setTitle("");
+                topbar.setVisibility(View.VISIBLE);
+                var1 = (float) y / 850;
+                var2 = var1 * 255;
+                var3 = Integer.toHexString((int) var2);
+                if (var3.length() == 1) {
+                    var3 = "0" + var3;
+                }
+                color = new StringBuffer("#EB6563").insert(1, var3).toString();
+                //LogUtils.e("y:"+y+"\n"+"var3:"+var3+"\n"+"color:"+color);
+                topbar.setBackgroundColor(Color.parseColor(color));
+            } else if (y >= 850) {
+                topbar.setTitle("商品详情");
+                topbar.setBackgroundColor(Color.parseColor("#EB6563"));
+            }
         }
     };
 
@@ -139,5 +177,70 @@ public class ActivityGoodDetail extends BaseActivity implements Banner.OnBannerC
         Bundle bundle = new Bundle();
         bundle.putStringArrayList("pic", images);
         UIHelper.jump(_activity, ActivityViewPhoto.class, bundle);
+    }
+
+    @OnClick({R.id.countView, R.id.btn_AddGood})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.countView:
+                break;
+            case R.id.btn_AddGood:
+                Add2CartAnim();
+                break;
+        }
+    }
+
+    private void Add2CartAnim() {
+        /* 起点 */
+        int[] startXY = new int[2];
+        btnAddGood.getLocationInWindow(startXY);
+        startXY[0] += btnAddGood.getWidth() / 2;
+        //startXY[1] += mBtnAddToCart.getHeight() / 2;
+        int fx = startXY[0];
+        int fy = startXY[1];
+        final ImageView animImg = new ImageView(this);
+//        Bitmap bm = ((BitmapDrawable) mGoodsView.getDrawable()).getBitmap();
+        Bitmap bm = ((BitmapDrawable)getResources().getDrawable(R.drawable.ic_launcher)).getBitmap();
+        animImg.setImageBitmap(Bitmap.createScaledBitmap(bm, 96, 96, false));
+
+        ViewGroup anim_mask_layout = AddToCartHelper.createAnimLayout(this);
+        anim_mask_layout.addView(animImg);
+        final View v = AddToCartHelper.addViewToAnimLayout(this, anim_mask_layout, animImg, startXY, true);
+        if (v == null) {
+            return;
+        }
+        /* 终点 */
+        final View cartView = tvShopCard;
+        int[] endXY = new int[2];
+        cartView.getLocationInWindow(endXY);
+        int tx = endXY[0] + cartView.getWidth() / 2 - 48;
+        int ty = endXY[1] + cartView.getHeight() / 2;
+        /* 中点 */
+        int mx = (tx + fx) / 2;
+        int my = ScreenUtils.getScreenHeight(_activity) / 10;
+        AddToCartHelper.startAnimationForJd(v, 0, 0, fx, fy, mx, my, tx, ty, new AddToCartHelper.AnimationListener() {
+            @Override
+            public void onAnimationEnd() {
+//                mBinding.setAmount(++mAmount);
+                //动画结束，做一下别的
+                YoYo.with(new ScaleUpAnimator())
+                        .duration(500)
+                        .playOn(tvShopCard);
+            }
+        });
+    }
+
+    public class ScaleUpAnimator extends BaseViewAnimator {
+        @Override
+        public void prepare(View target) {
+            //ViewGroup parent = (ViewGroup)target.getParent();
+            //int distance = parent.getHeight() - target.getTop();
+            getAnimatorAgent().playTogether(
+                    //ObjectAnimator.ofFloat(target,"alpha",0,1,1),
+                    ObjectAnimator.ofFloat(target,"scaleX",0.8f,1f,1.4f,1.2f,1),
+                    ObjectAnimator.ofFloat(target,"scaleY",0.8f,1f,1.4f,1.2f,1)
+                    //ObjectAnimator.ofFloat(target,"translationY",distance,-60,0)
+            );
+        }
     }
 }
