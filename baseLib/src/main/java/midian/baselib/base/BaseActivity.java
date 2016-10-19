@@ -45,7 +45,7 @@ public class BaseActivity extends Activity implements ApiCallback,OnClickListene
 		if (_Intent != null) {
 			mBundle = _Intent.getExtras();
 		}
-		
+
 
 		
 	}

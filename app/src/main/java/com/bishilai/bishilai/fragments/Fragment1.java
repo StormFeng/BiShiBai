@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.apkfuns.logutils.LogUtils;
 import com.bishilai.bishilai.MainActivity;
 import com.bishilai.bishilai.R;
+import com.bishilai.bishilai.activity.ActivityGoodDetail;
 import com.bishilai.bishilai.adapter.AdapterGridView11;
 import com.bishilai.bishilai.adapter.AdapterGridView12;
 import com.bishilai.bishilai.adapter.AdapterGridView13;
@@ -24,6 +25,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import midian.baselib.base.BaseFragment;
+import midian.baselib.utils.UIHelper;
 import midian.baselib.widget.BaseLibTopbarView;
 import midian.baselib.widget.ScrollChangeListener;
 import midian.baselib.widget.ScrollViewWidthListener;
@@ -42,7 +44,6 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
     @BindView(R.id.refreshScrollView)
     PullToRefreshScrollView refreshScrollView;
 
-    private View llFlag;
     private Banner bannerView;
     private TextView tvTab1;
     private TextView tvTab2;
@@ -57,7 +58,6 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
     private InnerGridView gridView7;
     private InnerGridView gridView8;
 
-    private int[] location=new int[2];
 
     private List<String> images = new ArrayList<>();
     private int flag = 0;
@@ -76,7 +76,6 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
         topbar.setBackgroundColor(getResources().getColor(R.color.alpha));
         topbar.getLine_iv().setVisibility(View.GONE);
         topbar.setMode(MODE_WITH_INPUT);
-        llFlag = content.findViewById(R.id.ll_Flag);
         bannerView = (Banner) content.findViewById(R.id.bannerView);
         gridView1 = (InnerGridView) content.findViewById(R.id.gridView1);
         gridView2 = (InnerGridView) content.findViewById(R.id.gridView2);
@@ -112,9 +111,12 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
         gridView8.setAdapter(new AdapterGridView13(_activity));
 
         refreshScrollView.setOnRefreshListener(onRefreshListener);
+        refreshScrollView.scrollView.setVerticalScrollBarEnabled(false);
+
+
         refreshScrollView.scrollView.setChangeListener(new ScrollChangeListener() {
             @Override
-            public void onScrollChanged(ScrollViewWidthListener scrollView, int x, int y, int oldx, int oldy) {
+            public void onScrollChanged(ScrollView scrollView, int x, int y, int oldx, int oldy) {
                 if(y<0){
                     topbar.setBackgroundColor(Color.parseColor("#00FFFFFF"));
                 } else if(y<485 && y>=0){
@@ -126,7 +128,7 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
                         var3="0"+var3;
                     }
                     String color=new StringBuffer("#EB6563").insert(1,var3).toString();
-//                    LogUtils.e("y:"+y+"\n"+"var3:"+var3+"\n"+"color:"+color);
+                    //LogUtils.e("y:"+y+"\n"+"var3:"+var3+"\n"+"color:"+color);
                     topbar.setBackgroundColor(Color.parseColor(color));
                 }else if(y>=485){
                     topbar.setBackgroundColor(Color.parseColor("#EB6563"));
@@ -149,6 +151,6 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
 
     @Override
     public void OnBannerClick(View view, int position) {
-
+        UIHelper.jump(_activity, ActivityGoodDetail.class);
     }
 }

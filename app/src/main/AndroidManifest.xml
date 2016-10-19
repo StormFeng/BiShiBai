@@ -20,7 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--列表筛选页面-->
         <activity android:name=".activity.ActivitySearchResult"/>
+        <!--商品详情页面-->
+        <activity android:name=".activity.ActivityGoodDetail"/>
+        <!--图片浏览页面-->
+        <activity android:name=".activity.ActivityViewPhoto"/>
     </application>
 
 </manifest>
