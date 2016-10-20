@@ -1,28 +1,20 @@
 package com.bishilai.bishilai.fragments;
 
-import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.apkfuns.logutils.LogUtils;
-import com.bishilai.bishilai.MainActivity;
 import com.bishilai.bishilai.R;
 import com.bishilai.bishilai.activity.ActivityGoodDetail;
 import com.bishilai.bishilai.adapter.AdapterGridView11;
 import com.bishilai.bishilai.adapter.AdapterGridView12;
 import com.bishilai.bishilai.adapter.AdapterGridView13;
-import com.bishilai.bishilai.utils.AddToCartHelper;
-import com.bishilai.bishilai.utils.ScreenUtils;
 import com.bishilai.bishilai.widget.Banner;
 import com.bishilai.bishilai.widget.InnerGridView;
-import com.jaeger.library.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +25,6 @@ import midian.baselib.base.BaseFragment;
 import midian.baselib.utils.UIHelper;
 import midian.baselib.widget.BaseLibTopbarView;
 import midian.baselib.widget.ScrollChangeListener;
-import midian.baselib.widget.ScrollViewWidthListener;
 import midian.baselib.widget.pulltorefresh.PullToRefreshBase;
 import midian.baselib.widget.pulltorefresh.PullToRefreshScrollView;
 
@@ -78,7 +69,7 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
 
     private void initView() {
 
-        View content = LayoutInflater.from(_activity).inflate(R.layout.fragment_tab11, null);
+        View content = LayoutInflater.from(_activity).inflate(R.layout.fragment_tab1, null);
         topbar.setBackgroundColor(getResources().getColor(R.color.alpha));
         topbar.getLine_iv().setVisibility(View.GONE);
         topbar.setMode(MODE_WITH_INPUT);

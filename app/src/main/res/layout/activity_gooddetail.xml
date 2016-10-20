@@ -1,245 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent">
 
-    <com.bishilai.bishilai.widget.ScrollChangeListenerView
-        android:id="@+id/scrollView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="47dp"
-        android:background="@color/window_bg">
-        <LinearLayout
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.bishilai.bishilai.widget.ScrollChangeListenerView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-            <com.bishilai.bishilai.widget.Banner
-                android:id="@+id/bannerView"
-                android:layout_width="match_parent"
-                android:layout_height="350dp"
-                app:indicator_height="7dp"
-                app:indicator_margin="3dp"
-                app:indicator_width="7dp">
-            </com.bishilai.bishilai.widget.Banner>
-
+            android:scrollbars="none"
+            android:background="@color/window_bg">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="15dp"
-                android:background="@color/white">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="红米手机Note4 全网通 64GB版"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Helio X20 十核旗舰处理器 / 全金属一体化机身"
-                    android:textSize="11sp"
-                    android:textColor="@color/text_bg66"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1199.00元"
-                    android:textSize="18sp"
-                    android:layout_marginTop="4dp"
-                    android:textColor="@color/orange"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:padding="15dp"
-                android:background="@color/white">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="颜色："
-                        android:textColor="@color/text_bg66"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="银色"
-                        android:textColor="@color/orange"/>
-                </LinearLayout>
-                <com.zhy.view.flowlayout.TagFlowLayout
-                    android:id="@+id/tag_Image"
-                    app:max_select="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                </com.zhy.view.flowlayout.TagFlowLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="容量："
-                        android:textColor="@color/text_bg66"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="32GB"
-                        android:textColor="@color/orange"/>
-                </LinearLayout>
-                <com.zhy.view.flowlayout.TagFlowLayout
-                    android:id="@+id/tag_Text"
-                    app:max_select="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                </com.zhy.view.flowlayout.TagFlowLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="数量"
-                    android:textColor="@color/text_bg66"/>
-                <com.bishilai.bishilai.widget.CountView
-                    android:id="@+id/countView"
-                    android:layout_marginTop="8dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </com.bishilai.bishilai.widget.CountView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:background="@color/white"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
-                <TextView
+
+                <com.bishilai.bishilai.widget.Banner
+                    android:id="@+id/bannerView"
                     android:layout_width="match_parent"
-                    android:layout_height="47dp"
-                    android:text="商品详情"
-                    android:gravity="center_vertical"
-                    android:padding="15dp"
-                    android:textColor="@color/text_bg90"
-                    android:drawableRight="@drawable/icon_arrow_right"/>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/divide_line"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="47dp"
-                    android:text="规格参数"
-                    android:gravity="center_vertical"
-                    android:padding="15dp"
-                    android:textColor="@color/text_bg90"
-                    android:drawableRight="@drawable/icon_arrow_right"/>
-            </LinearLayout>
-            
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical"
-                android:paddingBottom="5dp"
-                android:background="@color/white">
+                    android:layout_height="350dp"
+                    app:indicator_height="7dp"
+                    app:indicator_margin="3dp"
+                    app:indicator_width="7dp">
+                </com.bishilai.bishilai.widget.Banner>
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="47dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        android:text="用户评价"
-                        android:gravity="center_vertical"
-                        android:padding="15dp"
-                        android:textColor="@color/text_bg90" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="共2001条"
-                        android:gravity="center_vertical"
-                        android:padding="15dp"
-                        android:textColor="@color/text_bg90"
-                        android:drawablePadding="10dp"
-                        android:drawableRight="@drawable/icon_arrow_right"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/divide_line"/>
-                <include
-                    layout="@layout/item_comment"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:paddingBottom="15dp"
-                android:orientation="vertical"
-                android:background="@color/white">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="47dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        android:text="提问"
-                        android:gravity="center_vertical"
-                        android:padding="15dp"
-                        android:textColor="@color/text_bg90" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="共200条"
-                        android:gravity="center_vertical"
-                        android:padding="15dp"
-                        android:textColor="@color/text_bg90"
-                        android:drawablePadding="10dp"
-                        android:drawableRight="@drawable/icon_arrow_right"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/divide_line"/>
-                <TextView
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/orange"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    android:background="@color/white">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="红米手机Note4 全网通 64GB版"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Helio X20 十核旗舰处理器 / 全金属一体化机身"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_bg66"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1199.00元"
+                        android:textSize="18sp"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/orange"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_marginTop="10dp"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:text="能不能红外线"
-                    android:textSize="16sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
+                    android:padding="15dp"
+                    android:background="@color/white">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="颜色："
+                            android:textColor="@color/text_bg66"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="银色"
+                            android:textColor="@color/orange"/>
+                    </LinearLayout>
+                    <com.zhy.view.flowlayout.TagFlowLayout
+                        android:id="@+id/tag_Image"
+                        app:max_select="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </com.zhy.view.flowlayout.TagFlowLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="容量："
+                            android:textColor="@color/text_bg66"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="32GB"
+                            android:textColor="@color/orange"/>
+                    </LinearLayout>
+                    <com.zhy.view.flowlayout.TagFlowLayout
+                        android:id="@+id/tag_Text"
+                        app:max_select="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </com.zhy.view.flowlayout.TagFlowLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="数量"
+                        android:textColor="@color/text_bg66"/>
+                    <com.bishilai.bishilai.widget.CountView
+                        android:id="@+id/countView"
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                    </com.bishilai.bishilai.widget.CountView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/text_bg66"
-                    android:layout_marginTop="6dp"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:text="您好，5s是不支持红外的，感谢您对小米的支持"
-                    android:textSize="13sp" />
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tv_GoodDetai"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:text="商品详情"
+                        android:gravity="center_vertical"
+                        android:padding="15dp"
+                        android:textColor="@color/text_bg90"
+                        android:drawableRight="@drawable/icon_arrow_right"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divide_line"/>
+                    <TextView
+                        android:id="@+id/tv_Parameter"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:text="规格参数"
+                        android:gravity="center_vertical"
+                        android:padding="15dp"
+                        android:textColor="@color/text_bg90"
+                        android:drawableRight="@drawable/icon_arrow_right"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp"
+                    android:background="@color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="用户评价"
+                            android:gravity="center_vertical"
+                            android:padding="15dp"
+                            android:textColor="@color/text_bg90" />
+
+                        <TextView
+                            android:id="@+id/tv_Comment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="共2001条"
+                            android:gravity="center_vertical"
+                            android:padding="15dp"
+                            android:textColor="@color/text_bg90"
+                            android:drawablePadding="10dp"
+                            android:drawableRight="@drawable/icon_arrow_right"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divide_line"/>
+                    <include
+                        layout="@layout/item_comment"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="提问"
+                            android:gravity="center_vertical"
+                            android:padding="15dp"
+                            android:textColor="@color/text_bg90" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="共200条"
+                            android:gravity="center_vertical"
+                            android:padding="15dp"
+                            android:textColor="@color/text_bg90"
+                            android:drawablePadding="10dp"
+                            android:drawableRight="@drawable/icon_arrow_right"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divide_line"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/orange"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:text="能不能红外线"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_bg66"
+                        android:layout_marginTop="6dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:text="您好，5s是不支持红外的，感谢您对小米的支持"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="为您推荐"
+                        android:textColor="@color/text_bg99"
+                        android:gravity="center"/>
+                    <com.bishilai.bishilai.widget.HorizontalListView
+                        android:id="@+id/horizontalListView"
+                        android:layout_width="match_parent"
+                        android:divider="#00ffffff"
+                        app:dividerWidth="10dp"
+                        android:layout_height="80dp"/>
+
+                </LinearLayout>
+
+                <com.bishilai.bishilai.widget.ButtonGroup
+                    android:id="@+id/buttonGroup"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </com.bishilai.bishilai.widget.ButtonGroup>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divide_line"/>
+                <FrameLayout
+                    android:id="@+id/fl_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/window_bg" />
+
             </LinearLayout>
+        </com.bishilai.bishilai.widget.ScrollChangeListenerView>
 
-
-            
-            
-        </LinearLayout>
-    </com.bishilai.bishilai.widget.ScrollChangeListenerView>
-
-    <midian.baselib.widget.BaseLibTopbarView
+        <midian.baselib.widget.BaseLibTopbarView
         android:id="@+id/topbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -289,4 +338,4 @@
     </LinearLayout>
 
 
-</RelativeLayout>
+</LinearLayout>

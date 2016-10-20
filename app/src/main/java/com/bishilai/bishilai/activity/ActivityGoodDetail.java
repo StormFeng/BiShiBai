@@ -5,6 +5,9 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +20,15 @@ import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
 import com.bishilai.bishilai.R;
+import com.bishilai.bishilai.adapter.AdapterRecommendGood;
+import com.bishilai.bishilai.fragments.FragmentGoodDetail;
 import com.bishilai.bishilai.utils.AddToCartHelper;
 import com.bishilai.bishilai.utils.ScreenUtils;
 import com.bishilai.bishilai.widget.Banner;
+import com.bishilai.bishilai.widget.ButtonGroup;
+import com.bishilai.bishilai.widget.ButtonGroupListener;
 import com.bishilai.bishilai.widget.CountView;
+import com.bishilai.bishilai.widget.HorizontalListView;
 import com.bishilai.bishilai.widget.ScrollChangeListenerView;
 import com.daimajia.androidanimations.library.BaseViewAnimator;
 import com.daimajia.androidanimations.library.YoYo;
@@ -38,7 +46,7 @@ import java.util.Set;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import midian.baselib.base.BaseActivity;
+import midian.baselib.base.BaseFragmentActivity;
 import midian.baselib.utils.UIHelper;
 import midian.baselib.widget.BaseLibTopbarView;
 import midian.baselib.widget.ScrollChangeListener;
@@ -47,7 +55,7 @@ import midian.baselib.widget.ScrollChangeListener;
  * Created by Administrator on 2016/10/19 0019.
  */
 
-public class ActivityGoodDetail extends BaseActivity implements Banner.OnBannerClickListener {
+public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.OnBannerClickListener {
     @BindView(R.id.bannerView)
     Banner bannerView;
     @BindView(R.id.topbar)
@@ -64,12 +72,27 @@ public class ActivityGoodDetail extends BaseActivity implements Banner.OnBannerC
     Button btnAddGood;
     @BindView(R.id.tv_ShopCard)
     TextView tvShopCard;
+    @BindView(R.id.horizontalListView)
+    HorizontalListView horizontalListView;
+    @BindView(R.id.buttonGroup)
+    ButtonGroup buttonGroup;
+    @BindView(R.id.tv_GoodDetai)
+    TextView tvGoodDetai;
+    @BindView(R.id.tv_Parameter)
+    TextView tvParameter;
+    @BindView(R.id.tv_Comment)
+    TextView tvComment;
 
+    private int[] location = new int[2];
+    private Handler handler = new Handler();
+    private Fragment fragment;
     private int flag;
     private ArrayList<String> images = new ArrayList<>();
     private List<String> tags = new ArrayList<>();
     private float var1, var2;
     private String var3, color;
+    private FragmentGoodDetail fragmentGoodDetail;
+    private List<Fragment> fragments = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +143,46 @@ public class ActivityGoodDetail extends BaseActivity implements Banner.OnBannerC
         });
 
         scrollView.setChangeListener(scrollChangeListener);
+
+        horizontalListView.setAdapter(new AdapterRecommendGood(_activity));
+
+        List<String> list = new ArrayList<>();
+        list.add("规格");
+        list.add("详情");
+        list.add("商品参数");
+        buttonGroup.addButton(list);
+        buttonGroup.setButtonColor(getResources().getColor(R.color.text_bg99), getResources().getColor(R.color.alpha));
+        buttonGroup.setAfterClickedListener(buttonGroupListener);
+
+        fragment = new Fragment();
+        fragmentGoodDetail = new FragmentGoodDetail();
+        for (int i = 0; i < 3; i++) {
+            fragments.add(fragment);
+        }
+        switchFragment(fragment, fragmentGoodDetail);
     }
+
+    public void switchFragment(Fragment from, Fragment to) {
+        FragmentTransaction mTransaction = fm.beginTransaction();
+        if (mFragment != to) {
+            mFragment = to;
+            System.out.println("to.isAdded()" + to.isAdded());
+            if (to.isAdded()) {
+                mTransaction.hide(from).show(to).commit();
+            } else {
+                mTransaction.hide(from).add(R.id.fl_content, to).commit();
+            }
+
+        }
+    }
+
+
+    ButtonGroupListener buttonGroupListener = new ButtonGroupListener() {
+        @Override
+        public void afterClicked(int id) {
+            switchFragment(fragment, fragments.get(id));
+        }
+    };
 
     TagAdapter<String> imageAdapter = new TagAdapter<String>(images) {
         @Override
@@ -143,6 +205,9 @@ public class ActivityGoodDetail extends BaseActivity implements Banner.OnBannerC
     ScrollChangeListener scrollChangeListener = new ScrollChangeListener() {
         @Override
         public void onScrollChanged(ScrollView scrollView, int x, int y, int oldx, int oldy) {
+            if (0 == location[1]) {
+                buttonGroup.getLocationOnScreen(location);
+            }
             if (y < 0) {
                 topbar.setTitle("");
                 topbar.setBackgroundColor(Color.parseColor("#00FFFFFF"));
@@ -179,7 +244,7 @@ public class ActivityGoodDetail extends BaseActivity implements Banner.OnBannerC
         UIHelper.jump(_activity, ActivityViewPhoto.class, bundle);
     }
 
-    @OnClick({R.id.countView, R.id.btn_AddGood})
+    @OnClick({R.id.countView, R.id.btn_AddGood, R.id.tv_GoodDetai, R.id.tv_Parameter, R.id.tv_Comment})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.countView:
@@ -187,7 +252,25 @@ public class ActivityGoodDetail extends BaseActivity implements Banner.OnBannerC
             case R.id.btn_AddGood:
                 Add2CartAnim();
                 break;
+            case R.id.tv_GoodDetai:
+                scrollToPosition();
+                break;
+            case R.id.tv_Parameter:
+                scrollToPosition();
+                break;
+            case R.id.tv_Comment:
+                UIHelper.jump(_activity,ActivityComment.class);
+                break;
         }
+    }
+
+    private void scrollToPosition() {
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, location[1] - topbar.getHeight());
+            }
+        });
     }
 
     private void Add2CartAnim() {
@@ -200,7 +283,7 @@ public class ActivityGoodDetail extends BaseActivity implements Banner.OnBannerC
         int fy = startXY[1];
         final ImageView animImg = new ImageView(this);
 //        Bitmap bm = ((BitmapDrawable) mGoodsView.getDrawable()).getBitmap();
-        Bitmap bm = ((BitmapDrawable)getResources().getDrawable(R.drawable.ic_launcher)).getBitmap();
+        Bitmap bm = ((BitmapDrawable) getResources().getDrawable(R.drawable.ic_launcher)).getBitmap();
         animImg.setImageBitmap(Bitmap.createScaledBitmap(bm, 96, 96, false));
 
         ViewGroup anim_mask_layout = AddToCartHelper.createAnimLayout(this);
@@ -237,8 +320,8 @@ public class ActivityGoodDetail extends BaseActivity implements Banner.OnBannerC
             //int distance = parent.getHeight() - target.getTop();
             getAnimatorAgent().playTogether(
                     //ObjectAnimator.ofFloat(target,"alpha",0,1,1),
-                    ObjectAnimator.ofFloat(target,"scaleX",0.8f,1f,1.4f,1.2f,1),
-                    ObjectAnimator.ofFloat(target,"scaleY",0.8f,1f,1.4f,1.2f,1)
+                    ObjectAnimator.ofFloat(target, "scaleX", 0.8f, 1f, 1.4f, 1.2f, 1),
+                    ObjectAnimator.ofFloat(target, "scaleY", 0.8f, 1f, 1.4f, 1.2f, 1)
                     //ObjectAnimator.ofFloat(target,"translationY",distance,-60,0)
             );
         }

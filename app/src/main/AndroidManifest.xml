@@ -26,6 +26,8 @@
         <activity android:name=".activity.ActivityGoodDetail"/>
         <!--图片浏览页面-->
         <activity android:name=".activity.ActivityViewPhoto"/>
+        <!--商品评论页面-->
+        <activity android:name=".activity.ActivityComment"/>
     </application>
 
 </manifest>
