@@ -301,7 +301,7 @@ public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.O
         int ty = endXY[1] + cartView.getHeight() / 2;
         /* 中点 */
         int mx = (tx + fx) / 2;
-        int my = ScreenUtils.getScreenHeight(_activity) / 10;
+        int my = ScreenUtils.getScreenHeight(_activity) / 2;
         AddToCartHelper.startAnimationForJd(v, 0, 0, fx, fy, mx, my, tx, ty, new AddToCartHelper.AnimationListener() {
             @Override
             public void onAnimationEnd() {
