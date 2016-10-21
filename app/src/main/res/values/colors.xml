@@ -28,4 +28,7 @@
     <color name="canshu_bg" >#FFE9E9E9</color>
     <color name="reset_bg">#FF979797</color>
     <color name="edit_bg">#FFFBFBFB</color>
+
+    <color name="comment_popup_bg">#292929</color>
+    <color name="comment_popup_tx_bg">#c7c7c7</color>
 </resources>

@@ -73,6 +73,7 @@
             android:textColor="@color/text_bg99"/>
         
         <ImageView
+            android:id="@+id/iv_Comment"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_launcher"/>
