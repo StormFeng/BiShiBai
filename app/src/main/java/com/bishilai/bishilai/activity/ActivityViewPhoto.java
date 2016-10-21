@@ -2,6 +2,7 @@ package com.bishilai.bishilai.activity;
 
 import android.os.Bundle;
 
+import com.apkfuns.logutils.LogUtils;
 import com.bishilai.bishilai.R;
 
 import java.util.ArrayList;
@@ -25,5 +26,10 @@ public class ActivityViewPhoto extends BaseActivity {
         UrlPagerAdapter pagerAdapter = new UrlPagerAdapter(this, pics);
         viewPager.setOffscreenPageLimit(3);
         viewPager.setAdapter(pagerAdapter);
+
+        if(!"".equals(mBundle.getString("position"))){
+            LogUtils.e("mBundle.getString(\"position\"):"+mBundle.getString("position"));
+            viewPager.setCurrentItem(Integer.valueOf(mBundle.getString("position")));
+        }
     }
 }

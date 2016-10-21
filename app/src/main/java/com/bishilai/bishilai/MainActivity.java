@@ -31,6 +31,7 @@ public class MainActivity extends BaseFragmentActivity implements BaseTabStrip.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         vpFragments = (ViewPager) findViewById(R.id.gts_vp_fragments);
+        vpFragments.setOffscreenPageLimit(3);
         GradientTabStrip tabStrip = (GradientTabStrip) findViewById(R.id.gradientTabStrip);
         fragments.add(new Fragment1());
         fragments.add(new Fragment2());

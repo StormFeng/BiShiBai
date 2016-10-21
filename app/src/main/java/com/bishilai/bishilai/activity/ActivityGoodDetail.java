@@ -135,7 +135,7 @@ public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.O
         tagText.setAdapter(textAdapter);
         imageAdapter.setSelectedList(0);
         textAdapter.setSelectedList(0);
-        tagImage.setOnSelectListener(new TagFlowLayout.OnSelectListener() {
+        tagText.setOnSelectListener(new TagFlowLayout.OnSelectListener() {
             @Override
             public void onSelected(Set<Integer> selectPosSet) {
                 LogUtils.e(selectPosSet);
@@ -241,6 +241,7 @@ public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.O
     public void OnBannerClick(View view, int position) {
         Bundle bundle = new Bundle();
         bundle.putStringArrayList("pic", images);
+        bundle.putString("position",position-1+"");
         UIHelper.jump(_activity, ActivityViewPhoto.class, bundle);
     }
 

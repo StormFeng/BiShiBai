@@ -2,6 +2,7 @@ package com.bishilai.bishilai.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,6 +56,7 @@ public class ButtonGroup extends LinearLayout implements View.OnClickListener {
             itemParams.weight=1;
             Button button=new Button(context);
             button.setText(s);
+            button.setGravity(Gravity.CENTER);
             button.setLayoutParams(itemParams);
             button.setOnClickListener(this);
             button.setTag(i);
@@ -71,6 +73,13 @@ public class ButtonGroup extends LinearLayout implements View.OnClickListener {
             button.setBackgroundColor(backColor);
         }
         buttons.get(0).performClick();
+        return this;
+    }
+
+    public ButtonGroup setFontSize(float size){
+        for(Button button : buttons){
+            button.setTextSize(size);
+        }
         return this;
     }
 

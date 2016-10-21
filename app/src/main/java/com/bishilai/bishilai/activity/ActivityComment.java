@@ -17,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import midian.baselib.base.BaseMultiTypeListActivity;
 import midian.baselib.shizhefei.view.listviewhelper.IDataSource;
+import midian.baselib.utils.UIHelper;
 import midian.baselib.widget.BaseLibTopbarView;
 
 /**
@@ -31,7 +32,6 @@ public class ActivityComment extends BaseMultiTypeListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_comment);
         ButterKnife.bind(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window window = getWindow();
@@ -42,12 +42,14 @@ public class ActivityComment extends BaseMultiTypeListActivity {
         }
         topbar.setTitle("");
         topbar.setBackgroundColor(getResources().getColor(R.color.orange));
+        topbar.setLeftImageButton(R.drawable.icon_back, UIHelper.finish(_activity));
+        topbar.setLeftText("商品评价",UIHelper.finish(_activity));
     }
 
-//    @Override
-//    protected int getLayoutId() {
-//        return R.layout.activity_comment;
-//    }
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_comment;
+    }
 
     @Override
     protected IDataSource<ArrayList> getDataSource() {

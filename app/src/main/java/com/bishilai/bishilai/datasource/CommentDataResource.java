@@ -19,10 +19,17 @@ public class CommentDataResource extends BaseListDataSource {
     protected ArrayList load(int page) throws Exception {
         this.page=page;
         ArrayList<NetResult> models = new ArrayList<>();
+        if(page==1){
+            NetResult top = new NetResult();
+            top.setItemViewType(0);
+            models.add(top);
+        }
         for(int i=0;i<10;i++){
             NetResult netResult = new NetResult();
+            netResult.setItemViewType(1);
             models.add(netResult);
         }
+        hasMore=false;
         return models;
     }
 }
