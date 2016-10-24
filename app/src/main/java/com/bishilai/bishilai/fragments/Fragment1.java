@@ -14,6 +14,7 @@ import com.bishilai.bishilai.adapter.AdapterGridView11;
 import com.bishilai.bishilai.adapter.AdapterGridView12;
 import com.bishilai.bishilai.adapter.AdapterGridView13;
 import com.bishilai.bishilai.widget.Banner;
+import com.bishilai.bishilai.widget.DivideText;
 import com.bishilai.bishilai.widget.InnerGridView;
 
 import java.util.ArrayList;
@@ -54,6 +55,8 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
     private InnerGridView gridView7;
     private InnerGridView gridView8;
 
+    private DivideText divideText1;
+
     private float var1,var2;
     private String var3,color;
     private List<String> images = new ArrayList<>();
@@ -82,6 +85,7 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
         gridView6 = (InnerGridView) content.findViewById(R.id.gridView6);
         gridView7 = (InnerGridView) content.findViewById(R.id.gridView7);
         gridView8 = (InnerGridView) content.findViewById(R.id.gridView8);
+        divideText1 = (DivideText) content.findViewById(R.id.divideText1);
         refreshScrollView.setPullLoadEnabled(false);
         refreshScrollView.scrollView.addView(content);
 
@@ -106,6 +110,8 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
         gridView6.setAdapter(new AdapterGridView13(_activity));
         gridView7.setAdapter(new AdapterGridView13(_activity));
         gridView8.setAdapter(new AdapterGridView13(_activity));
+
+        divideText1.setTitle("明星产品");
 
         refreshScrollView.setOnRefreshListener(onRefreshListener);
         refreshScrollView.scrollView.setVerticalScrollBarEnabled(false);

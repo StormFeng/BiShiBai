@@ -1,10 +1,12 @@
 package com.bishilai.bishilai.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bishilai.bishilai.R;
@@ -26,7 +28,7 @@ public class AdapterGridView11 extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 9;
+        return 6;
     }
 
     @Override
@@ -49,6 +51,19 @@ public class AdapterGridView11 extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 //        viewHolder.tv1.setText("");
+        if(position%6==0){
+            convertView.setBackgroundColor(Color.parseColor("#FC7E7E"));
+        }else if(position%6==1){
+            convertView.setBackgroundColor(Color.parseColor("#9EDAFF"));
+        }else if(position%6==2){
+            convertView.setBackgroundColor(Color.parseColor("#B1DF84"));
+        }else if(position%6==3){
+            convertView.setBackgroundColor(Color.parseColor("#FFAD3F"));
+        }else if(position%6==4){
+            convertView.setBackgroundColor(Color.parseColor("#19BC9C"));
+        }else if(position%6==5){
+            convertView.setBackgroundColor(Color.parseColor("#FF99CA"));
+        }
         return convertView;
     }
 
@@ -59,6 +74,8 @@ public class AdapterGridView11 extends BaseAdapter {
         TextView tv2;
         @BindView(R.id.tv3)
         TextView tv3;
+        @BindView(R.id.iv)
+        ImageView iv;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);

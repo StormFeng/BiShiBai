@@ -13,7 +13,7 @@
         <com.bishilai.bishilai.widget.Banner
             android:id="@+id/bannerView"
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="214dp"
             app:indicator_height="7dp"
             app:indicator_margin="3dp"
             app:indicator_width="7dp"/>
@@ -23,78 +23,100 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:paddingBottom="6dp">
+            android:paddingBottom="15dp">
+
             <TextView
                 android:id="@+id/tv_Tab1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/ic_launcher"
-                android:text="tab1"
+                android:drawableTop="@drawable/icon_huangguan"
+                android:drawablePadding="5dp"
+                android:textColor="@color/text_bg66"
+                android:textSize="13sp"
+                android:text="排行榜"
                 android:gravity="center"/>
+
             <TextView
                 android:id="@+id/tv_Tab2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/ic_launcher"
-                android:text="tab2"
+                android:drawableTop="@drawable/icon_huangguan"
+                android:drawablePadding="5dp"
+                android:textColor="@color/text_bg66"
+                android:textSize="13sp"
+                android:text="护肤品"
                 android:gravity="center"/>
             <TextView
                 android:id="@+id/tv_Tab3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/ic_launcher"
-                android:text="tab3"
+                android:drawableTop="@drawable/icon_type"
+                android:drawablePadding="5dp"
+                android:textColor="@color/text_bg66"
+                android:textSize="13sp"
+                android:text="乐养生"
                 android:gravity="center"/>
             <TextView
                 android:id="@+id/tv_Tab4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/ic_launcher"
-                android:text="tab4"
+                android:drawableTop="@drawable/icon_type"
+                android:drawablePadding="5dp"
+                android:textColor="@color/text_bg66"
+                android:textSize="13sp"
+                android:text="选商品"
                 android:gravity="center"/>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="四轴防抖拍照 还能刷卡"
-                android:textSize="15sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="小米手机5 黑科技手机"
-                android:textSize="11sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="限量送LED随身灯 + Type-C转换头"
-                android:textSize="11sp" />
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="￥1599起"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/holo_red_dark"/>
-                <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginLeft="30dp"
-                    android:src="@drawable/ic_launcher"/>
-            </LinearLayout>
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
+            android:padding="11dp"
+            android:background="#D8F0EC"
+            android:gravity="center"
+            android:orientation="horizontal">
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:orientation="vertical">
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="超值美白祛斑套装"
+                       android:textColor="@color/text_bg33"
+                       android:textStyle="bold"
+                       android:textSize="18sp" />
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="1288元/套"
+                       android:textStyle="bold"
+                       android:textColor="@color/text_red"
+                       android:textSize="18sp" />
+               </LinearLayout>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="5dp"
+                   android:text="纯中药配方，变美从未如此简单"
+                   android:textColor="@color/text_bg33"
+                   android:textSize="13sp" />
+           </LinearLayout>
+            
+            <ImageView
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_launcher"/>
         </LinearLayout>
 
         <com.bishilai.bishilai.widget.InnerGridView
@@ -106,54 +128,40 @@
             android:numColumns="3"></com.bishilai.bishilai.widget.InnerGridView>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
             android:layout_marginTop="30dp"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="大流量直出纯净水，健康家庭必备"
-                android:textSize="15sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="享花呗三期免息，10月17日10:00-10月31日10:00"
-                android:textSize="11sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="小米净水器(厨下式)"
-                android:textSize="11sp" />
+            android:background="#FFE7E5"
+            android:gravity="center"
+            android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="￥1599起"
-                    android:textSize="25sp"
+                    android:text="碧诗莱萌宠减肥胶囊"
+                    android:textColor="@color/text_bg33"
                     android:textStyle="bold"
-                    android:textColor="@android:color/holo_red_dark"/>
-                <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginLeft="30dp"
-                    android:src="@drawable/ic_launcher"/>
+                    android:textSize="18sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="一言不合 说瘦就瘦"
+                    android:textSize="13sp" />
             </LinearLayout>
+            <ImageView
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_launcher"/>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@color/possible_result_points"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:textColor="@color/dp_red"
-            android:text="新机专享红包"/>
-
         <com.bishilai.bishilai.widget.DivideText
+            android:id="@+id/divideText1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </com.bishilai.bishilai.widget.DivideText>

@@ -3,9 +3,9 @@
     <!-- 边框 -->
     <stroke
         android:width="2dp"
-        android:color="@color/orange"/>
+        android:color="@color/green"/>
     <solid android:color="@color/white" android:state_pressed="true" />
-    <corners android:radius="0dp" />
+    <corners android:radius="5dp" />
 
 
 </shape>

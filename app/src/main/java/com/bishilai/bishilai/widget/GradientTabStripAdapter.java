@@ -44,13 +44,13 @@ public class GradientTabStripAdapter extends FragmentPagerAdapter implements
         switch (position) {
             default:
             case 0:
-                return "微信";
+                return "首页";
             case 1:
-                return "通讯录";
+                return "产品";
             case 2:
-                return "发现";
+                return "购物车";
             case 3:
-                return "我";
+                return "我的";
         }
     }
 
@@ -59,13 +59,13 @@ public class GradientTabStripAdapter extends FragmentPagerAdapter implements
         switch (position) {
             default:
             case 0:
-                return ContextCompat.getDrawable(context, R.drawable.ic_gradienttabstrip_chat_normal);
+                return ContextCompat.getDrawable(context, R.drawable.icon_home_nomal);
             case 1:
-                return ContextCompat.getDrawable(context, R.drawable.ic_gradienttabstrip_contacts_normal);
+                return ContextCompat.getDrawable(context, R.drawable.icon_good_nomal);
             case 2:
-                return ContextCompat.getDrawable(context, R.drawable.ic_gradienttabstrip_discovery_normal);
+                return ContextCompat.getDrawable(context, R.drawable.icon_shopcar_nomal);
             case 3:
-                return ContextCompat.getDrawable(context, R.drawable.ic_gradienttabstrip_account_normal);
+                return ContextCompat.getDrawable(context, R.drawable.icon_personl_nomal);
         }
     }
 
@@ -74,13 +74,13 @@ public class GradientTabStripAdapter extends FragmentPagerAdapter implements
         switch (position) {
             default:
             case 0:
-                return ContextCompat.getDrawable(context, R.drawable.ic_gradienttabstrip_chat_selected);
+                return ContextCompat.getDrawable(context, R.drawable.icon_home_press);
             case 1:
-                return ContextCompat.getDrawable(context, R.drawable.ic_gradienttabstrip_contacts_selected);
+                return ContextCompat.getDrawable(context, R.drawable.icon_good_press);
             case 2:
-                return ContextCompat.getDrawable(context, R.drawable.ic_gradienttabstrip_discovery_selected);
+                return ContextCompat.getDrawable(context, R.drawable.icon_shopcar_press);
             case 3:
-                return ContextCompat.getDrawable(context, R.drawable.ic_gradienttabstrip_account_selected);
+                return ContextCompat.getDrawable(context, R.drawable.icon_personl_press);
         }
     }
 

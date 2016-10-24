@@ -52,6 +52,7 @@ import midian.baselib.widget.BaseLibTopbarView;
 import midian.baselib.widget.ScrollChangeListener;
 
 /**
+ * 商品详情页面
  * Created by Administrator on 2016/10/19 0019.
  */
 

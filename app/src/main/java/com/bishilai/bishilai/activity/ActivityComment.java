@@ -21,6 +21,7 @@ import midian.baselib.utils.UIHelper;
 import midian.baselib.widget.BaseLibTopbarView;
 
 /**
+ * 评论列表页面
  * Created by Administrator on 2016/10/20 0020.
  */
 

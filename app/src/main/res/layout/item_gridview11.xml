@@ -2,9 +2,9 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@color/blue"
+    android:layout_width="118dp"
+    android:layout_height="160dp"
+    android:background="#FC7E7E"
     android:paddingTop="15sp"
     android:paddingBottom="15sp"
     android:paddingLeft="5dp"
@@ -15,26 +15,30 @@
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="13.5sp"
+        android:textSize="15sp"
         android:textColor="@color/white"
-        android:text="小米5s"/>
+        android:textStyle="bold"
+        android:text="减肥胶囊"/>
     <TextView
         android:id="@+id/tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="9.5sp"
+        android:textSize="13sp"
+        android:layout_marginTop="3dp"
         android:textColor="@color/white"
-        android:text="拍照黑科技 超感光相机"/>
+        android:text="纯中药无添加配方"/>
     <TextView
         android:id="@+id/tv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="11.5sp"
+        android:textSize="14sp"
         android:textColor="@color/white"
-        android:text="1999元起"/>
+        android:layout_marginTop="3dp"
+        android:text="699元起"/>
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/iv"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
         android:src="@drawable/ic_launcher"/>
 
 </LinearLayout>

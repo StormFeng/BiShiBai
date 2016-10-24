@@ -69,7 +69,6 @@ public class CountView extends LinearLayout {
             String var1=tvCount.getText().toString();
             int var2 = Integer.parseInt(var1);
             tvCount.setTextColor(getResources().getColor(R.color.text_bg22));
-            LogUtils.e(var2);
             tvCount.setText(++var2+"");
         }
     };

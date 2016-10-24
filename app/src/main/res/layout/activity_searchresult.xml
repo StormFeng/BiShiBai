@@ -10,59 +10,53 @@
         android:id="@+id/topbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:orientation="horizontal"
-        android:background="@color/white">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp">
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="推荐"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="新品"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="价格"/>
-        <TextView
-            android:id="@+id/tv_Search"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="筛选"/>
-
-        <View
-            android:layout_width="0.5dp"
-            android:layout_height="match_parent"
-            android:background="@color/divide_line"/>
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/ic_launcher"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热门搜索"
+            android:textSize="15.5sp"
+            android:textColor="@color/text_bg66"/>
         
+        <com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/tag_HotTag"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </com.zhy.view.flowlayout.TagFlowLayout>
 
-        
+        <LinearLayout
+            android:id="@+id/tv_ClearAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="历史搜索"
+                android:textSize="15.5sp"
+                android:textColor="@color/text_bg66" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="清空"
+                android:textColor="@color/text_bg99"/>
+        </LinearLayout>
+
+        <com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/tag_HistoryTag"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </com.zhy.view.flowlayout.TagFlowLayout>
     </LinearLayout>
-
-    <GridView
-        android:id="@+id/gridView"
-        android:verticalSpacing="5sp"
-        android:horizontalSpacing="5sp"
-        android:numColumns="2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </GridView>
 
 </LinearLayout>
