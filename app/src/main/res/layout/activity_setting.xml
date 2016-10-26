@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <midian.baselib.widget.BaseLibTopbarView
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_PersonlData"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="个人资料"
+        android:drawableRight="@drawable/icon_arrow_right"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/text_bg33"
+        android:background="@color/white"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divide_line"/>
+    <TextView
+        android:id="@+id/tv_ChangePass"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="修改密码"
+        android:drawableRight="@drawable/icon_arrow_right"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/text_bg33"
+        android:background="@color/white"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divide_line"/>
+    <TextView
+        android:id="@+id/tv_ReceiveAdress"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="收货地址"
+        android:drawableRight="@drawable/icon_arrow_right"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/text_bg33"
+        android:background="@color/white"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divide_line"/>
+    <TextView
+        android:id="@+id/tv_NewsNotice"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="消息通知"
+        android:drawableRight="@drawable/icon_arrow_right"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/text_bg33"
+        android:background="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_AboutCompany"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="关于碧诗莱"
+        android:drawableRight="@drawable/icon_arrow_right"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/text_bg33"
+        android:background="@color/white"/>
+    
+    <Button
+        android:id="@+id/btn_SignOut"
+        android:layout_width="330dp"
+        android:layout_height="44dp"
+        android:text="退出登录"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_4radiu_green"/>
+
+
+</LinearLayout>

@@ -36,6 +36,18 @@
         <activity android:name=".activity.ActivityCard"/>
         <!--我的消息-->
         <activity android:name=".activity.ActivityMyNews"/>
+        <!--优惠券-->
+        <activity android:name=".activity.ActivityCoupon"/>
+        <!--系统设置-->
+        <activity android:name=".activity.ActivitySetting"/>
+        <!--个人资料-->
+        <activity android:name=".activity.ActivityPersonalData"/>
+        <!--修改密码-->
+        <activity android:name=".activity.ActivityChangePass"/>
+        <!--关于-->
+        <activity android:name=".activity.ActivityAbout"/>
+        <!--消息通知-->
+        <activity android:name=".activity.ActivityNewsNotice"/>
     </application>
 
 </manifest>

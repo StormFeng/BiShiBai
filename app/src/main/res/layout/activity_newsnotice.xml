@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_bg">
+
+    <midian.baselib.widget.BaseLibTopbarView
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_bg60"
+            android:text="开启消息通知"/>
+        <com.kyleduo.switchbutton.SwitchButton
+            android:id="@+id/btn_SwitchNews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:kswTintColor="#07A746" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divide_line"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_bg60"
+            android:text="消息通知音效"/>
+        <com.kyleduo.switchbutton.SwitchButton
+            android:id="@+id/btn_SwitchSound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:kswTintColor="#07A746" />
+    </LinearLayout>
+
+</LinearLayout>

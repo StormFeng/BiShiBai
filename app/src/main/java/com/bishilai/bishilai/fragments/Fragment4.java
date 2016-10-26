@@ -7,7 +7,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bishilai.bishilai.R;
+import com.bishilai.bishilai.activity.ActivityCoupon;
+import com.bishilai.bishilai.activity.ActivityMyNews;
 import com.bishilai.bishilai.activity.ActivityMyWallet;
+import com.bishilai.bishilai.activity.ActivitySetting;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import butterknife.BindView;
@@ -44,6 +47,8 @@ public class Fragment4 extends BaseFragment {
     TextView tvVip;
     @BindView(R.id.tv_Coupon)
     TextView tvCoupon;
+    @BindView(R.id.tv_Setting)
+    TextView tvSetting;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -52,7 +57,7 @@ public class Fragment4 extends BaseFragment {
         return v;
     }
 
-    @OnClick({R.id.iv_Login, R.id.tv_AllBook, R.id.tv_ReadyPay, R.id.tv_ReadyReceive, R.id.tv_ReadyComment, R.id.tv_Wallet, R.id.tv_Collect, R.id.tv_News, R.id.tv_Vip, R.id.tv_Coupon})
+    @OnClick({R.id.iv_Login, R.id.tv_AllBook, R.id.tv_ReadyPay, R.id.tv_ReadyReceive, R.id.tv_ReadyComment, R.id.tv_Wallet, R.id.tv_Collect, R.id.tv_News, R.id.tv_Vip, R.id.tv_Coupon, R.id.tv_Setting})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_Login:
@@ -71,10 +76,15 @@ public class Fragment4 extends BaseFragment {
             case R.id.tv_Collect:
                 break;
             case R.id.tv_News:
+                UIHelper.jump(_activity, ActivityMyNews.class);
                 break;
             case R.id.tv_Vip:
                 break;
             case R.id.tv_Coupon:
+                UIHelper.jump(_activity, ActivityCoupon.class);
+                break;
+            case R.id.tv_Setting:
+                UIHelper.jump(_activity, ActivitySetting.class);
                 break;
         }
     }

@@ -6,9 +6,9 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.bishilai.bishilai.R;
-import com.bishilai.bishilai.datasource.ActivityCardDataResource;
+import com.bishilai.bishilai.datasource.ActivityCouponDataResource;
 import com.bishilai.bishilai.datasource.ActivityMyNewsDataResource;
-import com.bishilai.bishilai.tpl.ActivityCardTpl;
+import com.bishilai.bishilai.tpl.ActivityCouponTpl;
 import com.bishilai.bishilai.tpl.ActivityMyNewsTpl;
 import com.jaeger.library.StatusBarUtil;
 
@@ -20,11 +20,11 @@ import midian.baselib.utils.UIHelper;
 import midian.baselib.widget.BaseLibTopbarView;
 
 /**
- * 我的消息
+ * 优惠券
  * Created by Administrator on 2016/10/25 0025.
  */
 
-public class ActivityMyNews extends BaseListActivity {
+public class ActivityCoupon extends BaseListActivity {
 
     private BaseLibTopbarView topbar;
 
@@ -42,16 +42,17 @@ public class ActivityMyNews extends BaseListActivity {
         topbar=findView(R.id.topbar);
         topbar.setBackgroundColor(getResources().getColor(R.color.green));
         topbar.setLeftImageButton(R.drawable.icon_back, UIHelper.finish(_activity));
-        topbar.setTitle("我的消息");
+        topbar.setTitle("优惠券");
+        listView.setDivider(null);
     }
 
     @Override
     protected IDataSource<ArrayList> getDataSource() {
-        return new ActivityMyNewsDataResource(_activity);
+        return new ActivityCouponDataResource(_activity);
     }
 
     @Override
     protected Class getTemplateClass() {
-        return ActivityMyNewsTpl.class;
+        return ActivityCouponTpl.class;
     }
 }

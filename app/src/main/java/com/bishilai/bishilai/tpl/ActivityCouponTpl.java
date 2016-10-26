@@ -9,15 +9,15 @@ import midian.baselib.bean.NetResult;
 import midian.baselib.view.BaseTpl;
 
 /**
- * 我的银行卡
+ * 优惠券
  */
-public class ActivityMyNewsTpl extends BaseTpl<NetResult> {
+public class ActivityCouponTpl extends BaseTpl<NetResult> {
 
-    public ActivityMyNewsTpl(Context context, AttributeSet attrs) {
+    public ActivityCouponTpl(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public ActivityMyNewsTpl(Context context) {
+    public ActivityCouponTpl(Context context) {
         super(context);
     }
 
@@ -29,7 +29,7 @@ public class ActivityMyNewsTpl extends BaseTpl<NetResult> {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.item_mynews;
+        return R.layout.item_coupon;
     }
 
     @Override
