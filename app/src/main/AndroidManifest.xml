@@ -48,6 +48,8 @@
         <activity android:name=".activity.ActivityAbout"/>
         <!--消息通知-->
         <activity android:name=".activity.ActivityNewsNotice"/>
+        <!--订单管理-->
+        <activity android:name=".activity.ActivityBook"/>
     </application>
 
 </manifest>
