@@ -34,20 +34,12 @@ public class Fragment2 extends BaseFragment {
     InnerGridView gridView2;
     @BindView(R.id.gridView3)
     InnerGridView gridView3;
-    @BindView(R.id.gridView4)
-    InnerGridView gridView4;
-    @BindView(R.id.gridView5)
-    InnerGridView gridView5;
-    @BindView(R.id.gridView6)
-    InnerGridView gridView6;
-    @BindView(R.id.gridView7)
-    InnerGridView gridView7;
-    @BindView(R.id.gridView8)
-    InnerGridView gridView8;
-    @BindView(R.id.gridView9)
-    InnerGridView gridView9;
     @BindView(R.id.ll_FirstCard)
     LinearLayout llFirstCard;
+
+    AdapterGridView21 adapter21;
+    AdapterGridView21 adapter22;
+    AdapterGridView21 adapter23;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -61,15 +53,13 @@ public class Fragment2 extends BaseFragment {
         topbar.setBackgroundColor(getResources().getColor(R.color.orange));
         topbar.setMode(MODE_WITH_INPUT);
 
-        gridView1.setAdapter(new AdapterGridView21(_activity));
-        gridView2.setAdapter(new AdapterGridView21(_activity));
-        gridView3.setAdapter(new AdapterGridView21(_activity));
-        gridView4.setAdapter(new AdapterGridView21(_activity));
-        gridView5.setAdapter(new AdapterGridView21(_activity));
-        gridView6.setAdapter(new AdapterGridView21(_activity));
-        gridView7.setAdapter(new AdapterGridView21(_activity));
-        gridView8.setAdapter(new AdapterGridView21(_activity));
-        gridView9.setAdapter(new AdapterGridView21(_activity));
+        adapter21=new AdapterGridView21(_activity,7);
+        adapter22=new AdapterGridView21(_activity,11);
+        adapter23=new AdapterGridView21(_activity,3);
+
+        gridView1.setAdapter(adapter21);
+        gridView2.setAdapter(adapter22);
+        gridView3.setAdapter(adapter23);
     }
 
     @OnClick({R.id.topbar, R.id.ll_FirstCard})

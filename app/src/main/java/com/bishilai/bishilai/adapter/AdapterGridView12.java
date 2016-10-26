@@ -26,7 +26,7 @@ public class AdapterGridView12 extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 18;
+        return 6;
     }
 
     @Override

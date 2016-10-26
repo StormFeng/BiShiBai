@@ -47,7 +47,7 @@ public class MainActivity extends BaseFragmentActivity implements BaseTabStrip.O
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }else{
             StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimary));
-            StatusBarUtil.setTranslucentForImageViewInFragment(MainActivity.this,0,null);
+            StatusBarUtil.setTranslucentForImageViewInFragment(_activity,0,null);
         }
     }
 

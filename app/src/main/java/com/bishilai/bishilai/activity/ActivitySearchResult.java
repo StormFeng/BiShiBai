@@ -35,7 +35,7 @@ public class ActivitySearchResult extends BaseActivity {
     @BindView(R.id.tag_HotTag)
     TagFlowLayout tagHotTag;//热门搜索标签
     @BindView(R.id.tv_ClearAll)
-    LinearLayout tvClearAll;//清空
+    TextView tvClearAll;//清空
     @BindView(R.id.tag_HistoryTag)
     TagFlowLayout tagHistoryTag;//历史搜索标签
 
@@ -100,7 +100,7 @@ public class ActivitySearchResult extends BaseActivity {
 
     @OnClick(R.id.tv_ClearAll)
     public void onClick() {
+        historyTagString.clear();
+        tagHistoryTag.getAdapter().notifyDataChanged();
     }
-
-
 }

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/window_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -123,6 +124,7 @@
             android:id="@+id/gridView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:listSelector="@null"
             android:verticalSpacing="5sp"
             android:horizontalSpacing="5sp"
             android:numColumns="3"></com.bishilai.bishilai.widget.InnerGridView>
@@ -170,354 +172,70 @@
             android:id="@+id/gridView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:listSelector="@null"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:verticalSpacing="5sp"
             android:horizontalSpacing="5sp"
             android:numColumns="3"></com.bishilai.bishilai.widget.InnerGridView>
 
         <com.bishilai.bishilai.widget.DivideText
+            android:id="@+id/divideText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </com.bishilai.bishilai.widget.DivideText>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="98dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:gravity="center_vertical"
-            android:background="@color/map_blue">
+            android:background="#FFF9E5">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="米兔定位电话"/>
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_bg33"
+                    android:text="碧诗莱萌宠减肥胶囊 "/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="精准定位、双向通话、超长待机、小巧随行"
-                    android:textSize="9sp"/>
+                    android:text="一言不合 说瘦就瘦"
+                    android:layout_marginTop="5dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_bg33"/>
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="30dp"
-                    android:paddingRight="30dp"
-                    android:text="了解详情"
-                    android:textSize="9sp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/comment_bg2"/>
             </LinearLayout>
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_launcher"/>
+                android:layout_marginLeft="23dp"
+                android:padding="11dp"
+                android:src="@drawable/ic_launcher"
+                android:id="@+id/imageView3" />
         </LinearLayout>
 
         <com.bishilai.bishilai.widget.InnerGridView
             android:id="@+id/gridView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:verticalSpacing="5sp"
-            android:horizontalSpacing="5sp"
-            android:numColumns="2"></com.bishilai.bishilai.widget.InnerGridView>
-
-        <com.bishilai.bishilai.widget.DivideText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </com.bishilai.bishilai.widget.DivideText>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:gravity="center_vertical"
-            android:background="@color/map_blue">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="米兔定位电话"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="精准定位、双向通话、超长待机、小巧随行"
-                    android:textSize="9sp"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="30dp"
-                    android:paddingRight="30dp"
-                    android:text="了解详情"
-                    android:textSize="9sp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/comment_bg2"/>
-            </LinearLayout>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_launcher"/>
-        </LinearLayout>
-
-        <com.bishilai.bishilai.widget.InnerGridView
-            android:id="@+id/gridView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:verticalSpacing="5sp"
-            android:horizontalSpacing="5sp"
-            android:numColumns="2"></com.bishilai.bishilai.widget.InnerGridView>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="查看更多米家产品"
-            android:textSize="11sp"
-            android:gravity="center"
-            android:padding="10dp"/>
-
-        <com.bishilai.bishilai.widget.DivideText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </com.bishilai.bishilai.widget.DivideText>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:gravity="center_vertical"
-            android:background="@color/map_blue">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="米兔定位电话"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="精准定位、双向通话、超长待机、小巧随行"
-                    android:textSize="9sp"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="30dp"
-                    android:paddingRight="30dp"
-                    android:text="了解详情"
-                    android:textSize="9sp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/comment_bg2"/>
-            </LinearLayout>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_launcher"/>
-        </LinearLayout>
-
-        <com.bishilai.bishilai.widget.InnerGridView
-            android:id="@+id/gridView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:verticalSpacing="5sp"
-            android:horizontalSpacing="5sp"
-            android:numColumns="2"></com.bishilai.bishilai.widget.InnerGridView>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="查看更多米家产品"
-            android:textSize="11sp"
-            android:gravity="center"
-            android:padding="10dp"/>
-
-        <com.bishilai.bishilai.widget.DivideText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </com.bishilai.bishilai.widget.DivideText>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:gravity="center_vertical"
-            android:background="@color/map_blue">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="《小米》"
-                    android:textSize="18sp"
-                    android:textColor="@color/two_code_title"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="创刊号火热赠送中"
-                    android:textSize="18sp"
-                    android:textColor="@color/two_code_title"/>
-
-            </LinearLayout>
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_launcher"/>
-        </LinearLayout>
-
-        <com.bishilai.bishilai.widget.InnerGridView
-            android:id="@+id/gridView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:verticalSpacing="5sp"
-            android:horizontalSpacing="5sp"
-            android:numColumns="2"></com.bishilai.bishilai.widget.InnerGridView>
-
-        <com.bishilai.bishilai.widget.DivideText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </com.bishilai.bishilai.widget.DivideText>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:gravity="center_vertical"
-            android:background="@color/possible_result_points">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="用一件卫衣承包一秋的时尚"
-                    android:textStyle="bold"
-                    android:textColor="@color/dp_red"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="轻盈保暖 | 贴身舒适 | 运动休闲两相宜"
-                    android:textSize="9sp"
-                    android:layout_marginTop="5dp"
-                    android:textColor="@color/two_code_title"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="99元起"
-                    android:textSize="18sp"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/dp_red"/>
-
-            </LinearLayout>
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_launcher"/>
-        </LinearLayout>
-
-        <com.bishilai.bishilai.widget.InnerGridView
-            android:id="@+id/gridView7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:verticalSpacing="5sp"
-            android:horizontalSpacing="5sp"
-            android:numColumns="2"></com.bishilai.bishilai.widget.InnerGridView>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="查看更多服装"
-            android:textSize="11sp"
-            android:gravity="center"
-            android:padding="10dp"/>
-
-        <com.bishilai.bishilai.widget.DivideText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </com.bishilai.bishilai.widget.DivideText>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:gravity="center_vertical"
-            android:background="@color/dp_gray">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="8H乳胶枕"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="三曲线贴合颈部，呵护一晚好睡眠"
-                    android:textSize="9sp"
-                    android:layout_marginTop="5dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="159元起"
-                    android:textSize="18sp"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/dp_red"/>
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_launcher"/>
-        </LinearLayout>
-
-        <com.bishilai.bishilai.widget.InnerGridView
-            android:id="@+id/gridView8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:listSelector="@null"
             android:verticalSpacing="5sp"
             android:horizontalSpacing="5sp"
             android:numColumns="2"></com.bishilai.bishilai.widget.InnerGridView>
@@ -525,169 +243,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:paddingBottom="10dp"
-            android:background="@color/white">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="小米银行 任我行" />
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="永久免月费，电话0.1元/分钟"
-                    android:textSize="9sp" />
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="小米银行 任我行" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="永久免月费，电话0.1元/分钟"
-                    android:textSize="9sp" />
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:orientation="vertical">
+            android:gravity="center">
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="可播放视频超过14小时"
-                android:textSize="15sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="大屏手机就是小米Max"
-                android:textSize="11sp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="￥1299起"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/holo_red_dark"/>
-                <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginLeft="30dp"
-                    android:src="@drawable/ic_launcher"/>
-            </LinearLayout>
+                android:layout_height="43dp"
+                android:text="查看碧诗莱更多产品"
+                android:textColor="@color/text_bg33"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/icon_more"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/dp_red"
-                    android:text="新品"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:paddingTop="15dp"
-                    android:paddingBottom="15dp"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/dp_red"
-                    android:text="智能家庭"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:paddingTop="15dp"
-                    android:paddingBottom="15dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/dp_red"
-                    android:text="官翻机"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:paddingTop="15dp"
-                    android:paddingBottom="15dp"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@color/white">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/dp_red"
-                    android:text="女生"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:paddingTop="15dp"
-                    android:paddingBottom="15dp"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/dp_red"
-                    android:text="学生"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:paddingTop="15dp"
-                    android:paddingBottom="15dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/dp_red"
-                    android:text="白领"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:paddingTop="15dp"
-                    android:paddingBottom="15dp"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </LinearLayout>
 
     </LinearLayout>
 

@@ -49,11 +49,6 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
     private InnerGridView gridView1;
     private InnerGridView gridView2;
     private InnerGridView gridView3;
-    private InnerGridView gridView4;
-    private InnerGridView gridView5;
-    private InnerGridView gridView6;
-    private InnerGridView gridView7;
-    private InnerGridView gridView8;
 
     private DivideText divideText1;
 
@@ -80,11 +75,6 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
         gridView1 = (InnerGridView) content.findViewById(R.id.gridView1);
         gridView2 = (InnerGridView) content.findViewById(R.id.gridView2);
         gridView3 = (InnerGridView) content.findViewById(R.id.gridView3);
-        gridView4 = (InnerGridView) content.findViewById(R.id.gridView4);
-        gridView5 = (InnerGridView) content.findViewById(R.id.gridView5);
-        gridView6 = (InnerGridView) content.findViewById(R.id.gridView6);
-        gridView7 = (InnerGridView) content.findViewById(R.id.gridView7);
-        gridView8 = (InnerGridView) content.findViewById(R.id.gridView8);
         divideText1 = (DivideText) content.findViewById(R.id.divideText1);
         refreshScrollView.setPullLoadEnabled(false);
         refreshScrollView.scrollView.addView(content);
@@ -105,11 +95,6 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
         gridView1.setAdapter(new AdapterGridView11(_activity));
         gridView2.setAdapter(new AdapterGridView12(_activity));
         gridView3.setAdapter(new AdapterGridView13(_activity));
-        gridView4.setAdapter(new AdapterGridView13(_activity));
-        gridView5.setAdapter(new AdapterGridView13(_activity));
-        gridView6.setAdapter(new AdapterGridView13(_activity));
-        gridView7.setAdapter(new AdapterGridView13(_activity));
-        gridView8.setAdapter(new AdapterGridView13(_activity));
 
         divideText1.setTitle("明星产品");
 
@@ -130,11 +115,11 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
                     if(var3.length()==1){
                         var3="0"+var3;
                     }
-                    color=new StringBuffer("#EB6563").insert(1,var3).toString();
+                    color=new StringBuffer("#07A746").insert(1,var3).toString();
                     //LogUtils.e("y:"+y+"\n"+"var3:"+var3+"\n"+"color:"+color);
                     topbar.setBackgroundColor(Color.parseColor(color));
                 }else if(y>=485){
-                    topbar.setBackgroundColor(Color.parseColor("#EB6563"));
+                    topbar.setBackgroundColor(Color.parseColor("#07A746"));
                 }
             }
         });

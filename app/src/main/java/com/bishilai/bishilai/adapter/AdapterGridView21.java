@@ -20,14 +20,16 @@ import butterknife.ButterKnife;
 public class AdapterGridView21 extends BaseAdapter {
 
     private Context context;
+    private int size;
 
-    public AdapterGridView21(Context context) {
+    public AdapterGridView21(Context context,int size) {
         this.context = context;
+        this.size=size;
     }
 
     @Override
     public int getCount() {
-        return 11;
+        return size;
     }
 
     @Override

@@ -5,21 +5,20 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@color/alpha"
-    android:padding="10dp"
     android:gravity="center">
 
 
     <ImageView
         android:id="@+id/iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
         android:src="@drawable/ic_launcher"/>
 
     <TextView
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="11sp"
-        android:text="小米5s"/>
+        android:textSize="13sp"
+        android:text="春季养生"/>
 </LinearLayout>

@@ -28,6 +28,14 @@
         <activity android:name=".activity.ActivityViewPhoto"/>
         <!--商品评论页面-->
         <activity android:name=".activity.ActivityComment"/>
+        <!--我的钱包-->
+        <activity android:name=".activity.ActivityMyWallet"/>
+        <!--我的余额明细-->
+        <activity android:name=".activity.ActivityBalance"/>
+        <!--我的银行卡-->
+        <activity android:name=".activity.ActivityCard"/>
+        <!--我的消息-->
+        <activity android:name=".activity.ActivityMyNews"/>
     </application>
 
 </manifest>

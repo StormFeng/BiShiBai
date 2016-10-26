@@ -26,7 +26,7 @@ public class AdapterGridView13 extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 12;
+        return 4;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class AdapterGridView13 extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_gridview12, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_gridview13, null);
             viewHolder = new ViewHolder(convertView);
         }else {
             viewHolder = (ViewHolder) convertView.getTag();

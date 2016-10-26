@@ -137,14 +137,21 @@
         <LinearLayout
             android:id="@+id/inputArea"
             android:layout_width="240dp"
-            android:layout_height="27dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="45dp"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/c_topbar_input_bg"
+            android:background="@drawable/bg_topbar_radiusgreen"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:focusableInTouchMode="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/icon_topbar_search" />
 
             <EditText
                 android:id="@+id/input"
@@ -156,15 +163,11 @@
                 android:imeOptions=""
                 android:singleLine="true"
                 android:textColor="#333333"
-                android:textColorHint="#CDCDCD"
+                android:textColorHint="#FFFFFF"
                 android:textCursorDrawable="@drawable/text_cursor"
-                android:textSize="14sp" />
+                android:textSize="13sp" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:src="@drawable/icon_topbar_search" />
+
         </LinearLayout>
 
 </RelativeLayout>
