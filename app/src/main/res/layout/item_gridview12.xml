@@ -44,13 +44,13 @@
         android:layout_height="wrap_content"
         android:textSize="13sp"
         android:textColor="@color/text_bg33"
-        android:text="小米5s"/>
+        android:text="黑头导出液"/>
     <TextView
         android:id="@+id/tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="13sp"
         android:textColor="#07A746"
-        android:text="999元起"/>
+        android:text="1288元"/>
 
 </LinearLayout>
