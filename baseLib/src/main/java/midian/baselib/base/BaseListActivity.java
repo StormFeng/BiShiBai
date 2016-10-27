@@ -48,6 +48,7 @@ public abstract class BaseListActivity<Model extends NetResult> extends BaseActi
 		listView = refreshListView.getRefreshableView();
 		listView.setDivider(getResources().getDrawable(R.drawable.divider_line));
 		listView.setOnItemClickListener(this);
+		listView.setVerticalScrollBarEnabled(false);
 		resultList = dataSource.getResultList();
 		// 设置适配器
         adapter = new BaseListAdapter(listView, this, resultList, getTemplateClass(), listViewHelper);

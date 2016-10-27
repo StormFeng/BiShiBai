@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="167dp"
+    android:paddingTop="15dp"
+    android:background="@color/window_bg">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+        <com.bishilai.bishilai.widget.SmoothCheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:id="@+id/tv_Title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="郑州保税仓发货"
+            android:textColor="@color/text_bg33"
+            android:textSize="15sp"
+            android:layout_marginLeft="15dp"/>
+        
+        <ImageView
+            android:id="@+id/iv_Delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_delete"/>
+
+    </LinearLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divide_line"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:background="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_Name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="李先生"
+                android:textColor="@color/text_bg33"
+                android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/tv_Phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13567898675"
+                android:textColor="@color/text_bg33"
+                android:textSize="15sp"
+                android:layout_marginLeft="15dp"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_Adress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="广东省天河区宏太智慧谷给你看老顾客了给你看老顾客了给你看老顾客了"
+            android:textColor="@color/text_bg33"
+            android:layout_marginTop="7dp"
+            android:textSize="13sp"/>
+    </LinearLayout>
+
+</LinearLayout>

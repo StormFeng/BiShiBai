@@ -21,8 +21,7 @@ import midian.baselib.widget.BaseLibTopbarView;
 import static midian.baselib.widget.BaseLibTopbarView.MODE_WITH_INPUT;
 
 /**
- * Fragment2
- * Created by Alex on 2016/5/19.
+ * 产品
  */
 public class Fragment2 extends BaseFragment {
 
@@ -50,9 +49,10 @@ public class Fragment2 extends BaseFragment {
     }
 
     private void initView() {
-        topbar.setBackgroundColor(getResources().getColor(R.color.orange));
+        topbar.setBackgroundColor(getResources().getColor(R.color.green));
         topbar.setMode(MODE_WITH_INPUT);
-
+        topbar.setLeftImageButton(R.drawable.icon_love,null);
+        topbar.setRightImageButton(R.drawable.icon_talk,null);
         adapter21=new AdapterGridView21(_activity,7);
         adapter22=new AdapterGridView21(_activity,11);
         adapter23=new AdapterGridView21(_activity,3);

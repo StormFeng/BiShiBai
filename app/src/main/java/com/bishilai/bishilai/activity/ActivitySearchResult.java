@@ -1,8 +1,10 @@
 package com.bishilai.bishilai.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,6 +27,7 @@ import midian.baselib.widget.BaseLibTopbarView;
 import static midian.baselib.widget.BaseLibTopbarView.MODE_WITH_INPUT;
 
 /**
+ * 搜索产品
  * Created by Administrator on 2016/10/18 0018.
  */
 
@@ -39,6 +42,7 @@ public class ActivitySearchResult extends BaseActivity {
     @BindView(R.id.tag_HistoryTag)
     TagFlowLayout tagHistoryTag;//历史搜索标签
 
+    private EditText etSearch;
     private List<String> hotTagString=new ArrayList<>();
     private List<String> historyTagString=new ArrayList<>();
 
@@ -48,6 +52,8 @@ public class ActivitySearchResult extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searchresult);
         ButterKnife.bind(this);
+        etSearch=findView(R.id.input);
+        etSearch.setHint("搜索产品");
         initView();
     }
 

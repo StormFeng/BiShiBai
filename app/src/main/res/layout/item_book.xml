@@ -6,6 +6,7 @@
     android:paddingTop="15dp"
     android:gravity="center">
     <LinearLayout
+        android:id="@+id/ll_Item"
         android:layout_width="330dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -46,6 +47,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp">
             <ImageView
+                android:id="@+id/iv_Good"
                 android:layout_width="78dp"
                 android:layout_height="78dp"
                 android:src="@drawable/ic_launcher"
@@ -57,12 +59,14 @@
                 android:layout_marginLeft="13dp"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/tv_Name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="祛痘美白精华套装"
                     android:textSize="13sp"
                     android:textColor="@color/text_bg33"/>
                 <TextView
+                    android:id="@+id/tv_Count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="￥899  x1 "
@@ -83,6 +87,7 @@
                     android:textSize="15sp"
                     android:textColor="@color/text_bg33"/>
                 <TextView
+                    android:id="@+id/tv_Price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="￥899"
@@ -91,13 +96,14 @@
                     android:textColor="@color/dp_red"/>
             </LinearLayout>
         </LinearLayout>
-        
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:padding="15dp">
             <Button
+                android:id="@+id/btn_Cancel"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:text="取消订单"
@@ -106,6 +112,7 @@
                 android:background="@drawable/bg_4stroke_grey"/>
 
             <Button
+                android:id="@+id/btn_Confirm"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:text="立刻支付"

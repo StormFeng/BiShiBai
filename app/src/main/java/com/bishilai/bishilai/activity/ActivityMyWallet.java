@@ -82,7 +82,7 @@ public class ActivityMyWallet extends BaseFragmentActivity {
         topbar.setBackgroundColor(Color.parseColor("#00ffffff"));
         topbar.setTitle("");
         topbar.setLeftImageButton(R.drawable.icon_back,UIHelper.finish(_activity));
-        topbar.setRightImageButton(R.drawable.icon_readypay,UIHelper.OnClickJump(_activity,ActivityCard.class));
+        topbar.setRightImageButton(R.drawable.icon_bankcard,UIHelper.OnClickJump(_activity,ActivityCard.class));
         fragments.add(new FragmentBonus());
         fragments.add(new FragmentSales());
         viewPager.setAdapter(new FragmentPagerAdapter(fm) {

@@ -21,8 +21,7 @@ import midian.baselib.base.BaseFragment;
 import midian.baselib.utils.UIHelper;
 
 /**
- * Fragment4
- * Created by Alex on 2016/5/19.
+ * 我的
  */
 public class Fragment4 extends BaseFragment {
 

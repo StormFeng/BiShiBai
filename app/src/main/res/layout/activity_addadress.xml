@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_bg">
+
+    <midian.baselib.widget.BaseLibTopbarView
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="收货人姓名"
+                android:textSize="15sp"
+                android:textColor="@color/text_bg33"/>
+
+            <EditText
+                android:id="@+id/et_Name"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="小李子"
+                android:textSize="13sp"
+                android:textColor="@color/text_bg99"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divide_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="手机号码"
+                android:textSize="15sp"
+                android:textColor="@color/text_bg33"/>
+
+            <EditText
+                android:id="@+id/et_Phone"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="13456789876"
+                android:textSize="13sp"
+                android:textColor="@color/text_bg99" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divide_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="所在地区"
+                android:textSize="15sp"
+                android:textColor="@color/text_bg33"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/et_Location"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="广东省 广州市 天河区"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_bg99" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="定位"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_bg99"
+                    android:drawableLeft="@drawable/icon_location"
+                    android:drawablePadding="3dp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divide_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="详细地址"
+                android:textSize="15sp"
+                android:textColor="@color/text_bg33"/>
+
+            <EditText
+                android:id="@+id/et_Adress"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="岑村长兴街道聚源里1号104房"
+                android:textSize="13sp"
+                android:textColor="@color/text_bg99" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divide_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="设置为默认地址"
+                android:textSize="15sp"
+                android:textColor="@color/text_bg33" />
+
+            <com.kyleduo.switchbutton.SwitchButton
+                android:id="@+id/sb_Check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:kswTintColor="#07A746"/>
+        </LinearLayout>
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/btn_Save"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="44dp"
+        android:text="保存"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:background="@drawable/bg_4radiu_green"
+        android:layout_marginTop="80dp"/>
+
+</LinearLayout>

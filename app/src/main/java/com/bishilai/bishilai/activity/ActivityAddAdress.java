@@ -6,10 +6,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import com.bishilai.bishilai.R;
 import com.jaeger.library.StatusBarUtil;
+import com.kyleduo.switchbutton.SwitchButton;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,29 +20,30 @@ import midian.baselib.utils.UIHelper;
 import midian.baselib.widget.BaseLibTopbarView;
 
 /**
- * Created by Administrator on 2016/10/26 0026.
+ * 添加收货地址
+ * Created by Administrator on 2016/10/27 0027.
  */
 
-public class ActivitySetting extends BaseActivity {
+public class ActivityAddAdress extends BaseActivity {
     @BindView(R.id.topbar)
     BaseLibTopbarView topbar;
-    @BindView(R.id.tv_PersonlData)
-    TextView tvPersonlData;
-    @BindView(R.id.tv_ChangePass)
-    TextView tvChangePass;
-    @BindView(R.id.tv_ReceiveAdress)
-    TextView tvReceiveAdress;
-    @BindView(R.id.tv_NewsNotice)
-    TextView tvNewsNotice;
-    @BindView(R.id.tv_AboutCompany)
-    TextView tvAboutCompany;
-    @BindView(R.id.btn_SignOut)
-    Button btnSignOut;
+    @BindView(R.id.et_Name)
+    EditText etName;
+    @BindView(R.id.et_Phone)
+    EditText etPhone;
+    @BindView(R.id.et_Location)
+    EditText etLocation;
+    @BindView(R.id.et_Adress)
+    EditText etAdress;
+    @BindView(R.id.sb_Check)
+    SwitchButton sbCheck;
+    @BindView(R.id.btn_Save)
+    Button btnSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
+        setContentView(R.layout.activity_addadress);
         ButterKnife.bind(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window window = getWindow();
@@ -54,28 +56,16 @@ public class ActivitySetting extends BaseActivity {
         topbar=findView(R.id.topbar);
         topbar.setBackgroundColor(getResources().getColor(R.color.green));
         topbar.setLeftImageButton(R.drawable.icon_back, UIHelper.finish(_activity));
-        topbar.setTitle("系统设置");
+        topbar.setRightImageButton(R.drawable.icon_add, null);
+        topbar.setTitle("收货地址");
     }
 
-    @OnClick({R.id.tv_PersonlData, R.id.tv_ChangePass, R.id.tv_ReceiveAdress, R.id.tv_NewsNotice, R.id.tv_AboutCompany, R.id.btn_SignOut})
+    @OnClick({R.id.sb_Check, R.id.btn_Save})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.tv_PersonlData:
-                UIHelper.jump(_activity,ActivityPersonalData.class);
+            case R.id.sb_Check:
                 break;
-            case R.id.tv_ChangePass:
-                UIHelper.jump(_activity,ActivityChangePass.class);
-                break;
-            case R.id.tv_ReceiveAdress:
-                UIHelper.jump(_activity,ActivityReceiveAdress.class);
-                break;
-            case R.id.tv_NewsNotice:
-                UIHelper.jump(_activity,ActivityNewsNotice.class);
-                break;
-            case R.id.tv_AboutCompany:
-                UIHelper.jump(_activity,ActivityAbout.class);
-                break;
-            case R.id.btn_SignOut:
+            case R.id.btn_Save:
                 break;
         }
     }

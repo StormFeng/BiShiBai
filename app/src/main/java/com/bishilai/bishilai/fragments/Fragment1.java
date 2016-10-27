@@ -32,8 +32,7 @@ import midian.baselib.widget.pulltorefresh.PullToRefreshScrollView;
 import static midian.baselib.widget.BaseLibTopbarView.MODE_WITH_INPUT;
 
 /**
- * Fragment1
- * Created by Alex on 2016/5/19.
+ * 首页
  */
 public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListener {
     @BindView(R.id.topbar)
@@ -71,6 +70,8 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
         topbar.setBackgroundColor(getResources().getColor(R.color.alpha));
         topbar.getLine_iv().setVisibility(View.GONE);
         topbar.setMode(MODE_WITH_INPUT);
+        topbar.setLeftImageButton(R.drawable.icon_love,null);
+        topbar.setRightImageButton(R.drawable.icon_talk,null);
         bannerView = (Banner) content.findViewById(R.id.bannerView);
         gridView1 = (InnerGridView) content.findViewById(R.id.gridView1);
         gridView2 = (InnerGridView) content.findViewById(R.id.gridView2);

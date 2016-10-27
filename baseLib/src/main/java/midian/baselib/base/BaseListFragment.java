@@ -61,6 +61,7 @@ public abstract class BaseListFragment<Model extends NetResult> extends BaseFrag
         listView = refreshListView.getRefreshableView();
         listView.setDivider(getResources().getDrawable(R.drawable.divider_line));
         listView.setOnItemClickListener(this);
+        listView.setVerticalScrollBarEnabled(false);
         if (resultList == null) {
             resultList = dataSource.getResultList();
         }

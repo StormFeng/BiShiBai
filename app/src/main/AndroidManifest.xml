@@ -50,6 +50,12 @@
         <activity android:name=".activity.ActivityNewsNotice"/>
         <!--订单管理-->
         <activity android:name=".activity.ActivityBook"/>
+        <!--收货地址-->
+        <activity android:name=".activity.ActivityReceiveAdress"/>
+        <!--添加收货地址-->
+        <activity android:name=".activity.ActivityAddAdress"/>
+        <!--添加收货地址-->
+        <activity android:name=".activity.ActivityBookDetail"/>
     </application>
 
 </manifest>
