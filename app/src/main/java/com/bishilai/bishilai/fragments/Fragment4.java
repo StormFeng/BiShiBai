@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bishilai.bishilai.R;
@@ -49,6 +50,12 @@ public class Fragment4 extends BaseFragment {
     TextView tvCoupon;
     @BindView(R.id.tv_Setting)
     TextView tvSetting;
+    @BindView(R.id.ll_News)
+    LinearLayout llNews;
+    @BindView(R.id.ll_Vip)
+    LinearLayout llVip;
+    @BindView(R.id.ll_Coupon)
+    LinearLayout llCoupon;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -57,39 +64,39 @@ public class Fragment4 extends BaseFragment {
         return v;
     }
 
-    @OnClick({R.id.iv_Login, R.id.tv_AllBook, R.id.tv_ReadyPay, R.id.tv_ReadyReceive, R.id.tv_ReadyComment, R.id.tv_Wallet, R.id.tv_Collect, R.id.tv_News, R.id.tv_Vip, R.id.tv_Coupon, R.id.tv_Setting})
+    @OnClick({R.id.iv_Login, R.id.tv_AllBook, R.id.tv_ReadyPay, R.id.tv_ReadyReceive, R.id.tv_ReadyComment, R.id.tv_Wallet, R.id.tv_Collect, R.id.ll_News, R.id.ll_Vip, R.id.ll_Coupon, R.id.tv_Setting})
     public void onClick(View view) {
-        Bundle bundle=new Bundle();
+        Bundle bundle = new Bundle();
         switch (view.getId()) {
             case R.id.iv_Login:
                 break;
             case R.id.tv_AllBook:
-                bundle.putString("position","0");
-                UIHelper.jump(_activity, ActivityBook.class,bundle);
+                bundle.putString("position", "0");
+                UIHelper.jump(_activity, ActivityBook.class, bundle);
                 break;
             case R.id.tv_ReadyPay:
-                bundle.putString("position","1");
-                UIHelper.jump(_activity, ActivityBook.class,bundle);
+                bundle.putString("position", "1");
+                UIHelper.jump(_activity, ActivityBook.class, bundle);
                 break;
             case R.id.tv_ReadyReceive:
-                bundle.putString("position","2");
-                UIHelper.jump(_activity, ActivityBook.class,bundle);
+                bundle.putString("position", "2");
+                UIHelper.jump(_activity, ActivityBook.class, bundle);
                 break;
             case R.id.tv_ReadyComment:
-                bundle.putString("position","3");
-                UIHelper.jump(_activity, ActivityBook.class,bundle);
+                bundle.putString("position", "3");
+                UIHelper.jump(_activity, ActivityBook.class, bundle);
                 break;
             case R.id.tv_Wallet:
                 UIHelper.jump(_activity, ActivityMyWallet.class);
                 break;
             case R.id.tv_Collect:
                 break;
-            case R.id.tv_News:
+            case R.id.ll_News:
                 UIHelper.jump(_activity, ActivityMyNews.class);
                 break;
-            case R.id.tv_Vip:
+            case R.id.ll_Vip:
                 break;
-            case R.id.tv_Coupon:
+            case R.id.ll_Coupon:
                 UIHelper.jump(_activity, ActivityCoupon.class);
                 break;
             case R.id.tv_Setting:

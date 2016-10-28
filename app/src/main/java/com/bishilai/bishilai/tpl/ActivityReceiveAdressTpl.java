@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
 import com.bishilai.bishilai.R;
+import com.bishilai.bishilai.widget.NoticeDialog;
 import com.bishilai.bishilai.widget.SmoothCheckBox;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import midian.baselib.bean.NetResult;
+import midian.baselib.utils.UIHelper;
 import midian.baselib.view.BaseTpl;
 
 /**
@@ -82,6 +84,14 @@ public class ActivityReceiveAdressTpl extends BaseTpl<NetResult> {
                 LogUtils.e(view.getTag());
                 break;
             case R.id.iv_Delete:
+                NoticeDialog noticeDialog = new NoticeDialog(_activity);
+                noticeDialog.getOkButton().setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        UIHelper.t(_activity,"确认");
+                    }
+                });
+                noticeDialog.setNoticeContent("确认删除该收货地址吗？").show();
                 break;
         }
     }

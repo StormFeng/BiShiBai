@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.bishilai.bishilai.R;
 import com.bishilai.bishilai.activity.ActivityBookDetail;
 import com.bishilai.bishilai.activity.ActivityGoodDetail;
+import com.bishilai.bishilai.widget.NoticeDialog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -66,6 +67,14 @@ public class FragmentReadyPayTpl extends BaseTpl<NetResult> {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_Cancel:
+                NoticeDialog noticeDialog = new NoticeDialog(_activity);
+                noticeDialog.getOkButton().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        UIHelper.t(_activity,"确认");
+                    }
+                });
+                noticeDialog.setNoticeContent("确认取消该订单吗？").show();
                 break;
             case R.id.btn_Confirm:
                 break;

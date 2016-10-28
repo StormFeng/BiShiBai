@@ -28,7 +28,7 @@
                 android:layout_width="85dp"
                 android:layout_height="85dp"
                 app:riv_corner_radius="42dp"
-                android:src="@drawable/icon_login_head"
+                android:src="@drawable/icon_no_login"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="70dp"/>
         </RelativeLayout>
@@ -111,6 +111,8 @@
                 android:text="我的钱包"
                 android:gravity="center_vertical"
                 android:drawableLeft="@drawable/icon_wallet"
+                android:drawableRight="@drawable/icon_arrow_right"
+                android:paddingRight="15dp"
                 android:drawablePadding="15dp"
                 android:layout_marginTop="15dp"
                 android:paddingLeft="15dp"
@@ -127,6 +129,8 @@
                 android:text="我的收藏"
                 android:gravity="center_vertical"
                 android:drawableLeft="@drawable/icon_collect"
+                android:drawableRight="@drawable/icon_arrow_right"
+                android:paddingRight="15dp"
                 android:drawablePadding="15dp"
                 android:paddingLeft="15dp"
                 android:background="@color/white"/>
@@ -134,47 +138,114 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/divide_line"/>
-            <TextView
-                android:id="@+id/tv_News"
+            <LinearLayout
+                android:id="@+id/ll_News"
                 android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:text="我的消息"
-                android:gravity="center_vertical"
-                android:drawableLeft="@drawable/icon_news"
-                android:drawablePadding="15dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingRight="15dp"
                 android:paddingLeft="15dp"
-                android:background="@color/white"/>
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/tv_News"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="44dp"
+                    android:text="我的消息"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/icon_news"
+                    android:drawablePadding="15dp"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:text="3"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_8radiu_red" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_arrow_right"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/divide_line"/>
 
-            <TextView
-                android:id="@+id/tv_Vip"
+            <LinearLayout
+                android:id="@+id/ll_Vip"
                 android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:text="会员中心"
-                android:gravity="center_vertical"
-                android:drawableLeft="@drawable/icon_vip"
-                android:drawablePadding="15dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingRight="15dp"
                 android:paddingLeft="15dp"
-                android:background="@color/white" />
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/tv_Vip"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="44dp"
+                    android:text="会员中心"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/icon_vip"
+                    android:drawablePadding="15dp"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:text="现在去申请成为会员"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/text_bg99"
+                    android:drawableRight="@drawable/icon_arrow_right"
+                    android:background="@color/white" />
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/divide_line"/>
 
-            <TextView
-                android:id="@+id/tv_Coupon"
+            <LinearLayout
+                android:id="@+id/ll_Coupon"
                 android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:text="优惠券"
-                android:gravity="center_vertical"
-                android:drawableLeft="@drawable/icon_coupon"
-                android:drawablePadding="15dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingRight="15dp"
                 android:paddingLeft="15dp"
-                android:background="@color/white"/>
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/tv_Coupon"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="44dp"
+                    android:text="优惠券"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/icon_coupon"
+                    android:drawablePadding="15dp"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:text="新增加2名成员"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/text_bg99"
+                    android:drawableRight="@drawable/icon_arrow_right"
+                    android:background="@color/white" />
+            </LinearLayout>
+
 
             <View
                 android:layout_width="match_parent"
@@ -188,6 +259,8 @@
                 android:text="系统设置"
                 android:gravity="center_vertical"
                 android:drawableLeft="@drawable/icon_system"
+                android:drawableRight="@drawable/icon_arrow_right"
+                android:paddingRight="15dp"
                 android:drawablePadding="15dp"
                 android:layout_marginTop="15dp"
                 android:paddingLeft="15dp"

@@ -6,16 +6,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
 import com.bishilai.bishilai.R;
+import com.bishilai.bishilai.widget.NoticeDialog;
 import com.bishilai.bishilai.widget.SmoothCheckBox;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import midian.baselib.utils.UIHelper;
 
 /**
+ * 购物车
  * Created by Administrator on 2016/10/27 0027.
  */
 
@@ -90,9 +95,18 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             holder.cbItem.setTag(tag);
             holder.tvReduce.setTag(tag);
             holder.tvAdd.setTag(tag);
+            holder.ivDelete.setTag(tag);
             holder.cbItem.setOnClickListener(listener);
             holder.tvReduce.setOnClickListener(listener);
             holder.tvAdd.setOnClickListener(listener);
+            holder.ivDelete.setOnClickListener(listener);
+        }
+        if(groupPosition%2==0){
+            holder.llEdit.setVisibility(View.VISIBLE);
+            holder.llNomal.setVisibility(View.GONE);
+        }else{
+            holder.llEdit.setVisibility(View.GONE);
+            holder.llNomal.setVisibility(View.VISIBLE);
         }
         return convertView;
 
@@ -122,6 +136,17 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                     break;
                 case R.id.tv_Add:
                     LogUtils.e(v.getTag());
+                    break;
+                case R.id.iv_Delete:
+                    LogUtils.e(v.getTag());
+                    NoticeDialog noticeDialog = new NoticeDialog(context);
+                    noticeDialog.getOkButton().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            UIHelper.t(context,"确认");
+                        }
+                    });
+                    noticeDialog.setNoticeContent("确认删除该商品吗？").show();
                     break;
             }
         }
@@ -165,6 +190,12 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         TextView tvReduce;
         @BindView(R.id.tv_Add)
         TextView tvAdd;
+        @BindView(R.id.iv_Delete)
+        ImageView ivDelete;
+        @BindView(R.id.ll_Nomal)
+        LinearLayout llNomal;
+        @BindView(R.id.ll_Edit)
+        LinearLayout llEdit;
 
         ChildViewHolder(View view) {
             ButterKnife.bind(this, view);
