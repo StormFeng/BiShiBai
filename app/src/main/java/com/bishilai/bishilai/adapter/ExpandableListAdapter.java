@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
 import com.bishilai.bishilai.R;
+import com.bishilai.bishilai.bean.GoodBean;
+import com.bishilai.bishilai.bean.UpdateView;
 import com.bishilai.bishilai.widget.NoticeDialog;
 import com.bishilai.bishilai.widget.SmoothCheckBox;
 
@@ -27,29 +29,32 @@ import midian.baselib.utils.UIHelper;
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     private Context context;
+    private GoodBean goodBean;
+    private UpdateView updateViewListener;
 
-    public ExpandableListAdapter(Context context) {
+    public ExpandableListAdapter(Context context,GoodBean goodBean) {
         this.context = context;
+        this.goodBean=goodBean;
     }
 
     @Override
     public int getGroupCount() {
-        return 9;
+        return goodBean.getContent().size();
     }
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return 2;
+        return goodBean.getContent().get(groupPosition).getGooddetail().size();
     }
 
     @Override
     public Object getGroup(int groupPosition) {
-        return null;
+        return goodBean.getContent().get(groupPosition);
     }
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        return null;
+        return goodBean.getContent().get(groupPosition).getGooddetail().get(childPosition);
     }
 
     @Override
@@ -79,6 +84,14 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         }
         holder.cbGroupItem.setTag(groupPosition);
         holder.cbGroupItem.setOnClickListener(listener);
+        holder.tvPosition.setText(goodBean.getContent().get(groupPosition).getAdress());
+        if(goodBean.getContent().get(groupPosition).isselected()){
+            if(!holder.cbGroupItem.isChecked()){
+                holder.cbGroupItem.setChecked(true);
+            }
+        }else{
+            holder.cbGroupItem.setChecked(false);
+        }
         return convertView;
     }
 
@@ -91,23 +104,36 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             convertView.setTag(holder);
         } else {
             holder = (ChildViewHolder) convertView.getTag();
-            String tag=groupPosition+","+childPosition;
-            holder.cbItem.setTag(tag);
-            holder.tvReduce.setTag(tag);
-            holder.tvAdd.setTag(tag);
-            holder.ivDelete.setTag(tag);
-            holder.cbItem.setOnClickListener(listener);
-            holder.tvReduce.setOnClickListener(listener);
-            holder.tvAdd.setOnClickListener(listener);
-            holder.ivDelete.setOnClickListener(listener);
         }
-        if(groupPosition%2==0){
+        String tag=groupPosition+","+childPosition;
+        holder.cbItem.setTag(tag);
+        holder.tvReduce.setTag(tag);
+        holder.tvAdd.setTag(tag);
+        holder.ivDelete.setTag(tag);
+        holder.cbItem.setOnClickListener(listener);
+        holder.tvReduce.setOnClickListener(listener);
+        holder.tvAdd.setOnClickListener(listener);
+        holder.ivDelete.setOnClickListener(listener);
+        if(goodBean.getContent().get(groupPosition).getGooddetail().get(childPosition).isselected()){
+            holder.cbItem.setChecked(true);
+        }else{
+            holder.cbItem.setChecked(false);
+        }
+        if(goodBean.getContent().get(groupPosition).getGooddetail().get(childPosition).isedit()){
             holder.llEdit.setVisibility(View.VISIBLE);
             holder.llNomal.setVisibility(View.GONE);
+            holder.ivDelete.setVisibility(View.VISIBLE);
         }else{
             holder.llEdit.setVisibility(View.GONE);
             holder.llNomal.setVisibility(View.VISIBLE);
+            holder.ivDelete.setVisibility(View.GONE);
         }
+        holder.tvGoodName.setText(goodBean.getContent().get(groupPosition).getGooddetail().get(childPosition).getName());
+        holder.tvLimitCount.setText("限购"+goodBean.getContent().get(groupPosition).getGooddetail().get(childPosition).getLimitcount()+"件");
+        holder.tvPrice.setText("￥"+goodBean.getContent().get(groupPosition).getGooddetail().get(childPosition).getPrice());
+        holder.tvCount.setText("x"+goodBean.getContent().get(groupPosition).getGooddetail().get(childPosition).getCount());
+        holder.etCount.setText(goodBean.getContent().get(groupPosition).getGooddetail().get(childPosition).getCount());
+
         return convertView;
 
     }
@@ -121,21 +147,94 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     View.OnClickListener listener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            LogUtils.e("点击-----------------------");
+            SmoothCheckBox checkBox;
+            String tag = v.getTag().toString();
+            String[] split;
+            int groupId = 0;
+            int childId = 0;
+            int childSize = 0;
+            int groupPosition = 0;
+            if(tag.contains(",")){
+                split = tag.split(",");
+                groupId=Integer.parseInt(split[0]);
+                childId=Integer.parseInt(split[1]);
+            }else{
+                groupPosition = Integer.parseInt(tag);
+                childSize = goodBean.getContent().get(groupPosition).getGooddetail().size();
+            }
+            int allMoney;
+            int allCount;
             switch (v.getId()){
                 case R.id.cb_GroupItem:
-                    LogUtils.e(v.getTag());
-                    isChecked((SmoothCheckBox) v);
+                    checkBox = (SmoothCheckBox) v;
+                    goodBean.getContent().get(groupPosition).setIsselected(!checkBox.isChecked());
+                    for(int i = 0; i< childSize; i++){
+                        goodBean.getContent().get(groupPosition).getGooddetail().get(i).setIsselected(!checkBox.isChecked());
+                    }
+
+                    allCount=goodBean.getAllcount();
+                    allMoney=goodBean.getAllmoney();
+                    if(!checkBox.isChecked()){
+                        allCount += childSize;
+                        for(int i=0;i<childSize;i++){
+                            if(!goodBean.getContent().get(groupPosition).getGooddetail().get(i).isselected()){
+                                allMoney+=Integer.valueOf(goodBean.getContent().get(groupPosition).getGooddetail().get(i).getCount())
+                                        *Integer.valueOf(goodBean.getContent().get(groupPosition).getGooddetail().get(i).getPrice());
+                            }
+                        }
+                    }else{
+                        allCount-=childSize;
+                        for(int i=0;i<childSize;i++){
+                            allMoney-=Integer.valueOf(goodBean.getContent().get(groupPosition).getGooddetail().get(i).getCount())
+                                    *Integer.valueOf(goodBean.getContent().get(groupPosition).getGooddetail().get(i).getPrice());
+                        }
+                    }
+                    goodBean.setAllcount(allCount);
+                    goodBean.setAllmoney(allMoney);
+                    notifyDataSetChanged();
+                    updateViewListener.update(allCount,allMoney);
                     break;
                 case R.id.cb_Item:
-                    LogUtils.e(v.getTag());
-                    isChecked((SmoothCheckBox) v);
+                    checkBox = (SmoothCheckBox) v;
+                    int n=0;
+                    goodBean.getContent().get(groupId).getGooddetail().get(childId).setIsselected(!checkBox.isChecked());
+                    for(int i=0;i<goodBean.getContent().get(groupId).getGooddetail().size();i++){
+                        if(goodBean.getContent().get(groupId).getGooddetail().get(i).isselected()){
+                            n++;
+                        }
+                    }
+                    if(n==goodBean.getContent().get(groupId).getGooddetail().size()){
+                        goodBean.getContent().get(groupId).setIsselected(true);
+                    }else{
+                        goodBean.getContent().get(groupId).setIsselected(false);
+                    }
+
+                    allCount=goodBean.getAllcount();
+                    allMoney=goodBean.getAllmoney();
+                    if(!checkBox.isChecked()){
+                        allCount++;
+                        allMoney+=Integer.valueOf(goodBean.getContent().get(groupId).getGooddetail().get(childId).getCount())
+                                *Integer.valueOf(goodBean.getContent().get(groupId).getGooddetail().get(childId).getPrice());
+                        LogUtils.e(allMoney);
+                    }else{
+                        allCount--;
+                        allMoney-=Integer.valueOf(goodBean.getContent().get(groupId).getGooddetail().get(childId).getCount())
+                                *Integer.valueOf(goodBean.getContent().get(groupId).getGooddetail().get(childId).getPrice());
+                    }
+                    goodBean.setAllcount(allCount);
+                    goodBean.setAllmoney(allMoney);
+                    notifyDataSetChanged();
+                    updateViewListener.update(allCount,allMoney);
                     break;
                 case R.id.tv_Reduce:
-                    LogUtils.e(v.getTag());
+                    String var1 = goodBean.getContent().get(groupId).getGooddetail().get(childId).getCount();
+                    goodBean.getContent().get(groupId).getGooddetail().get(childId).setCount(reduceCount(var1));
+                    notifyDataSetChanged();
                     break;
                 case R.id.tv_Add:
-                    LogUtils.e(v.getTag());
+                    String var2 = goodBean.getContent().get(groupId).getGooddetail().get(childId).getCount();
+                    goodBean.getContent().get(groupId).getGooddetail().get(childId).setCount(addCount(var2));
+                    notifyDataSetChanged();
                     break;
                 case R.id.iv_Delete:
                     LogUtils.e(v.getTag());
@@ -152,13 +251,24 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         }
     };
 
-    private void isChecked(SmoothCheckBox v) {
-        SmoothCheckBox checkBox = v;
-        if(checkBox.isChecked()){
-            checkBox.setChecked(false);
-        }else{
-            checkBox.setChecked(true);
+    public void setChangedListener(UpdateView listener){
+        if(updateViewListener==null){
+            this.updateViewListener=listener;
         }
+    }
+
+    private String addCount(String var2) {
+        Integer inte = Integer.valueOf(var2);
+        inte++;
+        return inte+"";
+    }
+
+    private String reduceCount(String var){
+        Integer integer = Integer.valueOf(var);
+        if(integer>1){
+            integer--;
+        }
+        return integer+"";
     }
 
 
