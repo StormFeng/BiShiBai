@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bishilai.bishilai.R;
+import com.bishilai.bishilai.activity.ActivityChooseGood;
 import com.bishilai.bishilai.activity.ActivityGoodDetail;
 import com.bishilai.bishilai.adapter.AdapterGridView11;
 import com.bishilai.bishilai.adapter.AdapterGridView12;
@@ -34,7 +36,7 @@ import static midian.baselib.widget.BaseLibTopbarView.MODE_WITH_INPUT;
 /**
  * 首页
  */
-public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListener {
+public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListener, View.OnClickListener {
     @BindView(R.id.topbar)
     BaseLibTopbarView topbar;
     @BindView(R.id.refreshScrollView)
@@ -48,6 +50,7 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
     private InnerGridView gridView1;
     private InnerGridView gridView2;
     private InnerGridView gridView3;
+    private LinearLayout llLookMore;
 
     private DivideText divideText1;
 
@@ -77,6 +80,8 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
         gridView2 = (InnerGridView) content.findViewById(R.id.gridView2);
         gridView3 = (InnerGridView) content.findViewById(R.id.gridView3);
         divideText1 = (DivideText) content.findViewById(R.id.divideText1);
+        llLookMore = (LinearLayout) content.findViewById(R.id.ll_LookMore);
+        llLookMore.setOnClickListener(this);
         refreshScrollView.setPullLoadEnabled(false);
         refreshScrollView.scrollView.addView(content);
 
@@ -144,4 +149,12 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
     }
 
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.ll_LookMore:
+                UIHelper.jump(_activity, ActivityChooseGood.class);
+                break;
+        }
+    }
 }

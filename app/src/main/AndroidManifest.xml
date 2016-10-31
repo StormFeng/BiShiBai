@@ -13,49 +13,108 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme1"
         tools:replace="android:theme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.ActivityWelcom">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--引导页-->
+        <activity android:name=".activity.ActivityGuide"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--列表筛选页面-->
-        <activity android:name=".activity.ActivitySearchResult"/>
+        <activity android:name=".activity.ActivitySearchResult"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--商品详情页面-->
-        <activity android:name=".activity.ActivityGoodDetail"/>
+        <activity android:name=".activity.ActivityGoodDetail"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--图片浏览页面-->
-        <activity android:name=".activity.ActivityViewPhoto"/>
+        <activity android:name=".activity.ActivityViewPhoto"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--商品评论页面-->
-        <activity android:name=".activity.ActivityComment"/>
+        <activity android:name=".activity.ActivityComment"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--我的钱包-->
-        <activity android:name=".activity.ActivityMyWallet"/>
+        <activity android:name=".activity.ActivityMyWallet"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--我的余额明细-->
-        <activity android:name=".activity.ActivityBalance"/>
+        <activity android:name=".activity.ActivityBalance"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--我的银行卡-->
-        <activity android:name=".activity.ActivityCard"/>
+        <activity android:name=".activity.ActivityCard"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--我的消息-->
-        <activity android:name=".activity.ActivityMyNews"/>
+        <activity android:name=".activity.ActivityMyNews"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--优惠券-->
-        <activity android:name=".activity.ActivityCoupon"/>
+        <activity android:name=".activity.ActivityCoupon"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--系统设置-->
-        <activity android:name=".activity.ActivitySetting"/>
+        <activity android:name=".activity.ActivitySetting"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--个人资料-->
-        <activity android:name=".activity.ActivityPersonalData"/>
+        <activity android:name=".activity.ActivityPersonalData"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--修改密码-->
-        <activity android:name=".activity.ActivityChangePass"/>
+        <activity android:name=".activity.ActivityChangePass"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--关于-->
-        <activity android:name=".activity.ActivityAbout"/>
+        <activity android:name=".activity.ActivityAbout"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--消息通知-->
-        <activity android:name=".activity.ActivityNewsNotice"/>
+        <activity android:name=".activity.ActivityNewsNotice"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--订单管理-->
-        <activity android:name=".activity.ActivityBook"/>
+        <activity android:name=".activity.ActivityBook"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--收货地址-->
-        <activity android:name=".activity.ActivityReceiveAdress"/>
+        <activity android:name=".activity.ActivityReceiveAdress"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--添加收货地址-->
-        <activity android:name=".activity.ActivityAddAdress"/>
+        <activity android:name=".activity.ActivityAddAdress"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--添加收货地址-->
-        <activity android:name=".activity.ActivityBookDetail"/>
+        <activity android:name=".activity.ActivityBookDetail"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--忘记密码-->
+        <activity android:name=".activity.ActivityForgetPass"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--注册-->
+        <activity android:name=".activity.ActivityRegister"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--登录-->
+        <activity android:name=".activity.ActivityLogin"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--选择商品-->
+        <activity android:name=".activity.ActivityChooseGood"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

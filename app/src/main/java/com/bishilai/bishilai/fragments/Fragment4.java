@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.bishilai.bishilai.R;
 import com.bishilai.bishilai.activity.ActivityBook;
 import com.bishilai.bishilai.activity.ActivityCoupon;
+import com.bishilai.bishilai.activity.ActivityLogin;
 import com.bishilai.bishilai.activity.ActivityMyNews;
 import com.bishilai.bishilai.activity.ActivityMyWallet;
 import com.bishilai.bishilai.activity.ActivitySetting;
@@ -69,6 +70,7 @@ public class Fragment4 extends BaseFragment {
         Bundle bundle = new Bundle();
         switch (view.getId()) {
             case R.id.iv_Login:
+                UIHelper.jump(_activity, ActivityLogin.class);
                 break;
             case R.id.tv_AllBook:
                 bundle.putString("position", "0");

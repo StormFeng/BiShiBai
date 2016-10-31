@@ -42,4 +42,5 @@ dependencies {
     compile 'com.beardedhen:androidbootstrap:2.3.0'
     compile 'com.github.hackware1993:MagicIndicator:1.4.0'
     compile 'com.kyleduo.switchbutton:library:1.4.1'
+    compile 'com.github.paolorotolo:appintro:4.0.0'
 }
