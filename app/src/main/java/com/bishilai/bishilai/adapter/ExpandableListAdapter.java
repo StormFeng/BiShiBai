@@ -154,6 +154,8 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             int childId = 0;
             int childSize = 0;
             int groupPosition = 0;
+            int allCount=goodBean.getAllcount();
+            int allMoney=goodBean.getAllmoney();
             if(tag.contains(",")){
                 split = tag.split(",");
                 groupId=Integer.parseInt(split[0]);
@@ -162,22 +164,15 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                 groupPosition = Integer.parseInt(tag);
                 childSize = goodBean.getContent().get(groupPosition).getGooddetail().size();
             }
-            int allMoney;
-            int allCount;
             switch (v.getId()){
                 case R.id.cb_GroupItem:
                     checkBox = (SmoothCheckBox) v;
                     goodBean.getContent().get(groupPosition).setIsselected(!checkBox.isChecked());
-                    for(int i = 0; i< childSize; i++){
-                        goodBean.getContent().get(groupPosition).getGooddetail().get(i).setIsselected(!checkBox.isChecked());
-                    }
-
-                    allCount=goodBean.getAllcount();
-                    allMoney=goodBean.getAllmoney();
                     if(!checkBox.isChecked()){
-                        allCount += childSize;
                         for(int i=0;i<childSize;i++){
                             if(!goodBean.getContent().get(groupPosition).getGooddetail().get(i).isselected()){
+                                allCount++;
+                                goodBean.getContent().get(groupPosition).getGooddetail().get(i).setIsselected(!checkBox.isChecked());
                                 allMoney+=Integer.valueOf(goodBean.getContent().get(groupPosition).getGooddetail().get(i).getCount())
                                         *Integer.valueOf(goodBean.getContent().get(groupPosition).getGooddetail().get(i).getPrice());
                             }
@@ -185,6 +180,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                     }else{
                         allCount-=childSize;
                         for(int i=0;i<childSize;i++){
+                            goodBean.getContent().get(groupPosition).getGooddetail().get(i).setIsselected(!checkBox.isChecked());
                             allMoney-=Integer.valueOf(goodBean.getContent().get(groupPosition).getGooddetail().get(i).getCount())
                                     *Integer.valueOf(goodBean.getContent().get(groupPosition).getGooddetail().get(i).getPrice());
                         }
@@ -208,14 +204,10 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                     }else{
                         goodBean.getContent().get(groupId).setIsselected(false);
                     }
-
-                    allCount=goodBean.getAllcount();
-                    allMoney=goodBean.getAllmoney();
                     if(!checkBox.isChecked()){
                         allCount++;
                         allMoney+=Integer.valueOf(goodBean.getContent().get(groupId).getGooddetail().get(childId).getCount())
                                 *Integer.valueOf(goodBean.getContent().get(groupId).getGooddetail().get(childId).getPrice());
-                        LogUtils.e(allMoney);
                     }else{
                         allCount--;
                         allMoney-=Integer.valueOf(goodBean.getContent().get(groupId).getGooddetail().get(childId).getCount())
@@ -228,12 +220,26 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                     break;
                 case R.id.tv_Reduce:
                     String var1 = goodBean.getContent().get(groupId).getGooddetail().get(childId).getCount();
-                    goodBean.getContent().get(groupId).getGooddetail().get(childId).setCount(reduceCount(var1));
-                    notifyDataSetChanged();
+                    if(Integer.valueOf(var1)>1){
+                        goodBean.getContent().get(groupId).getGooddetail().get(childId).setCount(reduceCount(var1));
+                        if(goodBean.getContent().get(groupId).getGooddetail().get(childId).isselected()){
+                            allMoney-=Integer.valueOf(goodBean.getContent().get(groupId).getGooddetail().get(childId).getPrice());
+                            updateViewListener.update(allCount,allMoney);
+                        }
+                        goodBean.setAllmoney(allMoney);
+                        notifyDataSetChanged();
+                    }
                     break;
                 case R.id.tv_Add:
                     String var2 = goodBean.getContent().get(groupId).getGooddetail().get(childId).getCount();
                     goodBean.getContent().get(groupId).getGooddetail().get(childId).setCount(addCount(var2));
+                    notifyDataSetChanged();
+                    allMoney=goodBean.getAllmoney();
+                    if(goodBean.getContent().get(groupId).getGooddetail().get(childId).isselected()){
+                        allMoney+=Integer.valueOf(goodBean.getContent().get(groupId).getGooddetail().get(childId).getPrice());
+                        updateViewListener.update(allCount,allMoney);
+                    }
+                    goodBean.setAllmoney(allMoney);
                     notifyDataSetChanged();
                     break;
                 case R.id.iv_Delete:

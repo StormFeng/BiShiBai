@@ -104,12 +104,19 @@ public class Fragment3 extends BaseFragment implements UpdateView {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.cb_SelectAll:
+                int allCount=goodBeanList.getAllcount();
+                int allMoney=goodBeanList.getAllmoney();
                 if(!cbSelectAll.isChecked()){
                     cbSelectAll.setChecked(true);
                     for(int i=0;i<goodBeanList.getContent().size();i++){
                         goodBeanList.getContent().get(i).setIsselected(true);
                         for(int n=0;n<goodBeanList.getContent().get(i).getGooddetail().size();n++){
-                            goodBeanList.getContent().get(i).getGooddetail().get(n).setIsselected(true);
+                            if(!goodBeanList.getContent().get(i).getGooddetail().get(n).isselected()){
+                                allCount++;
+                                allMoney+=Integer.valueOf(goodBeanList.getContent().get(i).getGooddetail().get(n).getCount())
+                                        *Integer.valueOf(goodBeanList.getContent().get(i).getGooddetail().get(n).getPrice());
+                                goodBeanList.getContent().get(i).getGooddetail().get(n).setIsselected(true);
+                            }
                         }
                     }
                 }else{
@@ -119,8 +126,13 @@ public class Fragment3 extends BaseFragment implements UpdateView {
                         for(int n=0;n<goodBeanList.getContent().get(i).getGooddetail().size();n++){
                             goodBeanList.getContent().get(i).getGooddetail().get(n).setIsselected(false);
                         }
+                        allCount=0;
+                        allMoney=0;
                     }
                 }
+                goodBeanList.setAllmoney(allMoney);
+                goodBeanList.setAllcount(allCount);
+                update(allCount,allMoney);
                 adapter.notifyDataSetChanged();
                 break;
             case R.id.btn_Settlement:

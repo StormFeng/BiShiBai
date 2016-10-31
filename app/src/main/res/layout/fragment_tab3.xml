@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/bsl_red"
                     android:textSize="15sp"
-                    android:text="￥2098"/>
+                    android:text="￥0"/>
             </LinearLayout>
             <TextView
                 android:id="@+id/tv_Transport"
@@ -72,12 +72,13 @@
                 android:textSize="11sp"
                 android:text="运费：￥0"/>
         </LinearLayout>
+
         <Button
             android:id="@+id/btn_Settlement"
             android:layout_width="95dp"
             android:layout_height="match_parent"
             android:background="@color/bsl_red"
-            android:text="结算(4)"
+            android:text="结算(0)"
             android:textColor="@color/white"
             android:layout_marginLeft="15dp"
             android:textSize="16sp"/>

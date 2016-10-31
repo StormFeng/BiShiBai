@@ -16,7 +16,7 @@ public class DaoGoodBean {
         GoodBean.ContentBean.GooddetailBean gooddetailBean00=new GoodBean.ContentBean.GooddetailBean();
         gooddetailBean00.setId("0");
         gooddetailBean00.setPic("http://mengzhu.img-cn-shenzhen.aliyuncs.com/8a99524557c2dec90157c72795010007");
-        gooddetailBean00.setCount("0");
+        gooddetailBean00.setCount("1");
         gooddetailBean00.setLimitcount("2");
         gooddetailBean00.setName("洁面乳");
         gooddetailBean00.setPrice("111");
@@ -26,7 +26,7 @@ public class DaoGoodBean {
         GoodBean.ContentBean.GooddetailBean gooddetailBean01=new GoodBean.ContentBean.GooddetailBean();
         gooddetailBean01.setId("1");
         gooddetailBean01.setPic("http://mengzhu.img-cn-shenzhen.aliyuncs.com/8a99524557c2dec90157c72795010007");
-        gooddetailBean01.setCount("0");
+        gooddetailBean01.setCount("1");
         gooddetailBean01.setLimitcount("3");
         gooddetailBean01.setName("BB霜");
         gooddetailBean01.setPrice("222");
@@ -45,7 +45,7 @@ public class DaoGoodBean {
         GoodBean.ContentBean.GooddetailBean gooddetailBean11=new GoodBean.ContentBean.GooddetailBean();
         gooddetailBean11.setId("3");
         gooddetailBean11.setPic("http://mengzhu.img-cn-shenzhen.aliyuncs.com/8a99524557c2dec90157c72795010007");
-        gooddetailBean11.setCount("0");
+        gooddetailBean11.setCount("1");
         gooddetailBean11.setLimitcount("5");
         gooddetailBean11.setName("男士洁面乳");
         gooddetailBean11.setPrice("888");
