@@ -71,6 +71,7 @@ public class ActivityChooseGood extends BaseActivity {
         effectTagString.add("高贵");
         effectTagString.add("迷人");
 
+        seasonTagString.add("全部季节");
         seasonTagString.add("春季");
         seasonTagString.add("夏季");
         seasonTagString.add("秋季");

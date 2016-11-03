@@ -2,6 +2,8 @@ package com.bishilai.bishilai.activity;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -9,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.bishilai.bishilai.R;
+import com.bishilai.bishilai.utils.HelpUtil;
 import com.jaeger.library.StatusBarUtil;
 
 import butterknife.BindView;
@@ -30,8 +33,8 @@ public class ActivityForgetPass extends BaseActivity {
     BaseLibTopbarView topbar;
     @BindView(R.id.et_Phone)
     EditText etPhone;
-    @BindView(R.id.tv_Code)
-    TextView tvCode;
+    @BindView(R.id.btn_Code)
+    Button btnCode;
     @BindView(R.id.et_Code)
     EditText etCode;
     @BindView(R.id.et_NewPass)
@@ -58,8 +61,16 @@ public class ActivityForgetPass extends BaseActivity {
         topbar.setTitle("忘记密码");
     }
 
-    @OnClick(R.id.btn_Confirm)
-    public void onClick() {
-
+    @OnClick({R.id.btn_Code, R.id.btn_Confirm})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_Code:
+                HelpUtil.downTime(btnCode);
+                break;
+            case R.id.btn_Confirm:
+                break;
+        }
     }
+
+
 }

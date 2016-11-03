@@ -34,13 +34,6 @@
                 android:textSize="13sp"
                 android:background="@null"/>
 
-            <TextView
-                android:id="@+id/tv_Code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="获取验证码"
-                android:textSize="13sp"
-                android:textColor="@color/green"/>
         </LinearLayout>
         <View
             android:layout_width="match_parent"

@@ -28,8 +28,6 @@ public class ActivityLogin extends BaseActivity {
 
     @BindView(R.id.et_Phone)
     EditText etPhone;
-    @BindView(R.id.tv_Code)
-    TextView tvCode;
     @BindView(R.id.et_Pass)
     EditText etPass;
     @BindView(R.id.tv_ForgetPass)

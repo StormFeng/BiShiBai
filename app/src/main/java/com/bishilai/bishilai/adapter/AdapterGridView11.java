@@ -1,5 +1,6 @@
 package com.bishilai.bishilai.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -10,9 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bishilai.bishilai.R;
+import com.bishilai.bishilai.activity.ActivityGoodDetail;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import midian.baselib.utils.UIHelper;
 
 /**
  * Created by Administrator on 2016/10/17 0017.
@@ -64,6 +67,12 @@ public class AdapterGridView11 extends BaseAdapter {
         }else if(position%6==5){
             convertView.setBackgroundColor(Color.parseColor("#FF99CA"));
         }
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UIHelper.jump((Activity) context, ActivityGoodDetail.class);
+            }
+        });
         return convertView;
     }
 

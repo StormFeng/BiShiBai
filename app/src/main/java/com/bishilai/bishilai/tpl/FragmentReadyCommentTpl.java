@@ -1,6 +1,7 @@
 package com.bishilai.bishilai.tpl;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bishilai.bishilai.R;
+import com.bishilai.bishilai.activity.ActivityBookDetail;
 import com.bishilai.bishilai.widget.NoticeDialog;
 
 import butterknife.BindView;
@@ -63,6 +65,10 @@ public class FragmentReadyCommentTpl extends BaseTpl<NetResult> {
 
     @Override
     public void setBean(NetResult bean, int position) {
+        btnCancel.setText("删除订单");
+        btnConfirm.setText("去评价");
+        btnConfirm.setTextColor(getResources().getColor(R.color.green));
+        btnConfirm.setBackgroundResource(R.drawable.bg_4stroke_grey);
     }
 
     @OnClick({R.id.btn_Cancel, R.id.btn_Confirm, R.id.ll_Item})
@@ -81,6 +87,9 @@ public class FragmentReadyCommentTpl extends BaseTpl<NetResult> {
             case R.id.btn_Confirm:
                 break;
             case R.id.ll_Item:
+                Bundle bundle=new Bundle();
+                bundle.putString("flag","待评价");
+                UIHelper.jump(_activity, ActivityBookDetail.class,bundle);
                 break;
         }
     }

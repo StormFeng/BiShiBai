@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.bishilai.bishilai.R;
 import com.bishilai.bishilai.activity.ActivityChooseGood;
 import com.bishilai.bishilai.activity.ActivityGoodDetail;
+import com.bishilai.bishilai.activity.ActivityRankingList;
+import com.bishilai.bishilai.activity.ActivitySpringHealth;
 import com.bishilai.bishilai.adapter.AdapterGridView11;
 import com.bishilai.bishilai.adapter.AdapterGridView12;
 import com.bishilai.bishilai.adapter.AdapterGridView13;
@@ -81,6 +83,14 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
         gridView3 = (InnerGridView) content.findViewById(R.id.gridView3);
         divideText1 = (DivideText) content.findViewById(R.id.divideText1);
         llLookMore = (LinearLayout) content.findViewById(R.id.ll_LookMore);
+        tvTab1 = (TextView) content.findViewById(R.id.tv_Tab1);
+        tvTab2 = (TextView) content.findViewById(R.id.tv_Tab2);
+        tvTab3 = (TextView) content.findViewById(R.id.tv_Tab3);
+        tvTab4 = (TextView) content.findViewById(R.id.tv_Tab4);
+        tvTab1.setOnClickListener(this);
+        tvTab2.setOnClickListener(this);
+        tvTab3.setOnClickListener(this);
+        tvTab4.setOnClickListener(this);
         llLookMore.setOnClickListener(this);
         refreshScrollView.setPullLoadEnabled(false);
         refreshScrollView.scrollView.addView(content);
@@ -153,6 +163,15 @@ public class Fragment1 extends BaseFragment implements Banner.OnBannerClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.ll_LookMore:
+
+                break;
+            case R.id.tv_Tab1:
+                UIHelper.jump(_activity, ActivityRankingList.class);
+                break;
+            case R.id.tv_Tab3:
+                UIHelper.jump(_activity, ActivitySpringHealth.class);
+                break;
+            case R.id.tv_Tab4:
                 UIHelper.jump(_activity, ActivityChooseGood.class);
                 break;
         }

@@ -9,87 +9,52 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
         android:orientation="horizontal">
         <com.makeramen.roundedimageview.RoundedImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
             android:src="@drawable/ic_launcher"
             app:riv_corner_radius="15dp"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="PS火星风暴"
-            android:textColor="@color/text_bg60"
-            android:layout_marginLeft="10dp"/>
-
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_launcher"
-            app:riv_corner_radius="15dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="超爱"
-            android:textSize="10sp"
-            android:textColor="@color/orange"
-            android:layout_marginLeft="10dp"/>
-    </LinearLayout>
-    
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="评论，针对于事物进行主观或客观的自我印象阐述。评论易让人听到不利于自己的一面，因此评论的话语容易产生对方的逆反心理。但由于可以较快的表达自己的想法及感受，广为被大众所使用，实则是说者过瘾，听者闹心。"
-        android:lineSpacingExtra="3dp"
-        android:textColor="@color/text_bg66"
-        android:layout_marginTop="8dp"/>
-    
-    <com.bishilai.bishilai.widget.InnerGridView
-        android:layout_marginTop="8dp"
-        android:id="@+id/gridView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numColumns="3">
-    </com.bishilai.bishilai.widget.InnerGridView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="2016-09-17"
-            android:textSize="9sp"
-            android:textColor="@color/text_bg90"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="110个赞"
-            android:textSize="9sp"
-            android:textColor="@color/text_bg90"/>
-    </LinearLayout>
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/grey">
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_launcher"/>
-        <TextView
-            android:id="@+id/tv_Super"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="@string/test"
-            android:lineSpacingExtra="3dp"
-            android:textColor="@color/text_bg66"/>
-    </LinearLayout>
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_Name"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="PS火星风暴"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_bg33"/>
 
+                <TextView
+                    android:id="@+id/tv_Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5月1日 18:49"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_bg99"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_Content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec. Donec "
+                android:lineSpacingExtra="3dp"
+                android:textColor="@color/text_bg66"
+                android:layout_marginTop="8dp"/>
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/tag_Image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"/>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

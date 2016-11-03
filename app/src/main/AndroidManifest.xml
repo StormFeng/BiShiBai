@@ -13,16 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme1"
         tools:replace="android:theme">
-        <activity android:name=".activity.ActivityWelcom">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"/>
+        <!--<activity android:name=".MainActivity"-->
+            <!--android:launchMode="singleTop"-->
+            <!--android:screenOrientation="portrait"/>-->
         <!--引导页-->
         <activity android:name=".activity.ActivityGuide"
             android:launchMode="singleTop"
@@ -113,6 +113,14 @@
             android:screenOrientation="portrait"/>
         <!--选择商品-->
         <activity android:name=".activity.ActivityChooseGood"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--排行榜-->
+        <activity android:name=".activity.ActivityRankingList"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--春季养生-->
+        <activity android:name=".activity.ActivitySpringHealth"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
     </application>

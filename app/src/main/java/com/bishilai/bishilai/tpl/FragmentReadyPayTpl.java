@@ -1,6 +1,7 @@
 package com.bishilai.bishilai.tpl;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
@@ -79,7 +80,9 @@ public class FragmentReadyPayTpl extends BaseTpl<NetResult> {
             case R.id.btn_Confirm:
                 break;
             case R.id.ll_Item:
-                UIHelper.jump(_activity, ActivityBookDetail.class);
+                Bundle bundle=new Bundle();
+                bundle.putString("flag","待付款");
+                UIHelper.jump(_activity, ActivityBookDetail.class,bundle);
                 break;
         }
     }

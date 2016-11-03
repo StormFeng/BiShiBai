@@ -2,50 +2,37 @@ package com.bishilai.bishilai.activity;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.GridView;
 
 import com.bishilai.bishilai.R;
-import com.bishilai.bishilai.utils.HelpUtil;
+import com.bishilai.bishilai.adapter.AdapterGridViewRankingList;
+import com.bishilai.bishilai.adapter.AdapterGridViewSpringHealth;
 import com.jaeger.library.StatusBarUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import midian.baselib.base.BaseActivity;
 import midian.baselib.utils.UIHelper;
 import midian.baselib.widget.BaseLibTopbarView;
 
 /**
- * 注册
- * Created by Administrator on 2016/10/26 0026.
+ * 春季养生
+ * Created by Administrator on 2016/11/1 0001.
  */
 
-public class ActivityRegister extends BaseActivity {
-
+public class ActivitySpringHealth extends BaseActivity {
 
     @BindView(R.id.topbar)
     BaseLibTopbarView topbar;
-    @BindView(R.id.et_Phone)
-    EditText etPhone;
-    @BindView(R.id.btn_Code)
-    Button btnCode;
-    @BindView(R.id.et_Code)
-    EditText etCode;
-    @BindView(R.id.et_NewPass)
-    EditText etNewPass;
-    @BindView(R.id.et_Invitation)
-    EditText etInvitation;
-    @BindView(R.id.btn_Register)
-    Button btnRegister;
+    @BindView(R.id.gridView)
+    GridView gridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_rankinglist);
         ButterKnife.bind(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window window = getWindow();
@@ -54,21 +41,11 @@ public class ActivityRegister extends BaseActivity {
             StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimary));
             StatusBarUtil.setTranslucentForImageViewInFragment(_activity, 0, null);
         }
-
         topbar = findView(R.id.topbar);
         topbar.setBackgroundColor(getResources().getColor(R.color.green));
         topbar.setLeftImageButton(R.drawable.icon_back, UIHelper.finish(_activity));
-        topbar.setTitle("注册");
-    }
+        topbar.setTitle("春季养生");
 
-    @OnClick({R.id.btn_Code, R.id.btn_Register})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btn_Code:
-                HelpUtil.downTime(btnCode);
-                break;
-            case R.id.btn_Register:
-                break;
-        }
+        gridView.setAdapter(new AdapterGridViewSpringHealth(_activity));
     }
 }

@@ -1,38 +1,35 @@
 package com.bishilai.bishilai.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bishilai.bishilai.R;
-import com.bishilai.bishilai.activity.ActivityGoodDetail;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import midian.baselib.utils.UIHelper;
 
 /**
+ * 春季养生
  * Created by Administrator on 2016/10/17 0017.
  */
 
-public class AdapterGridView21 extends BaseAdapter {
+public class AdapterGridViewSpringHealth extends BaseAdapter {
 
     private Context context;
-    private int size;
 
-    public AdapterGridView21(Context context,int size) {
+    public AdapterGridViewSpringHealth(Context context) {
         this.context = context;
-        this.size=size;
     }
 
     @Override
     public int getCount() {
-        return size;
+        return 15;
     }
 
     @Override
@@ -49,26 +46,28 @@ public class AdapterGridView21 extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_gridview21, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_gridview13, null);
             viewHolder = new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
         }else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-//        viewHolder.tv1.setText("");
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UIHelper.jump((Activity) context, ActivityGoodDetail.class);
-            }
-        });
+        viewHolder.ivTypeBg.setImageResource(R.color.bsl_red);
+        viewHolder.tvType.setText("新品");
         return convertView;
     }
 
     static class ViewHolder {
         @BindView(R.id.tv1)
         TextView tv1;
-        @BindView(R.id.iv)
-        ImageView iv;
+        @BindView(R.id.tv2)
+        TextView tv2;
+        @BindView(R.id.iv_TypeBg)
+        RoundedImageView ivTypeBg;
+        @BindView(R.id.tv_Type)
+        TextView tvType;
+        @BindView(R.id.rl_Type)
+        RelativeLayout rlType;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);

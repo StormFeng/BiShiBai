@@ -1,5 +1,6 @@
 package com.bishilai.bishilai.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,9 +9,11 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.bishilai.bishilai.R;
+import com.bishilai.bishilai.activity.ActivityGoodDetail;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import midian.baselib.utils.UIHelper;
 
 /**
  * Created by Administrator on 2016/10/17 0017.
@@ -49,6 +52,12 @@ public class AdapterGridView13 extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 //        viewHolder.tv1.setText("");
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UIHelper.jump((Activity) context, ActivityGoodDetail.class);
+            }
+        });
         return convertView;
     }
 

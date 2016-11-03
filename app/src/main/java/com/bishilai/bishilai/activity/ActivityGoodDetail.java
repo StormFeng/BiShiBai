@@ -8,40 +8,36 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.apkfuns.logutils.LogUtils;
 import com.bishilai.bishilai.R;
-import com.bishilai.bishilai.adapter.AdapterRecommendGood;
+import com.bishilai.bishilai.adapter.AdapterListViewComment;
+import com.bishilai.bishilai.adapter.AdapterListviewRecomment;
 import com.bishilai.bishilai.fragments.FragmentGoodDetail;
 import com.bishilai.bishilai.utils.AddToCartHelper;
 import com.bishilai.bishilai.utils.ScreenUtils;
 import com.bishilai.bishilai.widget.Banner;
 import com.bishilai.bishilai.widget.ButtonGroup;
 import com.bishilai.bishilai.widget.ButtonGroupListener;
-import com.bishilai.bishilai.widget.CountView;
 import com.bishilai.bishilai.widget.HorizontalListView;
 import com.bishilai.bishilai.widget.ScrollChangeListenerView;
+import com.bishilai.bishilai.widget.ShareDialog;
 import com.daimajia.androidanimations.library.BaseViewAnimator;
 import com.daimajia.androidanimations.library.YoYo;
 import com.jaeger.library.StatusBarUtil;
-import com.makeramen.roundedimageview.RoundedImageView;
 import com.nineoldandroids.animation.ObjectAnimator;
-import com.zhy.view.flowlayout.FlowLayout;
-import com.zhy.view.flowlayout.TagAdapter;
-import com.zhy.view.flowlayout.TagFlowLayout;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -57,26 +53,10 @@ import midian.baselib.widget.ScrollChangeListener;
  */
 
 public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.OnBannerClickListener {
+
+
     @BindView(R.id.bannerView)
     Banner bannerView;
-    @BindView(R.id.topbar)
-    BaseLibTopbarView topbar;
-    @BindView(R.id.tag_Text)
-    TagFlowLayout tagText;
-    @BindView(R.id.scrollView)
-    ScrollChangeListenerView scrollView;
-    @BindView(R.id.tag_Image)
-    TagFlowLayout tagImage;
-    @BindView(R.id.countView)
-    CountView countView;
-    @BindView(R.id.btn_AddGood)
-    Button btnAddGood;
-    @BindView(R.id.tv_ShopCard)
-    TextView tvShopCard;
-    @BindView(R.id.horizontalListView)
-    HorizontalListView horizontalListView;
-    @BindView(R.id.buttonGroup)
-    ButtonGroup buttonGroup;
     @BindView(R.id.tv_GoodDetai)
     TextView tvGoodDetai;
     @BindView(R.id.tv_Parameter)
@@ -84,13 +64,33 @@ public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.O
     @BindView(R.id.tv_Comment)
     TextView tvComment;
 
+    @BindView(R.id.buttonGroup)
+    ButtonGroup buttonGroup;
+    @BindView(R.id.fl_content)
+    FrameLayout flContent;
+    @BindView(R.id.scrollView)
+    ScrollChangeListenerView scrollView;
+    @BindView(R.id.topbar)
+    BaseLibTopbarView topbar;
+    @BindView(R.id.tv_ShopCard)
+    TextView tvShopCard;
+    @BindView(R.id.tv_Count)
+    TextView tvCount;
+    @BindView(R.id.btn_AddGood)
+    Button btnAddGood;
+    @BindView(R.id.listView)
+    ListView listView;
+    @BindView(R.id.horizontalListView)
+    HorizontalListView horizontalListView;
+
+
     private int[] location = new int[2];
     private Handler handler = new Handler();
     private Fragment fragment;
     private int flag;
     private ArrayList<String> images = new ArrayList<>();
-    private List<String> tags = new ArrayList<>();
     private float var1, var2;
+    private int temp;
     private String var3, color;
     private FragmentGoodDetail fragmentGoodDetail;
     private List<Fragment> fragments = new ArrayList<>();
@@ -113,7 +113,8 @@ public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.O
     private void initView() {
         topbar.getLine_iv().setVisibility(View.GONE);
         topbar.setTitle("");
-        topbar.setLeftImageButton(R.drawable.icon_back, listener);
+        topbar.setLeftImageButton(R.drawable.icon_back, UIHelper.finish(_activity));
+        topbar.setRightImageButton(R.drawable.icon_share, listener);
 
         bannerView.setBannerStyle(Banner.CIRCLE_INDICATOR);//设置圆形指示器
         bannerView.setIndicatorGravity(Banner.CENTER);
@@ -128,24 +129,7 @@ public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.O
         }
         bannerView.setImages(images.toArray());
 
-        for (int i = 1; i < 4; i++) {
-            tags.add(Math.pow(8, i) + "GB");
-        }
-
-        tagImage.setAdapter(imageAdapter);
-        tagText.setAdapter(textAdapter);
-        imageAdapter.setSelectedList(0);
-        textAdapter.setSelectedList(0);
-        tagText.setOnSelectListener(new TagFlowLayout.OnSelectListener() {
-            @Override
-            public void onSelected(Set<Integer> selectPosSet) {
-                LogUtils.e(selectPosSet);
-            }
-        });
-
         scrollView.setChangeListener(scrollChangeListener);
-
-        horizontalListView.setAdapter(new AdapterRecommendGood(_activity));
 
         List<String> list = new ArrayList<>();
         list.add("规格");
@@ -161,6 +145,8 @@ public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.O
             fragments.add(fragment);
         }
         switchFragment(fragment, fragmentGoodDetail);
+        listView.setAdapter(new AdapterListViewComment(_activity));
+        horizontalListView.setAdapter(new AdapterListviewRecomment(_activity));
     }
 
     public void switchFragment(Fragment from, Fragment to) {
@@ -185,48 +171,32 @@ public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.O
         }
     };
 
-    TagAdapter<String> imageAdapter = new TagAdapter<String>(images) {
-        @Override
-        public View getView(FlowLayout parent, int position, String s) {
-            RoundedImageView iv = (RoundedImageView) LayoutInflater.from(_activity).inflate(R.layout.tag_imagelayout, tagImage, false);
-            ac.setImage(iv, images.get(position));
-            return iv;
-        }
-    };
-
-    TagAdapter<String> textAdapter = new TagAdapter<String>(tags) {
-        @Override
-        public View getView(FlowLayout parent, int position, String s) {
-            TextView tv = (TextView) LayoutInflater.from(_activity).inflate(R.layout.tag_layout, tagText, false);
-            tv.setText(s);
-            return tv;
-        }
-    };
 
     ScrollChangeListener scrollChangeListener = new ScrollChangeListener() {
         @Override
         public void onScrollChanged(ScrollView scrollView, int x, int y, int oldx, int oldy) {
             if (0 == location[1]) {
-                buttonGroup.getLocationOnScreen(location);
+                tvGoodDetai.getLocationOnScreen(location);
+                temp = location[1] - topbar.getHeight();
             }
             if (y < 0) {
                 topbar.setTitle("");
                 topbar.setBackgroundColor(Color.parseColor("#00FFFFFF"));
-            } else if (y < 850 && y >= 0) {
+            } else if (y < temp && y >= 0) {
                 topbar.setTitle("");
                 topbar.setVisibility(View.VISIBLE);
-                var1 = (float) y / 850;
+                var1 = (float) y / temp;
                 var2 = var1 * 255;
                 var3 = Integer.toHexString((int) var2);
                 if (var3.length() == 1) {
                     var3 = "0" + var3;
                 }
-                color = new StringBuffer("#EB6563").insert(1, var3).toString();
-                //LogUtils.e("y:"+y+"\n"+"var3:"+var3+"\n"+"color:"+color);
+                color = new StringBuffer("#07A746").insert(1, var3).toString();
+//                LogUtils.e("y:"+y+"\n"+"var3:"+var3+"\n"+"color:"+color);
                 topbar.setBackgroundColor(Color.parseColor(color));
-            } else if (y >= 850) {
+            } else if (y >= temp) {
                 topbar.setTitle("商品详情");
-                topbar.setBackgroundColor(Color.parseColor("#EB6563"));
+                topbar.setBackgroundColor(Color.parseColor("#07A746"));
             }
         }
     };
@@ -234,7 +204,11 @@ public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.O
     View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            finish();
+            switch (v.getId()){
+                case R.id.right_ib:
+                    new ShareDialog(_activity).show();
+                    break;
+            }
         }
     };
 
@@ -242,15 +216,13 @@ public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.O
     public void OnBannerClick(View view, int position) {
         Bundle bundle = new Bundle();
         bundle.putStringArrayList("pic", images);
-        bundle.putString("position",position-1+"");
+        bundle.putString("position", position - 1 + "");
         UIHelper.jump(_activity, ActivityViewPhoto.class, bundle);
     }
 
-    @OnClick({R.id.countView, R.id.btn_AddGood, R.id.tv_GoodDetai, R.id.tv_Parameter, R.id.tv_Comment})
+    @OnClick({R.id.btn_AddGood, R.id.tv_GoodDetai, R.id.tv_Parameter, R.id.tv_Comment})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.countView:
-                break;
             case R.id.btn_AddGood:
                 Add2CartAnim();
                 break;
@@ -261,7 +233,7 @@ public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.O
                 scrollToPosition();
                 break;
             case R.id.tv_Comment:
-                UIHelper.jump(_activity,ActivityComment.class);
+                UIHelper.jump(_activity, ActivityComment.class);
                 break;
         }
     }
@@ -310,7 +282,7 @@ public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.O
                 //动画结束，做一下别的
                 YoYo.with(new ScaleUpAnimator())
                         .duration(500)
-                        .playOn(tvShopCard);
+                        .playOn(tvCount);
             }
         });
     }

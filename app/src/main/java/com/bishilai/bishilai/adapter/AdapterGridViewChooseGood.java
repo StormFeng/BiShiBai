@@ -8,7 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.apkfuns.logutils.LogUtils;
 import com.bishilai.bishilai.R;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,11 +49,11 @@ public class AdapterGridViewChooseGood extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_gridview13, null);
             viewHolder = new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
         }else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-//        viewHolder.tv1.setText("");
-//        viewHolder.rlType.setVisibility(View.GONE);
+        viewHolder.rlType.setVisibility(View.GONE);
         return convertView;
     }
 
@@ -60,6 +62,10 @@ public class AdapterGridViewChooseGood extends BaseAdapter {
         TextView tv1;
         @BindView(R.id.tv2)
         TextView tv2;
+        @BindView(R.id.iv_TypeBg)
+        RoundedImageView ivTypeBg;
+        @BindView(R.id.tv_Type)
+        TextView tvType;
         @BindView(R.id.rl_Type)
         RelativeLayout rlType;
 

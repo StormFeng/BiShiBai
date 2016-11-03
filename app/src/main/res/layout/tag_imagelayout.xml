@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.makeramen.roundedimageview.RoundedImageView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="50dp"
-    android:layout_height="50dp"
+    android:layout_width="106dp"
+    android:layout_height="74dp"
     android:layout_margin="3.8dp"
-    android:background="@drawable/tag_selecter"
-    android:src="@drawable/ic_launcher"
-    android:gravity="center"
-    android:padding="5dp">
+    android:src="@drawable/icon_test"
+    android:gravity="center">
 </com.makeramen.roundedimageview.RoundedImageView>

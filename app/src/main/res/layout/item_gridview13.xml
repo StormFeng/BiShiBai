@@ -6,35 +6,6 @@
     android:background="@color/white"
     android:padding="15dp">
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="vertical"
-       android:layout_centerVertical="true"
-       android:gravity="center">
-       <ImageView
-           android:layout_width="108dp"
-           android:layout_height="108dp"
-           android:src="@drawable/ic_launcher"/>
-
-       <TextView
-           android:layout_marginTop="15dp"
-           android:id="@+id/tv1"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:textSize="13sp"
-           android:textColor="@color/text_bg33"
-           android:text="黑头导出液"/>
-       <TextView
-           android:id="@+id/tv2"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:textSize="13sp"
-           android:layout_marginTop="3dp"
-           android:textColor="#07A746"
-           android:text="999元起"/>
-   </LinearLayout>
-
 
     <RelativeLayout
         android:id="@+id/rl_Type"
@@ -42,11 +13,13 @@
         android:layout_height="28dp"
         android:gravity="center">
         <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_TypeBg"
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:src="@color/green"
             app:riv_corner_radius="14dp"/>
         <TextView
+            android:id="@+id/tv_Type"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/white"
@@ -54,5 +27,36 @@
             android:textSize="11sp"
             android:text="新品"/>
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:src="@drawable/ic_launcher"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/text_bg33"
+            android:text="黑头导出液"/>
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:layout_marginTop="3dp"
+            android:textColor="#07A746"
+            android:text="999元起"/>
+    </LinearLayout>
 
 </RelativeLayout>
