@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
+import com.bishilai.thirdpackage.R;
+
 import java.util.ArrayList;
 
 /**
@@ -43,6 +45,7 @@ public class PhotoPreview {
      */
     public void start(@NonNull Activity activity, int requestCode) {
       activity.startActivityForResult(getIntent(activity), requestCode);
+      activity.overridePendingTransition(R.anim.slide_right_in,R.anim.slide_right_out);
     }
 
     /**

@@ -70,7 +70,7 @@ public class PhotoPagerActivity extends FragmentActivity implements View.OnClick
     intent.putExtra(KEY_SELECTED_PHOTOS, pagerFragment.getPaths());
     setResult(RESULT_OK, intent);
     finish();
-
+    overridePendingTransition(R.anim.slide_right_in,R.anim.slide_right_out);
     super.onBackPressed();
   }
 
@@ -84,7 +84,11 @@ public class PhotoPagerActivity extends FragmentActivity implements View.OnClick
   public void onClick(View v) {
     int id=v.getId();
     if(id==R.id.iv_Back){
+      Intent intent = new Intent();
+      intent.putExtra(KEY_SELECTED_PHOTOS, pagerFragment.getPaths());
+      setResult(RESULT_OK, intent);
       finish();
+      overridePendingTransition(R.anim.slide_right_in,R.anim.slide_right_out);
     }else if(id==R.id.iv_Delete){
       final int index = pagerFragment.getCurrentItem();
       Toast toast = Toast.makeText(PhotoPagerActivity.this, R.string.__picker_deleted_a_photo, Toast.LENGTH_SHORT);
