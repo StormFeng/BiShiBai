@@ -11,6 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <com.midian.bishilai.widget.SelectFilterView
+        android:id="@+id/selectView"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+    </com.midian.bishilai.widget.SelectFilterView>
+
     <GridView
         android:id="@+id/gridView"
         android:layout_marginTop="3dp"

@@ -8,12 +8,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/PhotoViewLibrary" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/bDIntegrationSDK_LibProject" />
             <option value="$PROJECT_DIR$/baseLib" />
             <option value="$PROJECT_DIR$/configlib" />
             <option value="$PROJECT_DIR$/midianAfinal" />
+            <option value="$PROJECT_DIR$/thirdpackage" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

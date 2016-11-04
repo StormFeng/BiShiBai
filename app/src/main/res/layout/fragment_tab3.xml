@@ -29,7 +29,7 @@
         android:background="@color/white"
         android:orientation="horizontal">
         
-        <com.bishilai.bishilai.widget.SmoothCheckBox
+        <com.midian.bishilai.widget.SmoothCheckBox
             android:id="@+id/cb_SelectAll"
             android:layout_width="24dp"
             android:layout_height="24dp"

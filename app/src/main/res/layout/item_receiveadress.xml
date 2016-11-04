@@ -14,7 +14,7 @@
         android:padding="15dp"
         android:background="@color/white"
         android:gravity="center_vertical">
-        <com.bishilai.bishilai.widget.SmoothCheckBox
+        <com.midian.bishilai.widget.SmoothCheckBox
             android:id="@+id/checkbox"
             android:layout_width="24dp"
             android:layout_height="24dp" />

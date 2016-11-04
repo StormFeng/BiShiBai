@@ -4,7 +4,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
     defaultConfig {
-        applicationId "com.bishilai.bishilai"
+        applicationId "com.midian.bishilai"
         minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
@@ -16,6 +16,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    signingConfigs {
+        release {
+            storeFile file("$rootDir/bishilai.jks")
+            storePassword "bishilai123"
+            keyAlias "bishilai"
+            keyPassword "bishilai123"
+        }
+        debug {
+            storeFile file("$rootDir/bishilai.jks")
+            storePassword "bishilai123"
+            keyAlias "bishilai"
+            keyPassword "bishilai123"
+        }
+    }
 }
 
 dependencies {
@@ -23,7 +37,7 @@ dependencies {
     compile project(':baseLib')
     compile project(':configlib')
     compile project(':midianAfinal')
-    compile project(':PhotoViewLibrary')
+//    compile project(':PhotoViewLibrary')
     apt 'com.jakewharton:butterknife-compiler:8.2.1'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.github.bumptech.glide:glide:3.5.2'
@@ -39,4 +53,5 @@ dependencies {
     compile 'com.github.hackware1993:MagicIndicator:1.4.0'
     compile 'com.kyleduo.switchbutton:library:1.4.1'
     compile 'com.github.paolorotolo:appintro:4.0.0'
+    compile project(':thirdpackage')
 }

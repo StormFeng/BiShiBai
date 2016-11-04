@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.bishilai.bishilai.widget.Banner
+        <com.midian.bishilai.widget.Banner
             android:id="@+id/bannerView"
             android:layout_width="match_parent"
             android:layout_height="214dp"
@@ -121,14 +121,14 @@
                 android:src="@drawable/ic_launcher"/>
         </LinearLayout>
 
-        <com.bishilai.bishilai.widget.InnerGridView
+        <com.midian.bishilai.widget.InnerGridView
             android:id="@+id/gridView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:listSelector="@null"
             android:verticalSpacing="5sp"
             android:horizontalSpacing="5sp"
-            android:numColumns="3"></com.bishilai.bishilai.widget.InnerGridView>
+            android:numColumns="3"></com.midian.bishilai.widget.InnerGridView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -163,13 +163,13 @@
                 android:src="@drawable/ic_launcher"/>
         </LinearLayout>
 
-        <com.bishilai.bishilai.widget.DivideText
+        <com.midian.bishilai.widget.DivideText
             android:id="@+id/divideText1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        </com.bishilai.bishilai.widget.DivideText>
+        </com.midian.bishilai.widget.DivideText>
 
-        <com.bishilai.bishilai.widget.InnerGridView
+        <com.midian.bishilai.widget.InnerGridView
             android:id="@+id/gridView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -178,13 +178,13 @@
             android:layout_marginRight="15dp"
             android:verticalSpacing="5sp"
             android:horizontalSpacing="5sp"
-            android:numColumns="3"></com.bishilai.bishilai.widget.InnerGridView>
+            android:numColumns="3"></com.midian.bishilai.widget.InnerGridView>
 
-        <com.bishilai.bishilai.widget.DivideText
+        <com.midian.bishilai.widget.DivideText
             android:id="@+id/divideText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        </com.bishilai.bishilai.widget.DivideText>
+        </com.midian.bishilai.widget.DivideText>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -229,7 +229,7 @@
                 android:id="@+id/imageView3" />
         </LinearLayout>
 
-        <com.bishilai.bishilai.widget.InnerGridView
+        <com.midian.bishilai.widget.InnerGridView
             android:id="@+id/gridView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -239,7 +239,7 @@
             android:listSelector="@null"
             android:verticalSpacing="5sp"
             android:horizontalSpacing="5sp"
-            android:numColumns="2"></com.bishilai.bishilai.widget.InnerGridView>
+            android:numColumns="2"></com.midian.bishilai.widget.InnerGridView>
 
         <LinearLayout
             android:id="@+id/ll_LookMore"

@@ -10,7 +10,7 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <com.bishilai.bishilai.widget.ScrollChangeListenerView
+        <com.midian.bishilai.widget.ScrollChangeListenerView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -21,14 +21,14 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <com.bishilai.bishilai.widget.Banner
+                <com.midian.bishilai.widget.Banner
                     android:id="@+id/bannerView"
                     android:layout_width="match_parent"
                     android:layout_height="375dp"
                     app:indicator_height="7dp"
                     app:indicator_margin="3dp"
                     app:indicator_width="7dp">
-                </com.bishilai.bishilai.widget.Banner>
+                </com.midian.bishilai.widget.Banner>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -139,12 +139,12 @@
                         <!--android:layout_height="wrap_content"-->
                         <!--android:text="数量"-->
                         <!--android:textColor="@color/text_bg66"/>-->
-                    <!--<com.bishilai.bishilai.widget.CountView-->
+                    <!--<com.midian.bishilai.widget.CountView-->
                         <!--android:id="@+id/countView"-->
                         <!--android:layout_marginTop="8dp"-->
                         <!--android:layout_width="wrap_content"-->
                         <!--android:layout_height="wrap_content">-->
-                    <!--</com.bishilai.bishilai.widget.CountView>-->
+                    <!--</com.midian.bishilai.widget.CountView>-->
                 <!--</LinearLayout>-->
 
                 <LinearLayout
@@ -219,17 +219,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/divide_line"/>
-                    <!--<com.bishilai.bishilai.widget.InnerGridView-->
+                    <!--<com.midian.bishilai.widget.InnerGridView-->
                         <!--android:id="@+id/gridView"-->
                         <!--android:layout_width="match_parent"-->
                         <!--android:layout_height="wrap_content"-->
                         <!--android:numColumns="1">-->
-                    <!--</com.bishilai.bishilai.widget.InnerGridView>-->
-                    <com.bishilai.bishilai.widget.InnerListView
+                    <!--</com.midian.bishilai.widget.InnerGridView>-->
+                    <com.midian.bishilai.widget.InnerListView
                         android:id="@+id/listView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                    </com.bishilai.bishilai.widget.InnerListView>
+                    </com.midian.bishilai.widget.InnerListView>
                 </LinearLayout>
 
                 <LinearLayout
@@ -247,7 +247,7 @@
                         android:textSize="14sp"
                         android:textColor="@color/text_bg33"
                         android:gravity="center"/>
-                    <com.bishilai.bishilai.widget.HorizontalListView
+                    <com.midian.bishilai.widget.HorizontalListView
                         android:id="@+id/horizontalListView"
                         android:layout_width="match_parent"
                         android:divider="#00ffffff"
@@ -257,13 +257,13 @@
 
                 </LinearLayout>
 
-                <com.bishilai.bishilai.widget.ButtonGroup
+                <com.midian.bishilai.widget.ButtonGroup
                     android:id="@+id/buttonGroup"
                     android:layout_marginTop="10dp"
                     android:background="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                </com.bishilai.bishilai.widget.ButtonGroup>
+                </com.midian.bishilai.widget.ButtonGroup>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -274,7 +274,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/window_bg" />
             </LinearLayout>
-        </com.bishilai.bishilai.widget.ScrollChangeListenerView>
+        </com.midian.bishilai.widget.ScrollChangeListenerView>
 
         <midian.baselib.widget.BaseLibTopbarView
             android:id="@+id/topbar"

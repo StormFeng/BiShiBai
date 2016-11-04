@@ -70,7 +70,7 @@
                     android:textSize="14sp"
                     android:textColor="@color/text_bg33"
                     android:text="养生产品"/>
-                <com.bishilai.bishilai.widget.InnerGridView
+                <com.midian.bishilai.widget.InnerGridView
                     android:id="@+id/gridView1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                     android:verticalSpacing="30dp"
                     android:horizontalSpacing="5dp"
                     android:numColumns="3">
-                </com.bishilai.bishilai.widget.InnerGridView>
+                </com.midian.bishilai.widget.InnerGridView>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -131,7 +131,7 @@
                     android:textSize="14sp"
                     android:textColor="@color/text_bg33"
                     android:text="丽人产品"/>
-                <com.bishilai.bishilai.widget.InnerGridView
+                <com.midian.bishilai.widget.InnerGridView
                     android:id="@+id/gridView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -140,7 +140,7 @@
                     android:verticalSpacing="30dp"
                     android:horizontalSpacing="5dp"
                     android:numColumns="3">
-                </com.bishilai.bishilai.widget.InnerGridView>
+                </com.midian.bishilai.widget.InnerGridView>
             </LinearLayout>
 
 
@@ -194,7 +194,7 @@
                     android:textSize="14sp"
                     android:textColor="@color/text_bg33"
                     android:text="优惠套装"/>
-                <com.bishilai.bishilai.widget.InnerGridView
+                <com.midian.bishilai.widget.InnerGridView
                     android:id="@+id/gridView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -203,7 +203,7 @@
                     android:verticalSpacing="30dp"
                     android:horizontalSpacing="5dp"
                     android:numColumns="3">
-                </com.bishilai.bishilai.widget.InnerGridView>
+                </com.midian.bishilai.widget.InnerGridView>
             </LinearLayout>
 
         </LinearLayout>
