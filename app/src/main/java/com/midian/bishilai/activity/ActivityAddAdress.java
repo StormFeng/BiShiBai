@@ -8,6 +8,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.midian.base.base.BaseActivity;
+import com.midian.base.util.UIHelper;
+import com.midian.base.widget.BaseLibTopbarView;
 import com.midian.bishilai.R;
 import com.jaeger.library.StatusBarUtil;
 import com.kyleduo.switchbutton.SwitchButton;
@@ -15,9 +18,6 @@ import com.kyleduo.switchbutton.SwitchButton;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import midian.baselib.base.BaseActivity;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.widget.BaseLibTopbarView;
 
 /**
  * 添加收货地址

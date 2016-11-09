@@ -11,8 +11,6 @@ import com.midian.bishilai.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import midian.baselib.widget.GradientTabStrip;
-
 /**
  * GradientTabStripAdapter
  * Created by Alex on 2016/5/19.

@@ -15,10 +15,12 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import com.midian.base.base.BaseActivity;
+import com.midian.base.util.UIHelper;
 import com.midian.bishilai.MainActivity;
 import com.midian.bishilai.R;
-import midian.baselib.base.BaseActivity;
-import midian.baselib.utils.UIHelper;
+
 
 
 /**

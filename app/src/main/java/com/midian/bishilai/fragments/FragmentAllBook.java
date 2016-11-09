@@ -6,20 +6,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.midian.base.base.BaseListFragment;
+import com.midian.base.widget.pulltorefresh.listviewhelper.IDataSource;
 import com.midian.bishilai.R;
 import com.midian.bishilai.datasource.FramentAllBookDataResource;
 import com.midian.bishilai.tpl.FragmentAllBookTpl;
 
 import java.util.ArrayList;
-import midian.baselib.base.BaseListFragment;
-import midian.baselib.shizhefei.view.listviewhelper.IDataSource;
 
 /**
  * 全部订单
  * Created by Administrator on 2016/10/26 0026.
  */
 
-public class FragmentAllBook extends BaseListFragment{
+public class FragmentAllBook extends BaseListFragment {
 
 
     @Override

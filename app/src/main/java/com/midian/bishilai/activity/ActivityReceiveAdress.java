@@ -5,22 +5,22 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.midian.base.base.BaseListActivity;
+import com.midian.base.util.UIHelper;
+import com.midian.base.widget.BaseLibTopbarView;
+import com.midian.base.widget.pulltorefresh.listviewhelper.IDataSource;
 import com.midian.bishilai.R;
 import com.midian.bishilai.datasource.ActivityReceiveAdressDataResource;
 import com.midian.bishilai.tpl.ActivityReceiveAdressTpl;
 import com.jaeger.library.StatusBarUtil;
 import java.util.ArrayList;
-import midian.baselib.base.BaseListActivity;
-import midian.baselib.shizhefei.view.listviewhelper.IDataSource;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.widget.BaseLibTopbarView;
 
 /**
  * 收货地址
  * Created by Administrator on 2016/10/27 0027.
  */
 
-public class ActivityReceiveAdress  extends BaseListActivity{
+public class ActivityReceiveAdress  extends BaseListActivity {
 
     private BaseLibTopbarView topbar;
 

@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.midian.base.base.BaseMultiTypeListActivity;
+import com.midian.base.util.UIHelper;
+import com.midian.base.widget.BaseLibTopbarView;
+import com.midian.base.widget.pulltorefresh.listviewhelper.IDataSource;
 import com.midian.bishilai.R;
 import com.midian.bishilai.datasource.CommentDataResource;
 import com.midian.bishilai.tpl.CommentBotTpl;
@@ -15,10 +19,6 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import midian.baselib.base.BaseMultiTypeListActivity;
-import midian.baselib.shizhefei.view.listviewhelper.IDataSource;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.widget.BaseLibTopbarView;
 
 /**
  * 评论列表页面

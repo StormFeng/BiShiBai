@@ -10,6 +10,8 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
+import com.midian.base.base.BaseFragment;
+import com.midian.base.widget.BaseLibTopbarView;
 import com.midian.bishilai.R;
 import com.midian.bishilai.adapter.ExpandableListAdapter;
 import com.midian.bishilai.bean.DaoGoodBean;
@@ -20,10 +22,6 @@ import com.midian.bishilai.widget.SmoothCheckBox;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import midian.baselib.base.BaseFragment;
-import midian.baselib.widget.BaseLibTopbarView;
-
-import static midian.baselib.widget.BaseLibTopbarView.MODE_WITH_INPUT;
 
 /**
  * 购物车

@@ -10,20 +10,20 @@ import android.support.v4.view.ViewPager;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.midian.base.base.BaseFragmentActivity;
 import com.midian.bishilai.R;
 import com.midian.bishilai.activity.ActivityGuide;
 import com.midian.bishilai.fragments.Fragment1;
 import com.midian.bishilai.fragments.Fragment2;
 import com.midian.bishilai.fragments.Fragment3;
 import com.midian.bishilai.fragments.Fragment4;
+import com.midian.bishilai.widget.GradientTabStrip;
 import com.midian.bishilai.widget.GradientTabStripAdapter;
 import com.jaeger.library.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 import am.widget.basetabstrip.BaseTabStrip;
-import midian.baselib.base.BaseFragmentActivity;
-import midian.baselib.widget.GradientTabStrip;
 
 public class MainActivity extends BaseFragmentActivity implements BaseTabStrip.OnItemClickListener {
 

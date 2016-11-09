@@ -1,5 +1,2 @@
 include ':app'
-include ':baseLib'
-include ':configlib'
-include ':midianAfinal'
 include ':thirdpackage'

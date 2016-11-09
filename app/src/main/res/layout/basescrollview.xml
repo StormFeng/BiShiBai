@@ -4,13 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <midian.baselib.widget.pulltorefresh.PullToRefreshScrollView
+    <com.midian.base.widget.pulltorefresh.PullToRefreshScrollView
         android:id="@+id/refreshScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </midian.baselib.widget.pulltorefresh.PullToRefreshScrollView>
+        android:layout_height="match_parent"/>
 
-    <midian.baselib.widget.BaseLibTopbarView
+    <com.midian.base.widget.BaseLibTopbarView
         android:id="@+id/topbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

@@ -1,22 +1,19 @@
 package com.midian.bishilai.fragments;
 
+import com.midian.base.base.BaseListFragment;
+import com.midian.base.widget.pulltorefresh.listviewhelper.IDataSource;
 import com.midian.bishilai.R;
-import com.midian.bishilai.datasource.FramentAllBookDataResource;
 import com.midian.bishilai.datasource.FramentReadyPayDataResource;
-import com.midian.bishilai.tpl.FragmentAllBookTpl;
 import com.midian.bishilai.tpl.FragmentReadyPayTpl;
 
 import java.util.ArrayList;
-
-import midian.baselib.base.BaseListFragment;
-import midian.baselib.shizhefei.view.listviewhelper.IDataSource;
 
 /**
  * 待付款
  * Created by Administrator on 2016/10/26 0026.
  */
 
-public class FragmentReadyPay extends BaseListFragment{
+public class FragmentReadyPay extends BaseListFragment {
 
 
     @Override

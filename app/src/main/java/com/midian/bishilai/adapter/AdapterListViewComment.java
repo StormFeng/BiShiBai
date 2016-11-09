@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.midian.base.app.AppContext;
 import com.midian.bishilai.R;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.zhy.view.flowlayout.FlowLayout;
@@ -18,7 +19,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import midian.baselib.app.AppContext;
 
 /**
  * 评论

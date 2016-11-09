@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <midian.baselib.widget.pulltorefresh.PullToRefreshListView
+    <com.midian.base.widget.pulltorefresh.PullToRefreshListView
         android:id="@+id/pullToRefreshListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

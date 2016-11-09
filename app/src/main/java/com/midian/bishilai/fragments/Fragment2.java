@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.midian.base.base.BaseFragment;
+import com.midian.base.util.UIHelper;
+import com.midian.base.widget.BaseLibTopbarView;
 import com.midian.bishilai.R;
 import com.midian.bishilai.activity.ActivitySearchResult;
 import com.midian.bishilai.adapter.AdapterGridView21;
@@ -14,11 +17,8 @@ import com.midian.bishilai.widget.InnerGridView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import midian.baselib.base.BaseFragment;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.widget.BaseLibTopbarView;
 
-import static midian.baselib.widget.BaseLibTopbarView.MODE_WITH_INPUT;
+import static com.midian.base.widget.BaseLibTopbarView.MODE_WITH_INPUT;
 
 /**
  * 产品

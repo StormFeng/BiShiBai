@@ -3,6 +3,8 @@ package com.midian.bishilai.tpl;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import com.midian.base.bean.NetResult;
+import com.midian.base.view.BaseTpl;
 import com.midian.bishilai.R;
 import com.midian.bishilai.widget.ButtonGroup;
 
@@ -11,8 +13,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import midian.baselib.bean.NetResult;
-import midian.baselib.view.BaseTpl;
 
 public class CommentTopTpl extends BaseTpl<NetResult> {
 

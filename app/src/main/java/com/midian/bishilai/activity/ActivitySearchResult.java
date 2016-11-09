@@ -8,6 +8,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.midian.base.base.BaseActivity;
+import com.midian.base.util.UIHelper;
+import com.midian.base.widget.BaseLibTopbarView;
 import com.midian.bishilai.R;
 import com.jaeger.library.StatusBarUtil;
 import com.zhy.view.flowlayout.FlowLayout;
@@ -20,11 +23,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import midian.baselib.base.BaseActivity;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.widget.BaseLibTopbarView;
 
-import static midian.baselib.widget.BaseLibTopbarView.MODE_WITH_INPUT;
+import static com.midian.base.widget.BaseLibTopbarView.MODE_WITH_INPUT;
 
 /**
  * 搜索产品

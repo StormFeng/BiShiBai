@@ -1,22 +1,18 @@
 package com.midian.bishilai.fragments;
 
+import com.midian.base.base.BaseListFragment;
+import com.midian.base.widget.pulltorefresh.listviewhelper.IDataSource;
 import com.midian.bishilai.R;
 import com.midian.bishilai.datasource.FramentReadyCommentDataResource;
-import com.midian.bishilai.datasource.FramentReadyReceiveDataResource;
 import com.midian.bishilai.tpl.FragmentReadyCommentTpl;
-import com.midian.bishilai.tpl.FragmentReadyReceiveTpl;
-
 import java.util.ArrayList;
-
-import midian.baselib.base.BaseListFragment;
-import midian.baselib.shizhefei.view.listviewhelper.IDataSource;
 
 /**
  * 待评价
  * Created by Administrator on 2016/10/26 0026.
  */
 
-public class FragmentReadyComment extends BaseListFragment{
+public class FragmentReadyComment extends BaseListFragment {
 
 
     @Override

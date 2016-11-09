@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.midian.base.base.BaseFragment;
+import com.midian.base.util.UIHelper;
 import com.midian.bishilai.R;
 import com.midian.bishilai.activity.ActivityBook;
 import com.midian.bishilai.activity.ActivityCoupon;
@@ -19,8 +21,6 @@ import com.makeramen.roundedimageview.RoundedImageView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import midian.baselib.base.BaseFragment;
-import midian.baselib.utils.UIHelper;
 
 /**
  * 我的

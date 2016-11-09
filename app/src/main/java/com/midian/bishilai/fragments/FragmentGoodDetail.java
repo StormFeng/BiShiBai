@@ -10,11 +10,11 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.apkfuns.logutils.LogUtils;
+import com.midian.base.base.BaseFragment;
 import com.midian.bishilai.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import midian.baselib.base.BaseFragment;
 
 /**
  * Created by Administrator on 2016/10/20 0020.

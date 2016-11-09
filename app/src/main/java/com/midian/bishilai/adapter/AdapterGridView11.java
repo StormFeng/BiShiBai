@@ -10,12 +10,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.midian.base.util.UIHelper;
 import com.midian.bishilai.R;
 import com.midian.bishilai.activity.ActivityGoodDetail;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import midian.baselib.utils.UIHelper;
 
 /**
  * Created by Administrator on 2016/10/17 0017.

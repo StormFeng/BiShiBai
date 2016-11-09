@@ -9,6 +9,12 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.midian.base.base.BaseFragment;
+import com.midian.base.util.UIHelper;
+import com.midian.base.widget.BaseLibTopbarView;
+import com.midian.base.widget.ScrollChangeListener;
+import com.midian.base.widget.pulltorefresh.PullToRefreshBase;
+import com.midian.base.widget.pulltorefresh.PullToRefreshScrollView;
 import com.midian.bishilai.R;
 import com.midian.bishilai.activity.ActivityChooseGood;
 import com.midian.bishilai.activity.ActivityGoodDetail;
@@ -26,14 +32,8 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import midian.baselib.base.BaseFragment;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.widget.BaseLibTopbarView;
-import midian.baselib.widget.ScrollChangeListener;
-import midian.baselib.widget.pulltorefresh.PullToRefreshBase;
-import midian.baselib.widget.pulltorefresh.PullToRefreshScrollView;
 
-import static midian.baselib.widget.BaseLibTopbarView.MODE_WITH_INPUT;
+import static com.midian.base.widget.BaseLibTopbarView.MODE_WITH_INPUT;
 
 /**
  * 首页

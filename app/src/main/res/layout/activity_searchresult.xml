@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/window_bg">
 
-    <midian.baselib.widget.BaseLibTopbarView
+    <com.midian.base.widget.BaseLibTopbarView
         android:id="@+id/topbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

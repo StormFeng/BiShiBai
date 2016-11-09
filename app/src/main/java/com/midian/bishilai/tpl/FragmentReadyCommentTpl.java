@@ -9,6 +9,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.midian.base.bean.NetResult;
+import com.midian.base.util.UIHelper;
+import com.midian.base.view.BaseTpl;
 import com.midian.bishilai.R;
 import com.midian.bishilai.activity.ActivityBookDetail;
 import com.midian.bishilai.widget.NoticeDialog;
@@ -16,9 +19,6 @@ import com.midian.bishilai.widget.NoticeDialog;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import midian.baselib.bean.NetResult;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.view.BaseTpl;
 
 /**
  * 待评价

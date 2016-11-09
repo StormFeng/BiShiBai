@@ -21,7 +21,11 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
+import com.midian.base.base.BaseFragmentActivity;
+import com.midian.base.util.UIHelper;
+import com.midian.base.widget.BaseLibTopbarView;
 import com.midian.base.widget.PhotoPicker.PhotoPreview;
+import com.midian.base.widget.ScrollChangeListener;
 import com.midian.bishilai.R;
 import com.midian.bishilai.adapter.AdapterListViewComment;
 import com.midian.bishilai.adapter.AdapterListviewRecomment;
@@ -46,10 +50,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import midian.baselib.base.BaseFragmentActivity;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.widget.BaseLibTopbarView;
-import midian.baselib.widget.ScrollChangeListener;
 
 /**
  * 商品详情页面

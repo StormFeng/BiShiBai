@@ -4,12 +4,12 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import com.midian.base.bean.NetResult;
+import com.midian.base.view.BaseTpl;
 import com.midian.bishilai.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import midian.baselib.bean.NetResult;
-import midian.baselib.view.BaseTpl;
 
 /**
  * 我的银行卡

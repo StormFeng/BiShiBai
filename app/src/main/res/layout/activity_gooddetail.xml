@@ -276,7 +276,7 @@
             </LinearLayout>
         </com.midian.bishilai.widget.ScrollChangeListenerView>
 
-        <midian.baselib.widget.BaseLibTopbarView
+        <com.midian.base.widget.BaseLibTopbarView
             android:id="@+id/topbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

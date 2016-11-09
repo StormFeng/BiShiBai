@@ -3,10 +3,10 @@ package com.midian.bishilai.tpl;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import com.midian.base.bean.NetResult;
+import com.midian.base.view.BaseTpl;
 import com.midian.bishilai.R;
 
-import midian.baselib.bean.NetResult;
-import midian.baselib.view.BaseTpl;
 
 /**
  * 优惠券

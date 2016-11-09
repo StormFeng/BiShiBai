@@ -10,14 +10,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.midian.base.base.BaseActivity;
+import com.midian.base.util.UIHelper;
 import com.midian.bishilai.R;
 import com.jaeger.library.StatusBarUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import midian.baselib.base.BaseActivity;
-import midian.baselib.utils.UIHelper;
 
 /**
  * 登录

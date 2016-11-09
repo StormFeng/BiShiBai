@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
+import com.midian.base.util.UIHelper;
 import com.midian.bishilai.R;
 import com.midian.bishilai.bean.GoodBean;
 import com.midian.bishilai.bean.UpdateView;
@@ -19,7 +20,6 @@ import com.midian.bishilai.widget.SmoothCheckBox;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import midian.baselib.utils.UIHelper;
 
 /**
  * 购物车

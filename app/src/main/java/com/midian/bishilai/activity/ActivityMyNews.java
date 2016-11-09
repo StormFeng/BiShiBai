@@ -5,19 +5,17 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.midian.base.base.BaseListActivity;
+import com.midian.base.util.UIHelper;
+import com.midian.base.widget.BaseLibTopbarView;
+import com.midian.base.widget.pulltorefresh.listviewhelper.IDataSource;
 import com.midian.bishilai.R;
 import com.midian.bishilai.datasource.ActivityCardDataResource;
 import com.midian.bishilai.datasource.ActivityMyNewsDataResource;
 import com.midian.bishilai.tpl.ActivityCardTpl;
 import com.midian.bishilai.tpl.ActivityMyNewsTpl;
 import com.jaeger.library.StatusBarUtil;
-
 import java.util.ArrayList;
-
-import midian.baselib.base.BaseListActivity;
-import midian.baselib.shizhefei.view.listviewhelper.IDataSource;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.widget.BaseLibTopbarView;
 
 /**
  * 我的消息

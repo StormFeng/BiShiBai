@@ -4,7 +4,8 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ScrollView;
 
-import midian.baselib.widget.ScrollChangeListener;
+import com.midian.base.widget.ScrollChangeListener;
+
 
 /**
  * Created by Administrator on 2016/10/19 0019.

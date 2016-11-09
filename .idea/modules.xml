@@ -4,9 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BiShiBai.iml" filepath="$PROJECT_DIR$/BiShiBai.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/baseLib/baseLib.iml" filepath="$PROJECT_DIR$/baseLib/baseLib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/configlib/configlib.iml" filepath="$PROJECT_DIR$/configlib/configlib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/midianAfinal/midianAfinal.iml" filepath="$PROJECT_DIR$/midianAfinal/midianAfinal.iml" />
       <module fileurl="file://$PROJECT_DIR$/thirdpackage/thirdpackage.iml" filepath="$PROJECT_DIR$/thirdpackage/thirdpackage.iml" />
     </modules>
   </component>

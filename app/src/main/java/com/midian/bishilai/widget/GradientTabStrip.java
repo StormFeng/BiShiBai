@@ -1,4 +1,4 @@
-package midian.baselib.widget;
+package com.midian.bishilai.widget;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -19,7 +19,7 @@ import android.support.v4.view.ViewPager;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 
-import com.midian.baselib.R;
+import com.midian.bishilai.R;
 
 import am.widget.basetabstrip.BaseTabStrip;
 

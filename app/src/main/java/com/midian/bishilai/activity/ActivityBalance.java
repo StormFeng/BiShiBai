@@ -6,18 +6,16 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.midian.base.base.BaseListActivity;
+import com.midian.base.util.UIHelper;
+import com.midian.base.widget.BaseLibTopbarView;
+import com.midian.base.widget.pulltorefresh.listviewhelper.IDataSource;
 import com.midian.bishilai.R;
 import com.midian.bishilai.datasource.ActivityBalanceDataResource;
 import com.midian.bishilai.tpl.ActivityBalanceTpl;
 import com.jaeger.library.StatusBarUtil;
 
 import java.util.ArrayList;
-
-import midian.baselib.base.BaseListActivity;
-import midian.baselib.shizhefei.view.listviewhelper.IDataAdapter;
-import midian.baselib.shizhefei.view.listviewhelper.IDataSource;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.widget.BaseLibTopbarView;
 
 /**
  * Created by Administrator on 2016/10/25 0025.

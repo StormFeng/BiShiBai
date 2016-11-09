@@ -8,6 +8,9 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.midian.base.base.BaseActivity;
+import com.midian.base.util.UIHelper;
+import com.midian.base.widget.BaseLibTopbarView;
 import com.midian.base.widget.PhotoPicker.PhotoPicker;
 import com.midian.bishilai.R;
 import com.jaeger.library.StatusBarUtil;
@@ -16,9 +19,6 @@ import com.makeramen.roundedimageview.RoundedImageView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import midian.baselib.base.BaseActivity;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.widget.BaseLibTopbarView;
 
 /**
  * Created by Administrator on 2016/10/26 0026.

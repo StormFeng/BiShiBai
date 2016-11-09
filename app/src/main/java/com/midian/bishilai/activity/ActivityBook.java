@@ -13,6 +13,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
+import com.midian.base.base.BaseFragmentActivity;
+import com.midian.base.util.UIHelper;
+import com.midian.base.widget.BaseLibTopbarView;
 import com.midian.bishilai.R;
 import com.midian.bishilai.fragments.FragmentAllBook;
 import com.midian.bishilai.fragments.FragmentReadyComment;
@@ -37,9 +40,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import midian.baselib.base.BaseFragmentActivity;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.widget.BaseLibTopbarView;
 
 /**
  * 订单管理

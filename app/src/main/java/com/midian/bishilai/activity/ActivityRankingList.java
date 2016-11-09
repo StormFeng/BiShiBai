@@ -8,15 +8,15 @@ import android.view.WindowManager;
 import android.widget.GridView;
 
 import com.jaeger.library.StatusBarUtil;
+import com.midian.base.base.BaseActivity;
+import com.midian.base.util.UIHelper;
+import com.midian.base.widget.BaseLibTopbarView;
 import com.midian.bishilai.R;
 import com.midian.bishilai.adapter.AdapterGridViewRankingList;
 import com.midian.bishilai.widget.SelectView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import midian.baselib.base.BaseActivity;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.widget.BaseLibTopbarView;
 
 /**
  * 排行榜

@@ -12,16 +12,15 @@ import android.widget.GridView;
 import android.widget.PopupWindow;
 
 import com.jaeger.library.StatusBarUtil;
+import com.midian.base.base.BaseActivity;
+import com.midian.base.util.UIHelper;
+import com.midian.base.widget.BaseLibTopbarView;
 import com.midian.bishilai.R;
 import com.midian.bishilai.adapter.AdapterGridViewSpringHealth;
 import com.midian.bishilai.widget.SelectView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import midian.baselib.base.BaseActivity;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.widget.BaseLibTopbarView;
-
 /**
  * 春季养生
  * Created by Administrator on 2016/11/1 0001.

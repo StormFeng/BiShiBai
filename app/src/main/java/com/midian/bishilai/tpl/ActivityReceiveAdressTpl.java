@@ -7,6 +7,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
+import com.midian.base.bean.NetResult;
+import com.midian.base.util.UIHelper;
+import com.midian.base.view.BaseTpl;
 import com.midian.bishilai.R;
 import com.midian.bishilai.widget.NoticeDialog;
 import com.midian.bishilai.widget.SmoothCheckBox;
@@ -18,9 +21,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import midian.baselib.bean.NetResult;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.view.BaseTpl;
 
 /**
  * 收货地址

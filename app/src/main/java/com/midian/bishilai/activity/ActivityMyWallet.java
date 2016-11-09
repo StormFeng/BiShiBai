@@ -13,6 +13,9 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.midian.base.base.BaseFragmentActivity;
+import com.midian.base.util.UIHelper;
+import com.midian.base.widget.BaseLibTopbarView;
 import com.midian.bishilai.R;
 import com.midian.bishilai.fragments.FragmentBonus;
 import com.midian.bishilai.fragments.FragmentSales;
@@ -33,9 +36,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import midian.baselib.base.BaseFragmentActivity;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.widget.BaseLibTopbarView;
 
 /**
  * 我的钱包
@@ -81,7 +81,7 @@ public class ActivityMyWallet extends BaseFragmentActivity {
     private void initView() {
         topbar.setBackgroundColor(Color.parseColor("#00ffffff"));
         topbar.setTitle("");
-        topbar.setLeftImageButton(R.drawable.icon_back,UIHelper.finish(_activity));
+        topbar.setLeftImageButton(R.drawable.icon_back, UIHelper.finish(_activity));
         topbar.setRightImageButton(R.drawable.icon_bankcard,UIHelper.OnClickJump(_activity,ActivityCard.class));
         fragments.add(new FragmentBonus());
         fragments.add(new FragmentSales());

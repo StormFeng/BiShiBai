@@ -1,9 +1,12 @@
 package com.midian.bishilai.datasource;
 
 import android.content.Context;
+
+import com.midian.base.base.BaseListDataSource;
+import com.midian.base.bean.NetResult;
+
 import java.util.ArrayList;
-import midian.baselib.base.BaseListDataSource;
-import midian.baselib.bean.NetResult;
+
 
 public class CommentDataResource extends BaseListDataSource {
 

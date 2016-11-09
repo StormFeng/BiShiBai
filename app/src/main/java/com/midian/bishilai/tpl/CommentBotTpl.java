@@ -9,6 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
+import com.midian.base.bean.NetResult;
+import com.midian.base.util.UIHelper;
+import com.midian.base.view.BaseTpl;
 import com.midian.base.widget.PhotoPicker.PhotoPreview;
 import com.midian.bishilai.R;
 import com.midian.bishilai.widget.CommentPopup;
@@ -20,9 +23,6 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import midian.baselib.bean.NetResult;
-import midian.baselib.utils.UIHelper;
-import midian.baselib.view.BaseTpl;
 
 public class CommentBotTpl extends BaseTpl<NetResult> {
 
