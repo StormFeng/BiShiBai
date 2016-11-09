@@ -2,13 +2,15 @@ package com.midian.bishilai.activity;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.GridView;
 
+import com.jaeger.library.StatusBarUtil;
 import com.midian.bishilai.R;
 import com.midian.bishilai.adapter.AdapterGridViewRankingList;
-import com.jaeger.library.StatusBarUtil;
+import com.midian.bishilai.widget.SelectView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,6 +29,8 @@ public class ActivityRankingList extends BaseActivity {
     BaseLibTopbarView topbar;
     @BindView(R.id.gridView)
     GridView gridView;
+    @BindView(R.id.selectView)
+    SelectView selectView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,5 +50,6 @@ public class ActivityRankingList extends BaseActivity {
         topbar.setTitle("排行榜");
 
         gridView.setAdapter(new AdapterGridViewRankingList(_activity));
+        selectView.setVisibility(View.GONE);
     }
 }

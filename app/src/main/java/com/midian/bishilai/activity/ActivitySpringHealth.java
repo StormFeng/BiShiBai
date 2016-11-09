@@ -61,6 +61,7 @@ public class ActivitySpringHealth extends BaseActivity implements SelectView.onS
         gridView.setAdapter(new AdapterGridViewSpringHealth(_activity));
 
         menu = LayoutInflater.from(_activity).inflate(R.layout.layout_popup, null);
+        initMenu(menu);
         String[] tabs = {"推荐", "新品", "价格", "筛选"};
         selectView.init(tabs);
         selectView.setOnStatusChangeListener(this);
@@ -71,14 +72,17 @@ public class ActivitySpringHealth extends BaseActivity implements SelectView.onS
         UIHelper.t(_activity, "tab" + position + "被选中");
         switch (position) {
             case 0:
+                closePopup();
                 break;
             case 1:
+                closePopup();
                 break;
             case 2:
+                closePopup();
                 break;
             case 3:
                 if (status[0]) {
-                    showMenu(selectView, menu);
+                    showMenu(selectView);
                 } else {
                     view.setVisibility(View.GONE);
                     popupWindow.dismiss();
@@ -87,12 +91,25 @@ public class ActivitySpringHealth extends BaseActivity implements SelectView.onS
         }
     }
 
-    private void showMenu(View parent, View contentView) {
-        view.setVisibility(View.VISIBLE);
+    private void closePopup(){
+        if(popupWindow.isShowing()){
+            popupWindow.dismiss();
+        }
+    }
+
+    /**
+     * 初始化popupwindow
+     * @param contentView
+     */
+    private void initMenu(View contentView) {
         WindowManager manager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         int width = manager.getDefaultDisplay().getWidth();
         popupWindow = new PopupWindow(contentView, width, 600);
         popupWindow.setBackgroundDrawable(new BitmapDrawable(null, ""));
+    }
+
+    private void showMenu(View parent) {
+        view.setVisibility(View.VISIBLE);
         popupWindow.showAsDropDown(parent, 0, 30);
     }
 
