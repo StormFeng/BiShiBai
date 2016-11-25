@@ -166,6 +166,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             }
             switch (v.getId()){
                 case R.id.cb_GroupItem:
+                    LogUtils.e("父item被点击");
                     checkBox = (SmoothCheckBox) v;
                     goodBean.getContent().get(groupPosition).setIsselected(!checkBox.isChecked());
                     if(!checkBox.isChecked()){
@@ -185,25 +186,54 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                                     *Integer.valueOf(goodBean.getContent().get(groupPosition).getGooddetail().get(i).getPrice());
                         }
                     }
+                    int cm=0;
+                    //判断是否所有的父item都被选中，决定全选按钮状态
+                    for(int i=0;i<goodBean.getContent().size();i++){
+                        if(goodBean.getContent().get(i).isselected()){
+                            cm++;
+                        }
+                    }
+                    if(cm==goodBean.getContent().size()){
+                        goodBean.setAllSelect(true);
+                    }else{
+                        goodBean.setAllSelect(false);
+                    }
                     goodBean.setAllcount(allCount);
                     goodBean.setAllmoney(allMoney);
                     notifyDataSetChanged();
-                    updateViewListener.update(allCount,allMoney);
+                    updateViewListener.update(goodBean.isAllSelect(),allCount,allMoney);
                     break;
+                //单个子项item被点击
                 case R.id.cb_Item:
+                    LogUtils.e("子item被点击");
                     checkBox = (SmoothCheckBox) v;
                     int n=0;
+                    int m=0;
                     goodBean.getContent().get(groupId).getGooddetail().get(childId).setIsselected(!checkBox.isChecked());
+                    //遍历父item所有数据，统计被选中的item数量
                     for(int i=0;i<goodBean.getContent().get(groupId).getGooddetail().size();i++){
                         if(goodBean.getContent().get(groupId).getGooddetail().get(i).isselected()){
                             n++;
                         }
                     }
+                    //判断是否所有的子item都被选中，决定父item状态
                     if(n==goodBean.getContent().get(groupId).getGooddetail().size()){
                         goodBean.getContent().get(groupId).setIsselected(true);
                     }else{
                         goodBean.getContent().get(groupId).setIsselected(false);
                     }
+                    //判断是否所有的父item都被选中，决定全选按钮状态
+                    for(int i=0;i<goodBean.getContent().size();i++){
+                        if(goodBean.getContent().get(i).isselected()){
+                            m++;
+                        }
+                    }
+                    if(m==goodBean.getContent().size()){
+                        goodBean.setAllSelect(true);
+                    }else{
+                        goodBean.setAllSelect(false);
+                    }
+                    //判断子item状态，更新结算总商品数和合计Money
                     if(!checkBox.isChecked()){
                         allCount++;
                         allMoney+=Integer.valueOf(goodBean.getContent().get(groupId).getGooddetail().get(childId).getCount())
@@ -216,31 +246,36 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                     goodBean.setAllcount(allCount);
                     goodBean.setAllmoney(allMoney);
                     notifyDataSetChanged();
-                    updateViewListener.update(allCount,allMoney);
+                    updateViewListener.update(goodBean.isAllSelect(),allCount,allMoney);
                     break;
                 case R.id.tv_Reduce:
+                    //减少商品数量
                     String var1 = goodBean.getContent().get(groupId).getGooddetail().get(childId).getCount();
                     if(Integer.valueOf(var1)>1){
                         goodBean.getContent().get(groupId).getGooddetail().get(childId).setCount(reduceCount(var1));
                         if(goodBean.getContent().get(groupId).getGooddetail().get(childId).isselected()){
                             allMoney-=Integer.valueOf(goodBean.getContent().get(groupId).getGooddetail().get(childId).getPrice());
-                            updateViewListener.update(allCount,allMoney);
+                            updateViewListener.update(goodBean.isAllSelect(),allCount,allMoney);
                         }
                         goodBean.setAllmoney(allMoney);
                         notifyDataSetChanged();
                     }
                     break;
                 case R.id.tv_Add:
+                    //添加商品数量
                     String var2 = goodBean.getContent().get(groupId).getGooddetail().get(childId).getCount();
-                    goodBean.getContent().get(groupId).getGooddetail().get(childId).setCount(addCount(var2));
-                    notifyDataSetChanged();
-                    allMoney=goodBean.getAllmoney();
-                    if(goodBean.getContent().get(groupId).getGooddetail().get(childId).isselected()){
-                        allMoney+=Integer.valueOf(goodBean.getContent().get(groupId).getGooddetail().get(childId).getPrice());
-                        updateViewListener.update(allCount,allMoney);
+                    String var3 = goodBean.getContent().get(groupId).getGooddetail().get(childId).getLimitcount();
+                    if(Integer.valueOf(var3)>Integer.valueOf(var2)){
+                        goodBean.getContent().get(groupId).getGooddetail().get(childId).setCount(addCount(var2));
+                        notifyDataSetChanged();
+                        allMoney=goodBean.getAllmoney();
+                        if(goodBean.getContent().get(groupId).getGooddetail().get(childId).isselected()){
+                            allMoney+=Integer.valueOf(goodBean.getContent().get(groupId).getGooddetail().get(childId).getPrice());
+                            updateViewListener.update(goodBean.isAllSelect(),allCount,allMoney);
+                        }
+                        goodBean.setAllmoney(allMoney);
+                        notifyDataSetChanged();
                     }
-                    goodBean.setAllmoney(allMoney);
-                    notifyDataSetChanged();
                     break;
                 case R.id.iv_Delete:
                     LogUtils.e(v.getTag());

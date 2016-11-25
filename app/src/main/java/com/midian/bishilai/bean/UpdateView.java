@@ -5,5 +5,5 @@ package com.midian.bishilai.bean;
  */
 
 public interface UpdateView {
-    void update(int count,int price);
+    void update(boolean isAllSelected,int count,int price);
 }

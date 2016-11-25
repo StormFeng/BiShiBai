@@ -105,7 +105,8 @@ public class Fragment3 extends BaseFragment implements UpdateView {
                 int allCount=goodBeanList.getAllcount();
                 int allMoney=goodBeanList.getAllmoney();
                 if(!cbSelectAll.isChecked()){
-                    cbSelectAll.setChecked(true);
+//                    cbSelectAll.setChecked(true);
+                    goodBeanList.setAllSelect(true);
                     for(int i=0;i<goodBeanList.getContent().size();i++){
                         goodBeanList.getContent().get(i).setIsselected(true);
                         for(int n=0;n<goodBeanList.getContent().get(i).getGooddetail().size();n++){
@@ -118,7 +119,8 @@ public class Fragment3 extends BaseFragment implements UpdateView {
                         }
                     }
                 }else{
-                    cbSelectAll.setChecked(false);
+//                    cbSelectAll.setChecked(false);
+                    goodBeanList.setAllSelect(false);
                     for(int i=0;i<goodBeanList.getContent().size();i++){
                         goodBeanList.getContent().get(i).setIsselected(false);
                         for(int n=0;n<goodBeanList.getContent().get(i).getGooddetail().size();n++){
@@ -130,7 +132,7 @@ public class Fragment3 extends BaseFragment implements UpdateView {
                 }
                 goodBeanList.setAllmoney(allMoney);
                 goodBeanList.setAllcount(allCount);
-                update(allCount,allMoney);
+                update(goodBeanList.isAllSelect(),allCount,allMoney);
                 adapter.notifyDataSetChanged();
                 break;
             case R.id.btn_Settlement:
@@ -139,9 +141,10 @@ public class Fragment3 extends BaseFragment implements UpdateView {
     }
 
     @Override
-    public void update(int count, int price) {
+    public void update(boolean isAllSelect,int count, int price) {
         LogUtils.d(count);
         btnSettlement.setText("结算("+count+")");
         tvAllMoney.setText("￥"+price);
+        cbSelectAll.setChecked(isAllSelect);
     }
 }

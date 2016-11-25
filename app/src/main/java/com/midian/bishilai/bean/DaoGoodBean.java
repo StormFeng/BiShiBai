@@ -66,6 +66,9 @@ public class DaoGoodBean {
         contentBeanList.add(contentBean1);
 
         GoodBean goodBean=new GoodBean();
+        goodBean.setAllSelect(false);
+        goodBean.setAllcount(0);
+        goodBean.setAllcount(0);
         goodBean.setContent(contentBeanList);
         return goodBean;
     }

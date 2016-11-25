@@ -18,6 +18,15 @@ public class GoodBean {
     private List<ContentBean> content;
     private int allmoney;
     private int allcount;
+    private boolean isAllSelect;
+
+    public boolean isAllSelect() {
+        return isAllSelect;
+    }
+
+    public void setAllSelect(boolean allSelect) {
+        isAllSelect = allSelect;
+    }
 
     public int getAllmoney() {
         return allmoney;

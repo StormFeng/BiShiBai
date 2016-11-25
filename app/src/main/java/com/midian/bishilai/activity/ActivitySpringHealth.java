@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -104,6 +105,7 @@ public class ActivitySpringHealth extends BaseActivity implements SelectView.onS
         WindowManager manager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         int width = manager.getDefaultDisplay().getWidth();
         popupWindow = new PopupWindow(contentView, width, 600);
+//        popupWindow.setAnimationStyle(R.style.animation_top_popup);
         popupWindow.setBackgroundDrawable(new BitmapDrawable(null, ""));
     }
 

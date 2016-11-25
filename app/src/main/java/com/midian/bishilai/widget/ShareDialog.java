@@ -80,11 +80,13 @@ public class ShareDialog extends Dialog {
         LogUtils.e(view.getId());
         switch (view.getId()) {
             case R.id.iv_WeChat:
-                share(title,content,imageUrl,targetUrl);
+                share(SHARE_MEDIA.WEIXIN,title,content,imageUrl,targetUrl);
                 break;
             case R.id.iv_Circle:
+                share(SHARE_MEDIA.QQ,title,content,imageUrl,targetUrl);
                 break;
             case R.id.iv_Sina:
+                share(SHARE_MEDIA.SINA,title,content,imageUrl,targetUrl);
                 break;
         }
     }
@@ -99,21 +101,19 @@ public class ShareDialog extends Dialog {
 
         @Override
         public void onError(SHARE_MEDIA share_media, Throwable throwable) {
-            LogUtils.d("share_media:"+share_media+throwable.getMessage());
+            LogUtils.e("share_media:"+share_media+throwable.getMessage());
             Toast.makeText(context, share_media + " 分享失败", Toast.LENGTH_SHORT).show();
-//            dismiss();
         }
 
         @Override
         public void onCancel(SHARE_MEDIA share_media) {
-            LogUtils.d("share_media:"+share_media);
+            LogUtils.e("share_media:"+share_media);
             Toast.makeText(context, share_media + " 分享取消了", Toast.LENGTH_SHORT).show();
-//            dismiss();
         }
     };
 
-    public void share(String title,String content,String imageUrl,String targetUrl){
-        new ShareAction((Activity) context).setPlatform(SHARE_MEDIA.QQ)
+    public void share(SHARE_MEDIA platform,String title,String content,String imageUrl,String targetUrl){
+        new ShareAction((Activity) context).setPlatform(platform)
                 .withTitle(title)
                 .withText(content)
                 .withMedia(new UMImage(context,imageUrl))

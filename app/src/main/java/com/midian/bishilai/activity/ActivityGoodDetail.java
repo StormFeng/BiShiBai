@@ -307,10 +307,19 @@ public class ActivityGoodDetail extends BaseFragmentActivity implements Banner.O
         }
     }
 
+
+    /**
+     * 如果使用的是qq或者新浪精简版jar
+     * 需要在您使用分享或授权的Activity（fragment不行）中添加如下回调代码：
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
-        LogUtils.e("onActivityResult");
+        LogUtils.e("shareCallBack---onActivityResult");
+        LogUtils.e("requestCode:"+requestCode+"     resultCode:"+resultCode+"     data"+data);
     }
 }
