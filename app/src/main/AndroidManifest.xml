@@ -135,8 +135,9 @@
             android:configChanges="keyboardHidden|orientation"
             android:windowSoftInputMode="adjustResize"
             android:exported="false" >
-        <service android:name="com.sina.weibo.sdk.net.DownloadService"
-            android:exported="false"></service>
+            <!--<service android:name="com.sina.weibo.sdk.net.DownloadService"-->
+                <!--android:exported="false">-->
+            <!--</service>-->
         </activity>
         <!--微信-->
         <activity
@@ -168,8 +169,7 @@
         <activity
             android:name="com.umeng.socialize.editorpage.ShareActivity"
             android:theme="@style/Theme.UMDefault"
-            android:excludeFromRecents="true"
-            />
+            android:excludeFromRecents="true"/>
     </application>
 
 </manifest>
